@@ -10,5 +10,6 @@ namespace ClassLibrary
     {
         //Estic Fen Una Prova Desde Azure a Visual Studio
         //Esta es la segona prova Desde Visual Studio a Azure
+        //...
     }
 }
