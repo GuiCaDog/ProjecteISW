@@ -8,6 +8,7 @@ namespace ClassLibrary
 {
     public class Class1
     {
-        //Estic Fen Una Prova
+        //Estic Fen Una Prova Desde Azure a Visual Studio
+        //Esta es la segona prova Desde Visual Studio a Azure
     }
 }
