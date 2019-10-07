@@ -18,5 +18,9 @@ namespace ClassLibrary
         // public void Tostar(){Tostat=true;}
         // public void Menjar(){Existeix=false;}
         // public void SerKiko(){ while(Existeix) {try{if(Tostat){Menjar();} SerKiko();}catch(StackOVerFlowError e){Tostar();}}}
+        //Raupepi també va a fer una prova
+        //Altra prova
+        //Prova 1
+        //Prova 2
     }
 }
