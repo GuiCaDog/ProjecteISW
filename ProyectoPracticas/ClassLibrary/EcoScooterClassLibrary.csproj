@@ -64,6 +64,7 @@
     <Compile Include="Persistence\Entities\PlanningWork.cs" />
     <Compile Include="Persistence\Entities\Rental.cs" />
     <Compile Include="Persistence\Entities\Scooter.cs" />
+    <Compile Include="Persistence\Entities\ScooterState.cs" />
     <Compile Include="Persistence\Entities\Station.cs" />
     <Compile Include="Persistence\Entities\TrackPoint.cs" />
     <Compile Include="Persistence\Entities\User.cs" />
