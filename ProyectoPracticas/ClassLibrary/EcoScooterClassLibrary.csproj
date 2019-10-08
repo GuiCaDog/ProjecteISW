@@ -7,8 +7,8 @@
     <ProjectGuid>{5F2C37C2-3F27-4511-A976-EFFB8C6F1238}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ClassLibrary</RootNamespace>
-    <AssemblyName>ClassLibrary</AssemblyName>
+    <RootNamespace>EcoScooter</RootNamespace>
+    <AssemblyName>EcoScooterLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -42,13 +45,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
-    <Compile Include="Class2.cs" />
+    <Compile Include="BusinessLogic\Entities\EcoScooter.cs" />
+    <Compile Include="BusinessLogic\Entities\Employee.cs" />
+    <Compile Include="BusinessLogic\Entities\Incident.cs" />
+    <Compile Include="BusinessLogic\Entities\Maintenance.cs" />
+    <Compile Include="BusinessLogic\Entities\Person.cs" />
+    <Compile Include="BusinessLogic\Entities\PlanningWork.cs" />
+    <Compile Include="BusinessLogic\Entities\Rental.cs" />
+    <Compile Include="BusinessLogic\Entities\Scooter.cs" />
+    <Compile Include="BusinessLogic\Entities\Station.cs" />
+    <Compile Include="BusinessLogic\Entities\TrackPoint.cs" />
+    <Compile Include="BusinessLogic\Entities\User.cs" />
+    <Compile Include="Persistence\Entities\EcoScooter.cs" />
+    <Compile Include="Persistence\Entities\Employee.cs" />
+    <Compile Include="Persistence\Entities\Incident.cs" />
+    <Compile Include="Persistence\Entities\Maintenance.cs" />
+    <Compile Include="Persistence\Entities\Person.cs" />
+    <Compile Include="Persistence\Entities\PlanningWork.cs" />
+    <Compile Include="Persistence\Entities\Rental.cs" />
+    <Compile Include="Persistence\Entities\Scooter.cs" />
+    <Compile Include="Persistence\Entities\ScooterState.cs" />
+    <Compile Include="Persistence\Entities\Station.cs" />
+    <Compile Include="Persistence\Entities\TrackPoint.cs" />
+    <Compile Include="Persistence\Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLogic\" />
-    <Folder Include="Persistence\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

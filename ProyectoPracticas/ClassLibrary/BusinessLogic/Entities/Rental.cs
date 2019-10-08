@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary
+namespace EcoScooter.Domain
 {
-    class Class2
+    public partial class Rental
     {
-        //Altra prova
     }
 }
