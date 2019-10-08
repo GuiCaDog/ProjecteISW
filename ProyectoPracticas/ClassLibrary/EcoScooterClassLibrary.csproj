@@ -45,6 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\Entities\EcoScooter.cs" />
+    <Compile Include="BusinessLogic\Entities\Employee.cs" />
+    <Compile Include="BusinessLogic\Entities\Incident.cs" />
+    <Compile Include="BusinessLogic\Entities\Maintenance.cs" />
+    <Compile Include="BusinessLogic\Entities\Person.cs" />
+    <Compile Include="BusinessLogic\Entities\PlanningWork.cs" />
+    <Compile Include="BusinessLogic\Entities\Rental.cs" />
+    <Compile Include="BusinessLogic\Entities\Scooter.cs" />
+    <Compile Include="BusinessLogic\Entities\Station.cs" />
+    <Compile Include="BusinessLogic\Entities\TrackPoint.cs" />
+    <Compile Include="BusinessLogic\Entities\User.cs" />
     <Compile Include="Persistence\Entities\EcoScooter.cs" />
     <Compile Include="Persistence\Entities\Employee.cs" />
     <Compile Include="Persistence\Entities\Incident.cs" />
@@ -58,8 +69,6 @@
     <Compile Include="Persistence\Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BusinessLogic\Entities\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
