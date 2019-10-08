@@ -8,5 +8,6 @@ namespace EcoScooter.Domain
 {
     public partial class Person
     {
+
     }
 }
