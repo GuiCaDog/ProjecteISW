@@ -45,7 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Persistence\Entities\EcoScooter.cs" />
+    <Compile Include="Persistence\Entities\Employee.cs" />
+    <Compile Include="Persistence\Entities\Incident.cs" />
+    <Compile Include="Persistence\Entities\Maintenance.cs" />
     <Compile Include="Persistence\Entities\Person.cs" />
+    <Compile Include="Persistence\Entities\PlanningWork.cs" />
+    <Compile Include="Persistence\Entities\Rental.cs" />
+    <Compile Include="Persistence\Entities\Scooter.cs" />
+    <Compile Include="Persistence\Entities\Station.cs" />
+    <Compile Include="Persistence\Entities\TrackPoint.cs" />
+    <Compile Include="Persistence\Entities\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

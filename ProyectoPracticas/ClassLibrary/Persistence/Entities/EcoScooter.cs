@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EcoScooter.Domain
 {
-    public partial class Person
+    public partial class EcoScooter
     {
     }
 }
