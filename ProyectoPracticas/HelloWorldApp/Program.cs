@@ -18,7 +18,7 @@ namespace HelloWorldApp
                 "Mongolian",
                 "Russian",
                 "Austrian",
-                "Brazilian"
+                "Brazilian" //partial: classe repartida en varios llocs
             };
         }
         static void Main(string[] args)
