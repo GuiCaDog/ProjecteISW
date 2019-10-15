@@ -8,6 +8,18 @@ namespace EcoScooter.Domain
 {
     public partial class Person
     {
+        public Person()
+        {
+        }
+        public Person(DateTime birthDate, string dni, string email, string name, int telephon)
+        {
+            Birthdate = birthDate;
+            Dni = dni;
+            Email = email;
+            name = name;
+            Telephon = telephon;
+        }
+
         public DateTime Birthdate
         {
             get;

@@ -8,11 +8,23 @@ namespace EcoScooter.Domain
 {
     public partial class Maintenance
     {
+        public Maintenance()
+        {
+            PlanningWork = new List<PlanningWork>();
+        }
+                                                    //el ? indica que pot prendre el valor null
+        public Maintenance(String description, DateTime? endDate, int id, DateTime startDate) : this()
+        {
+            Description = description;
+            endDate = EndDate;
+            Id = id;
+            StartDate = startDate;
+        }
         public string Description {
             get;
             set;
         }
-        public DateTime EndDate {
+        public DateTime? EndDate {
             get;
             set;
         }
@@ -24,6 +36,17 @@ namespace EcoScooter.Domain
         }
         public DateTime StartDate { 
         
+            get;
+            set;
+        }
+        /*Relaciones*/
+        public virtual Employee Employee
+        {
+            get;
+            set;
+        }
+        public virtual ICollection<PlanningWork> PlanningWork
+        {
             get;
             set;
         }

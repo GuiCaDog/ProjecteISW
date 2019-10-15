@@ -19,14 +19,14 @@ namespace EcoScooter.Domain
             get;
             set;
         }
-            //decimal no double
-        public double Price
+            
+        public Decimal Price
         {
             get;
             set;
         }
 
-        public DateTime StartDate
+        public DateTime? StartDate
         {
             get;
             set;
