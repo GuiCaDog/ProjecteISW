@@ -8,26 +8,53 @@ namespace EcoScooter.Domain
 {
     public partial class EcoScooter
     {
-        double DiscountYounger
+        public EcoScooter()
+        {
+            Employees = new List<Employee>();
+        }
+        public EcoScooter(double discountYounger, double fare, double maxSpeed) : this() 
+         {
+            DiscountYounger = discountYounger;
+            Fare = fare;
+            MaxSpeed = maxSpeed;
+         }
+        public double DiscountYounger
         {
             get;
             set;
         }
-        double Fare
+        public double Fare
         {
             get;
             set;
         }
-        double MaxSpeed
+        public double MaxSpeed
         {
             get;
             set;
         }
 
-        ICollection<Person> PersonCollection;
-        ICollection<Employee> EmployeeCollection;
-        ICollection<Scooter> ScooterCollection;
-        //.......
+        public virtual ICollection<Person> People
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<Employee> Employees
+        {
+            get;
+            set;
+        }
+        public virtual ICollection<Scooter> Scooters
+        {
+            get;
+            set;
+        }
+        public virtual ICollection<Station> Stations
+        {
+            get;
+            set;
+        }
 
     }
 }
