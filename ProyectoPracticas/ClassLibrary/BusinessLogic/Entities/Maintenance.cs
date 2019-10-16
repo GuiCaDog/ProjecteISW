@@ -12,14 +12,14 @@ namespace EcoScooter.Domain
         {
             PlanningWork = new List<PlanningWork>();
         }
-                                                    //el ? indica que pot prendre el valor null
+                                                    //el ? indica que pot prendre el valor null //el this executa el primer constructor sense parametres
         public Maintenance(String description, DateTime? endDate, int id, DateTime startDate) : this()
         {
             Description = description;
-            endDate = EndDate;
+            EndDate = endDate;
             Id = id;
             StartDate = startDate;
-        }
+        }        //-------Al main haurem de pasarli una llista de PlanningWorks amb almenys 1 PW----------
         public string Description {
             get;
             set;

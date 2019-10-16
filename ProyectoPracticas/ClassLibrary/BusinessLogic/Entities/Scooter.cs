@@ -9,12 +9,23 @@ namespace EcoScooter.Domain
 
     public partial class Scooter
     {
+        public Scooter() {
+
+        }
+
+        public Scooter(int id, DateTime registerDate, ScooterState state) {
+           Id = id;
+           RegisterDate = registerDate;
+           State = state;
+        }
+
+
         public int Id
         {
             get;
             set;
         }
-        public DateTime Register
+        public DateTime RegisterDate
         {
             get;
             set;
@@ -24,5 +35,31 @@ namespace EcoScooter.Domain
             get;
             set;
         }
+
+        public virtual ICollection<PlanningWork> PlanningWork
+        {
+            get;
+            set;
+        }
+
+        public virtual ICollection<Rental> Rentals
+        {
+            get;
+            set;
+        }
+
+        public virtual Station Station
+        {
+            get;
+            set;
+        }
+
+        public virtual Maintenance Maintenance
+        {
+            get;
+            set;
+        }
+
+
     }
 }
