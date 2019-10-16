@@ -12,7 +12,7 @@ namespace EcoScooter.Domain
         {
 
         }
-        public Incident(string description, int id, DateTime timeStamp, Rental rental)
+        public Incident(string description, int id, Rental rental, DateTime timeStamp)
         {
             Description = description;
             Id = id;
