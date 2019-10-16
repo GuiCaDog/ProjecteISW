@@ -36,7 +36,7 @@ namespace EcoScooter.Domain
             get;
             set;
         }
-        public Rental Rental
+        public virtual Rental Rental
         {
             get;
             set;
