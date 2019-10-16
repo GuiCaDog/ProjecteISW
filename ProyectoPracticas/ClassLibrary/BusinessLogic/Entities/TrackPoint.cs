@@ -8,6 +8,18 @@ namespace EcoScooter.Domain
 {
     public partial class TrackPoint
     {
+        public TrackPoint()
+        {
+
+        }
+        public TrackPoint(double batteryLevel, double latitude, double longitude, double speed, DateTime timeStamp)
+        {
+            BatteryLevel = batteryLevel;
+            Latitude = latitude;
+            Longitude = longitude;
+            Speed = speed;
+            TimeStamp = timeStamp;
+        }
         public double BatteryLevel
         {
             get;
@@ -30,11 +42,11 @@ namespace EcoScooter.Domain
             set;
         }
 
-        public DateTime Timestamp
+        public DateTime TimeStamp
         {
             get;
             set;
         }
-
+     
     }
 }

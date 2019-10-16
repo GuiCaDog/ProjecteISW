@@ -12,12 +12,11 @@ namespace EcoScooter.Domain
         {
 
         }
-        public Incident(string description, int id, Rental rental, DateTime timeStamp)
+        public Incident(string description, int id, DateTime timeStamp)
         {
             Description = description;
             Id = id;
             TimeStamp = timeStamp;
-            Rental = rental;
         }
         public string Description
         {
@@ -36,11 +35,7 @@ namespace EcoScooter.Domain
             get;
             set;
         }
-        public virtual Rental Rental
-        {
-            get;
-            set;
-        }
+
 
     }
 }
