@@ -8,6 +8,17 @@ namespace EcoScooter.Domain
 {
     public partial class Station
     {
+        public Station()
+        {
+            
+        }
+        public Station(string adress, double latitude, double longitude, string id)
+        {
+            Address = adress;
+            Latitude = latitude;
+            Longitude = longitude;
+            Id = id;
+        }
         public string Address
         {
             get;
@@ -27,6 +38,21 @@ namespace EcoScooter.Domain
         }
 
         public double Longitude
+        {
+            get;
+            set;
+        }
+        public ICollection<Rental> DestinationRentals
+        {
+            get;
+            set;
+        }
+        public ICollection<Rental> OriginRentals
+        {
+            get;
+            set;
+        }
+        public ICollection<Scooter> Scooters
         {
             get;
             set;

@@ -19,7 +19,7 @@ namespace EcoScooter.Domain
             endDate = EndDate;
             Id = id;
             StartDate = startDate;
-        }
+        }        //-------Al main haurem de pasarli una llista de PlanningWorks amb almenys 1 PW----------
         public string Description {
             get;
             set;

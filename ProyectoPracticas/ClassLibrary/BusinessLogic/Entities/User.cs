@@ -8,6 +8,20 @@ namespace EcoScooter.Domain
 {
     public partial class User
     {
+        public User()
+        {
+
+        }
+
+        public User(int cw, DateTime expirationDate, string login, int number, string password)
+        {
+            Cw = cw;
+            ExpirationDate = expirationDate;
+            Number = number;
+            Password = password;
+
+        }
+        
         public int Cw
         {
             get;
@@ -32,6 +46,12 @@ namespace EcoScooter.Domain
         }
 
         public string Password
+        {
+            get;
+            set;
+        }
+
+        public ICollection<Rental> Rentals
         {
             get;
             set;
