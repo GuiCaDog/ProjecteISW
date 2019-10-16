@@ -8,6 +8,17 @@ namespace EcoScooter.Domain
 {
     public partial class Incident
     {
+        public Incident()
+        {
+
+        }
+        public Incident(string description, int id, DateTime timeStamp, Rental rental)
+        {
+            Description = description;
+            Id = id;
+            TimeStamp = timeStamp;
+            Rental = rental;
+        }
         public string Description
         {
             get;
@@ -25,5 +36,11 @@ namespace EcoScooter.Domain
             get;
             set;
         }
+        public Rental Rental
+        {
+            get;
+            set;
+        }
+
     }
 }
