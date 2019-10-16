@@ -42,17 +42,17 @@ namespace EcoScooter.Domain
             get;
             set;
         }
-        public ICollection<Rental> DestinationRentals
+        public virtual ICollection<Rental> DestinationRentals
         {
             get;
             set;
         }
-        public ICollection<Rental> OriginRentals
+        public virtual ICollection<Rental> OriginRentals
         {
             get;
             set;
         }
-        public ICollection<Scooter> Scooters
+        public virtual ICollection<Scooter> Scooters
         {
             get;
             set;

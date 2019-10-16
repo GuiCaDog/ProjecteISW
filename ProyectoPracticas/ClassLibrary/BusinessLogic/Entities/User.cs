@@ -51,7 +51,7 @@ namespace EcoScooter.Domain
             set;
         }
 
-        public ICollection<Rental> Rentals
+        public virtual ICollection<Rental> Rentals
         {
             get;
             set;
