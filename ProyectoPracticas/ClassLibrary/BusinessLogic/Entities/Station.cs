@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcoScooter.Domain
+namespace EcoScooter.Entities
 {
     public partial class Station
     {
         public Station()
         {
+            DestinationRentals = new List<Rental>();
             OriginRentals = new List<Rental>();
             Scooters = new List<Scooter>();
         }

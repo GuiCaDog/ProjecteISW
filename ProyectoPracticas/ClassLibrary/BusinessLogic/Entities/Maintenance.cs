@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcoScooter.Domain
+namespace EcoScooter.Entities
 {
     public partial class Maintenance
     {
@@ -19,7 +19,9 @@ namespace EcoScooter.Domain
             EndDate = endDate;
             Id = id;
             StartDate = startDate;
-        }        //-------Al main haurem de pasarli una llista de PlanningWorks amb almenys 1 PW----------
+        }
+        //-------Al main haurem de pasarli una llista de PlanningWorks amb almenys 1 PW----------
+
         public string Description {
             get;
             set;
