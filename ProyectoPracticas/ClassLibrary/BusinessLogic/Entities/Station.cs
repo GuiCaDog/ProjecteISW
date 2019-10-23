@@ -10,6 +10,7 @@ namespace EcoScooter.Entities
     {
         public Station()
         {
+            DestinationRentals = new List<Rental>();
             OriginRentals = new List<Rental>();
             Scooters = new List<Scooter>();
         }
