@@ -22,35 +22,6 @@ namespace EcoScooter.Entities
         }
         //-------Al main haurem de pasarli una llista de PlanningWorks amb almenys 1 PW----------
 
-        public string Description {
-            get;
-            set;
-        }
-        public DateTime? EndDate {
-            get;
-            set;
-        }
-
-        public int Id { 
         
-            get;
-            set;
-        }
-        public DateTime StartDate { 
-        
-            get;
-            set;
-        }
-        /*Relaciones*/
-        public virtual Employee Employee
-        {
-            get;
-            set;
-        }
-        public virtual ICollection<PlanningWork> PlanningWork
-        {
-            get;
-            set;
-        }
     }
 }

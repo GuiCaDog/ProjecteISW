@@ -22,39 +22,6 @@ namespace EcoScooter.Entities
 
         }
         
-        public int Cw
-        {
-            get;
-            set;
-        }
-        public DateTime ExpirationDate
-        {
-            get;
-            set;
-        }
-
-        public string Login
-        {
-            get;
-            set;
-        }
-
-        public int Number
-        {
-            get;
-            set;
-        }
-
-        public string Password
-        {
-            get;
-            set;
-        }
-
-        public virtual ICollection<Rental> Rentals
-        {
-            get;
-            set;
-        }
+        
     }
 }

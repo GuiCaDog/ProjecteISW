@@ -22,36 +22,7 @@ namespace EcoScooter.Entities
             Salary = salary;
             Maintenances = new List<Maintenance>();
         }
-        public string Iban
-        {
-            get;
-            set;
-        }
-
-        public int Pin
-        {
-            get;
-            set;
-        }
-
-        public string Position
-        {
-            get;
-            set;
-        }
-                
-        public Decimal Salary
-        {
-            get;
-            set;
-        }
-
-        /*Relaciones*/
-        public virtual ICollection<Maintenance> Maintenances
-        {
-            get;
-            set;
-        }
+        
 
     }
 }

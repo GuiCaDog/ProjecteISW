@@ -22,43 +22,7 @@ namespace EcoScooter.Entities
             Fare = fare;
             MaxSpeed = maxSpeed;
          }
-        public double DiscountYounger
-        {
-            get;
-            set;
-        }
-        public double Fare
-        {
-            get;
-            set;
-        }
-        public double MaxSpeed
-        {
-            get;
-            set;
-        }
-
-        public virtual ICollection<Person> People
-        {
-            get;
-            set;
-        }
-
-        public virtual ICollection<Employee> Employees
-        {
-            get;
-            set;
-        }
-        public virtual ICollection<Scooter> Scooters
-        {
-            get;
-            set;
-        }
-        public virtual ICollection<Station> Stations
-        {
-            get;
-            set;
-        }
+       
 
     }
 }
