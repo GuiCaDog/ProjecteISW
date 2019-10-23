@@ -10,10 +10,12 @@ namespace EcoScooter.Domain
     public partial class Scooter
     {
         public Scooter() {
-
+            Rentals = new List<Rental>();
+            PlanningWork = new List<PlanningWork>();
         }
 
-        public Scooter(int id, DateTime registerDate, ScooterState state) {
+        public Scooter(int id, DateTime registerDate, ScooterState state) : this()
+{
            Id = id;
            RegisterDate = registerDate;
            State = state;

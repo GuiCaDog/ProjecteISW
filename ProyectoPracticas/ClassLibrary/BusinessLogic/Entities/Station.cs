@@ -10,9 +10,10 @@ namespace EcoScooter.Domain
     {
         public Station()
         {
-            
+            OriginRentals = new List<Rental>();
+            Scooters = new List<Scooter>();
         }
-        public Station(string adress, double latitude, double longitude, string id)
+        public Station(string adress, double latitude, double longitude, string id) : this()
         {
             Address = adress;
             Latitude = latitude;

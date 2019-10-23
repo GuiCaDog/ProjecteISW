@@ -10,10 +10,10 @@ namespace EcoScooter.Domain
     {
         public User()
         {
-
+                Rentals = new List<Rental>();
         }
 
-        public User(int cw, DateTime expirationDate, string login, int number, string password)
+        public User(int cw, DateTime expirationDate, string login, int number, string password) : this()
         {
             Cw = cw;
             ExpirationDate = expirationDate;
