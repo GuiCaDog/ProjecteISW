@@ -8,6 +8,7 @@ namespace EcoScooter.Entities
 {
     public partial class PlanningWork
     {
+        [Key]
         public string Description
         {
             get;
@@ -19,12 +20,14 @@ namespace EcoScooter.Entities
             set;
         }
 
+        [InverseProperty("PlanningWork")]
         public virtual Maintenance Maintenance
         {
             get;
             set;
         }
 
+        [InverseProperty("PlanningWork")]
         public virtual Scooter Scooter
         {
             get;

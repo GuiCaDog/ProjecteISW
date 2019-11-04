@@ -14,6 +14,7 @@ namespace EcoScooter.Entities
             set;
         }
 
+        [Key]
         public string Id
         {
             get;

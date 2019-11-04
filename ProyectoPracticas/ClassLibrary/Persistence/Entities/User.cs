@@ -8,6 +8,7 @@ namespace EcoScooter.Entities
 {
     public partial class User
     {
+        [Key]
         public int Cw
         {
             get;

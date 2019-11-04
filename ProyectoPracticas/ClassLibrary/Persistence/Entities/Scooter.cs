@@ -8,6 +8,7 @@ namespace EcoScooter.Entities
 {
     public partial class Scooter
     {
+        [Key]
         public int Id
         {
             get;

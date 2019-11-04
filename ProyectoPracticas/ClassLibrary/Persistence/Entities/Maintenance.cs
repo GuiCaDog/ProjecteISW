@@ -19,6 +19,7 @@ namespace EcoScooter.Entities
             set;
         }
 
+        [Key]
         public int Id
         {
 
@@ -32,6 +33,7 @@ namespace EcoScooter.Entities
             set;
         }
         /*Relaciones*/
+        [InverseProperty("Maintenances")]
         public virtual Employee Employee
         {
             get;

@@ -14,6 +14,7 @@ namespace EcoScooter.Entities
             set;
         }
 
+        [Key]
         public int Id
         {
             get;
@@ -32,6 +33,7 @@ namespace EcoScooter.Entities
             set;
         }
 
+        [InverseProperty("Rentals")]
         public virtual User User
         {
             get;
@@ -42,21 +44,29 @@ namespace EcoScooter.Entities
             get;
             set;
         }
+        
         public virtual ICollection<TrackPoint> TrackPoints
         {
             get;
             set;
         }
+
+
+        [InverseProperty("DestinationRentals")]
         public virtual Station DestinationStation
         {
             get;
             set;
         }
+
+        [InverseProperty("OriginRentals")]
         public virtual Station OriginStation
         {
             get;
             set;
         }
+
+        [InverseProperty("Rentals")]
         public virtual Scooter Scooter
         {
             get;
