@@ -38,7 +38,7 @@ namespace EcoScooter.Entities
             get;
             set;
         }
-
+        [InverseProperty("Scooters")]
         public virtual Station Station
         {
             get;
