@@ -27,7 +27,7 @@ namespace EcoScooter.Entities
             get;
             set;
         }
-        public string Nom
+        public string Name
         {
             get;
             set;
