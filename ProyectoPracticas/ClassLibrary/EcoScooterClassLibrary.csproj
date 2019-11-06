@@ -66,6 +66,9 @@
     <Compile Include="BusinessLogic\Entities\Station.cs" />
     <Compile Include="BusinessLogic\Entities\TrackPoint.cs" />
     <Compile Include="BusinessLogic\Entities\User.cs" />
+    <Compile Include="BusinessLogic\Services\EcoScooterService.cs" />
+    <Compile Include="BusinessLogic\Services\IEcoScooterService.cs" />
+    <Compile Include="BusinessLogic\Services\ServiceException.cs" />
     <Compile Include="Persistence\Entities\EcoScooter.cs" />
     <Compile Include="Persistence\Entities\Employee.cs" />
     <Compile Include="Persistence\Entities\Incident.cs" />
