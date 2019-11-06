@@ -8,7 +8,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EcoScooter.Entities
 {
-    public partial class Employee
+    public partial class Employee:Person
     {
         [Key]
         public string Iban

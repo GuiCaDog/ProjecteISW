@@ -16,7 +16,7 @@ namespace EcoScooter.Entities
             Birthdate = birthDate;
             Dni = dni;
             Email = email;
-            name = name;
+            Name = name;
             Telephon = telephon;
         }
 

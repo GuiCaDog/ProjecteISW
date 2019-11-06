@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EcoScooter.Entities
 {
-    public partial class User
+    public partial class User:Person
     {
         public User()
         {
