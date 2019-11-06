@@ -13,6 +13,11 @@ namespace EcoScooter.Entities
     public partial class PlanningWork
     {
         [Key]
+        public int Id
+        {
+            get;
+            set;
+        }
         public string Description
         {
             get;

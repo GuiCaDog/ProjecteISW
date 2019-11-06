@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace EcoScooter.Entities
 {
@@ -19,6 +21,13 @@ namespace EcoScooter.Entities
             set;
         }
         public double MaxSpeed
+        {
+            get;
+            set;
+        }
+
+        [Key]
+        public int Id
         {
             get;
             set;

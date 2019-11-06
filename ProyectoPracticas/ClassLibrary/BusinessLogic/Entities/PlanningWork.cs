@@ -8,6 +8,8 @@ namespace EcoScooter.Entities
 {
     public partial class PlanningWork
     {
+
+
         public PlanningWork()
         {
             //no te cap llista

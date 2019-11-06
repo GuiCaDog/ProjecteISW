@@ -1,10 +1,11 @@
-﻿using System;
+﻿using EcoScooter.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcoScooter.BusinessLogic.Services
+namespace EcoScooter.Services
 {
     public interface IEcoScooterService
     {
@@ -48,8 +49,7 @@ namespace EcoScooter.BusinessLogic.Services
         /// <param name="login"></param>
         /// <param name="number"></param>
         /// <param name="password"></param>
-        /// <exception cref="ServiceException">Thrown when user's data is incorrrect</exception> 
-
+        /// <exception cref="ServiceException">Thrown when user's data is incorrrect or the dni already exists</exception> 
         void RegisterUser(DateTime birthDate, String dni, String email, String name, int telephon, int cvv, DateTime expirationDate, string login, int number, string password);
 
         /// <summary>
@@ -67,6 +67,16 @@ namespace EcoScooter.BusinessLogic.Services
         /// <param name="pin"></param>
         ///  <exception cref="ServiceException">Thrown when employee's data is incorrrect or the employee doesn't exist  </exception> 
         void LoginEmployee(String dni, int pin);
+
+        /// <summary>
+        /// Registers a new sttion into the system
+        /// </summary>
+        /// <param name="address"></param>
+        /// <param name="latitude"></param>
+        /// <param name="longitude"></param>
+        /// <param name="">stationId</param>
+        /// <exception cref="ServiceException">Thrown when the input data is incorrect or the stationId already exists in the system</exception>
+        void RegisterStation(String address, Double latitude, Double longitude, String stationId);
 
         /// <summary>
         /// Registers a new scooter into the system. If ScooterState is "available", furthermore, it assigns the scooter to the station provided. 
@@ -101,6 +111,29 @@ namespace EcoScooter.BusinessLogic.Services
         /// or the rental doe </exception> 
         void RegisterIncident(string description, DateTime timeStamp, int rentalId);
 
+
+        /// <summary>
+        /// Gets the ids of the rentals corresponding to the user's routes  made within the date interval provided. 
+        /// The route description is a string with the following fields splitted by commas: startDate, endDate, price, Origin stationId, Destination stationID
+        /// </summary>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <exception cref="ServiceException"> Thrown when the interval marked between the start and end date is wrong 
+        /// or there are not available routes in that period </exception> 
+        ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate);
+
+        /// <summary>
+        /// Gets the descriptions of the user's routes associated to the rentalId provided: startDate, endDate, price, Origin stationId, Destination stationID
+        /// </summary>
+        /// <param name="rentalId"></param>
+        /// <param name="startDate"></param>
+        /// <param name="endDate"></param>
+        /// <param name="price"></param>
+        /// <param name="originStationId"></param>
+        /// <param name="destinationStationId"></param>
+        /// <exception cref="ServiceException"> Thrown when the there is not a rental with the rentalId provided </exception> 
+        void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId);
+
         /// <summary>
         /// Gets the descriptions of the user's routes  made within the date interval provided. 
         /// The route description is a string with the following fields splitted by commas: startDate, endDate, price, Origin stationId, Destination stationID
@@ -110,4 +143,9 @@ namespace EcoScooter.BusinessLogic.Services
         /// <exception cref="ServiceException"> Thrown when the interval marked between the start and end date is wrong 
         /// or there are not available routes in that period </exception> 
         ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate);
+
+
+
+
     }
+}
