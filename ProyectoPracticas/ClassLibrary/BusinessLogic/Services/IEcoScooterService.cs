@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EcoScooter.Services
+namespace EcoScooter.BusinessLogic.Services
 {
     public interface IEcoScooterService
     {

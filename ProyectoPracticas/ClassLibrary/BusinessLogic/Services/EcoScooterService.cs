@@ -35,58 +35,58 @@ namespace EcoScooter.BusinessLogic.Services
             ecoScooter.MaxSpeed = maxSpeed;
         }
 
-        void removeAllData() { }
-        void saveChanges() { }
-        bool isLoggedAsUser(string dni) { return false; }
+        public void removeAllData() { }
+        public void saveChanges() { }
+        public bool isLoggedAsUser(string dni) { return false; }
 
-        bool isLoggedAsEmployee(string dni) { return false; }
+        public bool isLoggedAsEmployee(string dni) { return false; }
 
-        void RegisterUser(DateTime birthDate, String dni, String email, String name, int telephon, int cvv, DateTime expirationDate, string login, int number, string password)
+        public void RegisterUser(DateTime birthDate, String dni, String email, String name, int telephon, int cvv, DateTime expirationDate, string login, int number, string password)
         {
 
         }
 
-        void LoginUser(string login, string password)
+        public void LoginUser(string login, string password)
         {
 
         }
 
-        void LoginEmployee(String dni, int pin)
+        public void LoginEmployee(String dni, int pin)
         {
 
         }
 
-        void RegisterStation(String address, Double latitude, Double longitude, String stationId)
+        public void RegisterStation(String address, Double latitude, Double longitude, String stationId)
         {
 
         }
 
-        void RegisterScooter(DateTime registerDate, ScooterState state, String stationId)
+        public void RegisterScooter(DateTime registerDate, ScooterState state, String stationId)
         {
 
         }
 
-        void RentScooter(string stationId)
+        public void RentScooter(string stationId)
         {
 
         }
-        void ReturnScooter(string stationId)
-        {
-
-        }
-
-        void RegisterIncident(string description, DateTime timeStamp, int rentalId)
+        public void ReturnScooter(string stationId)
         {
 
         }
 
+        public void RegisterIncident(string description, DateTime timeStamp, int rentalId)
+        {
 
-        ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
+        }
+
+
+        public ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
         {
             return null;
         }
 
-        void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
+        public void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
         {
             startDate = new DateTime();
             endDate = new DateTime();
@@ -95,7 +95,7 @@ namespace EcoScooter.BusinessLogic.Services
             destinationStationId = 10;
         }
 
-        ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
+        public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
         {
             return null;
         }
