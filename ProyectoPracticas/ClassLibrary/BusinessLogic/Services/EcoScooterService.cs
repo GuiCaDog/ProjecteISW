@@ -9,7 +9,7 @@ using EcoScooter.BusinessLogic.Services;
 
 namespace EcoScooter.BusinessLogic.Services
 {
-    public class EcoScooterService : IEcoScooterService
+    public class EcoScooterService //: IEcoScooterService
     {
         private readonly IDAL dal;
         public EcoScooterService(IDAL dal)
