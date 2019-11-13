@@ -85,7 +85,7 @@ namespace EcoScooter.Services
         /// <param name="state"></param>
         /// <param name="stationId"></param>
         ///  <exception cref="ServiceException">Thrown when the input data is incorrect: wrong registerDate, incorrect state or not existing station  </exception> 
-        void RegisterScooter(DateTime registerDate, ScooterState state, int stationId);
+        void RegisterScooter(DateTime registerDate, ScooterState state, String stationId);
 
         /// <summary>
         /// Rents a scooter from one station
@@ -143,9 +143,5 @@ namespace EcoScooter.Services
         /// <exception cref="ServiceException"> Thrown when the interval marked between the start and end date is wrong 
         /// or there are not available routes in that period </exception> 
         ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate);
-
-
-
-
     }
 }
