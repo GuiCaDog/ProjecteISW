@@ -9,7 +9,7 @@ using EcoScooter.BusinessLogic.Services;
 
 namespace EcoScooter.BusinessLogic.Services
 {
-    public class EcoScooterService //: IEcoScooterService
+    public class EcoScooterService : IEcoScooterService
     {
         private readonly IDAL dal; 
         private EcoScooter.Entities.EcoScooter ecoScooter;
@@ -88,7 +88,11 @@ namespace EcoScooter.BusinessLogic.Services
 
         void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
         {
-           
+            startDate = new DateTime();
+            endDate = new DateTime();
+            price = 100;
+            originStationId = 10;
+            destinationStationId = 10;
         }
 
         ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
