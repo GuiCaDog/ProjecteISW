@@ -48,12 +48,21 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void LoginUser(string login, string password)
         {
+            //User u = dal.GetById<User>(login);
+            //if (!u.getPassword().equals(password))
+            //{
+            //    throw new Exception("El usuario no existe o la contraseña es incorrecta!");
+            //}
 
         }
 
         public void LoginEmployee(String dni, int pin)
         {
-
+            //Employee e = dal.GetById<User>(dni);
+            //if (!e.getPin().equals(pin))
+            //{
+            //    throw new Exception("El usuario no existe o la pin es incorrecta!");
+            //}
         }
 
         public void RegisterStation(String address, Double latitude, Double longitude, String stationId)
