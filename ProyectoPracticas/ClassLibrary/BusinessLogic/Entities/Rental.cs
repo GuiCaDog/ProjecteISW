@@ -25,6 +25,5 @@ namespace EcoScooter.Entities
             User = user;
         }
 
-        
     }
 }
