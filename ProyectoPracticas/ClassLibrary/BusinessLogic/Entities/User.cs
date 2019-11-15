@@ -24,6 +24,17 @@ namespace EcoScooter.Entities
             Rentals = new List<Rental>();
 
         }
+        //Metodes usats per a implementar serveis
+        //Donat un login diu si coincidix en el del usuari
+        public Boolean isLogin(String login)
+        {
+            return this.Login == login;
+        }
+        //Donat una contraseña diu si coincidix en la del usuari
+        public Boolean isPassword(String password)
+        {
+            return this.Password == password;
+        }
 
 
     }

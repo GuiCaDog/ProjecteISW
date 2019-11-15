@@ -10,7 +10,7 @@ namespace EcoScooter.Entities
 {
     public partial class Employee:Person
     {
-        [Key]
+        //[Key]
         public string Iban
         {
             get;

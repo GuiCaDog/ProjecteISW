@@ -13,6 +13,8 @@ namespace EcoScooter.BusinessLogic.Services
     {
         private readonly IDAL dal; 
         private EcoScooter.Entities.EcoScooter ecoScooter;
+        //Variables que usem
+        List<User> userList;
         //Hay que mantener una referencia al usuario con la sesión actualmente iniciada. Se debe declarar bajo esta línea.
         public EcoScooterService(IDAL dal)
         {
@@ -68,21 +70,35 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void LoginUser(string login, string password)
         {
-            //User u = dal.GetById<User>(login);
-            //if (!u.getPassword().equals(password))
-            //{
-            //    throw new Exception("El usuario no existe o la contraseña es incorrecta!");
-            //}
+            userList =(List<User>) dal.GetAll<User>();
+            int i = 0;
+            //Busquem hasta trobar un usuari amb ixe Login
+            while(i < userList.Count && !userList[i].isLogin(login)) { i++; }
+            //Hem trobat un usuari amb ixe login
+            if(i < userList.Count)
+            {
+                if (userList[i].isPassword(password)) { /*El usuari se loguea correctamet*/}
+                //La contraseña era incorrecta
+                else { new ServiceException("Contraseña incorrecta"); }  
+            }
+            //Ixe login no existix
+            else { new ServiceException("El usuario no existe"); }
 
         }
 
         public void LoginEmployee(String dni, int pin)
         {
-            //Employee e = dal.GetById<User>(dni);          
-            //if (!e.getPin().equals(pin))
-            //{
-            //    throw new Exception("El usuario no existe o la pin es incorrecta!");
-            //}
+            //En este cas sí podem buscar per clau primaria (Dni)
+            Employee empleat = dal.GetById<Employee>(dni);
+            //Ha trobat el empleat asociat a ixe dni
+            if (empleat != null)
+            {
+                if (empleat.isPin(pin) ){ /*El empleat se loguea correctamet*/}
+                //El pin era incorrecto
+                else { new ServiceException("El pin del empleado es incorrecto"); }
+            }
+            //No existix un empleat amb ixe dni
+            else { new ServiceException("El empleado no existe"); }
         }
 
         public void RegisterStation(String address, Double latitude, Double longitude, String stationId)
@@ -144,7 +160,7 @@ namespace EcoScooter.BusinessLogic.Services
             Incident i = new Incident(description, 123 , timeStamp);
             //2. El	sistema	actualitza	la	informació	associada	a	un	lloguer	amb incident
             Rental r = dal.GetById<Rental>(rentalId);
-            r.Incident(i);
+            //r.Incident(i);
             
 
             

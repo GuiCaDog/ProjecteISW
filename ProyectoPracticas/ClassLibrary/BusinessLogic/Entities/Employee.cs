@@ -21,8 +21,15 @@ namespace EcoScooter.Entities
             Position = position;
             Salary = salary;
             Maintenances = new List<Maintenance>();
-        }
-        
+        }
+        //Metodes usats per a implementar serveis
+        //Donat un pin, diu si coincidix amb el del empleat
+        public Boolean isPin(int pin)
+        {
+            return this.Pin == pin;
+        }
+
+
 
     }
 }
