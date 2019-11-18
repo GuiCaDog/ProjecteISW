@@ -18,6 +18,7 @@ namespace EcoScooter.Entities
         public EcoScooter(double discountYounger, double fare, double maxSpeed, Employee employee) : this() 
          {
             Employees.Add(employee);
+            People.Add(employee); //Nova linia afegida
             DiscountYounger = discountYounger;
             Fare = fare;
             MaxSpeed = maxSpeed;
