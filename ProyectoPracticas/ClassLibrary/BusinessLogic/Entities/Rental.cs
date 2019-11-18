@@ -25,5 +25,11 @@ namespace EcoScooter.Entities
             User = user;
         }
 
+
+        //Métodes implementats per als serves
+        public bool inInterval(DateTime startDate, DateTime endDate)
+        {
+            return (startDate.CompareTo(this.StartDate) <= 0 && endDate.CompareTo(this.EndDate) <= 0);
+        }
     }
 }

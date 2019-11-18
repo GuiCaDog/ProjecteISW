@@ -13,8 +13,10 @@ namespace EcoScooter.BusinessLogic.Services
     {
         private readonly IDAL dal; 
         private EcoScooter.Entities.EcoScooter ecoScooter;
+
         //Variables que usem
-        List<User> userList;
+        private List<User> userList;
+        private Person personaLogejada; //Quan fa login ens guardem la seua referencia
         //Hay que mantener una referencia al usuario con la sesión actualmente iniciada. Se debe declarar bajo esta línea.
         public EcoScooterService(IDAL dal)
         {
@@ -51,10 +53,27 @@ namespace EcoScooter.BusinessLogic.Services
             dal.Clear<User>();
             dal.Commit();
         }
-        public void saveChanges() { }
-        public bool isLoggedAsUser(string dni) { return false; }
+        public void saveChanges() {
+            dal.Commit();
+        }
+        public bool isLoggedAsUser(string dni) {
+            return isLogged(dni, "usuari");
+        }
 
-        public bool isLoggedAsEmployee(string dni) { return false; }
+        public bool isLoggedAsEmployee(string dni) {
+            return isLogged(dni, "empleat");
+        }
+
+        //He fet un métode per reutiliçar codi
+        private bool isLogged(string dni, string type)
+        {
+            Person personaBuscada = dal.GetById<Person>(dni);
+            if (personaBuscada == null)
+            {
+                throw new ServiceException("El dni del " +type+" es incorrecte");
+            }
+            return personaBuscada.Equals(personaLogejada);
+        }
 
         public void RegisterUser(DateTime birthDate, String dni, String email, String name, int telephon, int cvv, DateTime expirationDate, string login, int number, string password)
         {
@@ -77,12 +96,15 @@ namespace EcoScooter.BusinessLogic.Services
             //Hem trobat un usuari amb ixe login
             if(i < userList.Count)
             {
-                if (userList[i].isPassword(password)) { /*El usuari se loguea correctamet*/}
+                if (userList[i].isPassword(password)) {
+                    /*El usuari se loguea correctamet. Guardem la seua referencia*/
+                    personaLogejada = userList[i];
+                }
                 //La contraseña era incorrecta
-                else { new ServiceException("Contraseña incorrecta"); }  
+                else { throw new ServiceException("Contraseña incorrecta"); }  
             }
             //Ixe login no existix
-            else { new ServiceException("El usuario no existe"); }
+            else { throw new ServiceException("El usuario no existe"); }
 
         }
 
@@ -93,12 +115,15 @@ namespace EcoScooter.BusinessLogic.Services
             //Ha trobat el empleat asociat a ixe dni
             if (empleat != null)
             {
-                if (empleat.isPin(pin) ){ /*El empleat se loguea correctamet*/}
+                if (empleat.isPin(pin) ){
+                    /*El empleat se loguea correctamet. Guardem la seua referencia*/
+                    personaLogejada = empleat;
+                }
                 //El pin era incorrecto
-                else { new ServiceException("El pin del empleado es incorrecto"); }
+                else { throw new ServiceException("El pin del empleado es incorrecto"); }
             }
             //No existix un empleat amb ixe dni
-            else { new ServiceException("El empleado no existe"); }
+            else {throw new ServiceException("El empleado no existe"); }
         }
 
         public void RegisterStation(String address, Double latitude, Double longitude, String stationId)
@@ -109,7 +134,7 @@ namespace EcoScooter.BusinessLogic.Services
                 Station s = new Station(address, latitude, longitude, stationId);
                 //Falta comprovar si falta informació o es incorrecta
                 dal.Insert<Station>(s);
-                dal.Commit();
+                //dal.Commit();
             }
             else {
                 throw new Exception("La estación ya existe");
@@ -134,7 +159,7 @@ namespace EcoScooter.BusinessLogic.Services
                 else
                 {                                
                     dal.Insert<Scooter>(s);
-                    dal.Commit();
+                    //dal.Commit();
                 }
             } 
             else {
@@ -183,7 +208,24 @@ namespace EcoScooter.BusinessLogic.Services
 
         public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
         {
-            return null;
+            //En la precondicó ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
+            //Si la data inicial es major que la final, ja ni seguim
+            if(startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecte"); }
+            //Guardem els rentals de ixe usuari
+            List<Rental> llistaRentals = (List<Rental>)((User) personaLogejada).Rentals;
+            List<String> descripcions = new List<String>();
+            for(int i = 0; i < llistaRentals.Count; i++)
+            {
+                //Usem un métode implementat en Rentals que torna true si esta entre ixes dates
+                if(llistaRentals[i].inInterval(startDate, endDate))
+                {
+                    descripcions.Add(llistaRentals[i].StartDate + ", " + llistaRentals[i].EndDate + ", " + llistaRentals[i].Price
+                        + ", " + llistaRentals[i].OriginStation + ", " + llistaRentals[i].DestinationStation);
+                }
+            }
+            //Si no hem trobat ninguna ruta
+            if(descripcions.Count == 0) { throw new ServiceException("No hi han rutes en ixe interval"); }
+            return descripcions;
         }
     }
 }
