@@ -14,10 +14,12 @@ namespace EcoScooter.BusinessLogic.Services
         private readonly IDAL dal; 
         private EcoScooter.Entities.EcoScooter ecoScooter;
 
-        //Variables que usem
+        //Variables que usem-------------------------
         private List<User> userList;
-        private Person personaLogejada; //Quan fa login ens guardem la seua referencia
         //Hay que mantener una referencia al usuario con la sesión actualmente iniciada. Se debe declarar bajo esta línea.
+        private Person personaLogejada; //Quan fa login ens guardem la seua referencia
+        //--------------------------------------------
+        
         public EcoScooterService(IDAL dal)
         {
             this.dal = dal;
