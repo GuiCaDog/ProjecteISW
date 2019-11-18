@@ -45,6 +45,7 @@ namespace EcoScooter.BusinessLogic.Services
         public void removeAllData() {
             dal.Clear<Entities.EcoScooter>();
             dal.Clear<Employee>();
+            dal.Clear<Maintenance>();
             dal.Clear<Incident>();
             dal.Clear<Person>();
             dal.Clear<PlanningWork>();
