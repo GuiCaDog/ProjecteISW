@@ -80,14 +80,20 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void RegisterUser(DateTime birthDate, String dni, String email, String name, int telephon, int cvv, DateTime expirationDate, string login, int number, string password)
         {
-            //...
-            //birthDate.Year.
-            if(false)
-            {
-                throw new ServiceException("Datos erroneos");
-            }
+           
             User u = new User(birthDate, dni, email, name, telephon, cvv, expirationDate, login, number, password);
-            dal.Insert<User>(u);
+            string reason;
+            bool validated = u.validateData(out reason, ecoScooter);
+            if (validated)
+            {
+                ecoScooter.People.Add(u);//Tenim que fer esto?
+                //dal.Insert<User>(u);//I esto tambe? Les 2 coses?
+                dal.Commit();
+            }
+            else
+            {
+                throw new ServiceException(reason);
+            }
         }
 
         public void LoginUser(string login, string password)

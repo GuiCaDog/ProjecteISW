@@ -20,7 +20,7 @@ namespace EcoScooter.Entities
             ExpirationDate = expirationDate;
             Number = number;
             Password = password;
-
+            Login = login;
             Rentals = new List<Rental>();
 
         }
@@ -34,6 +34,38 @@ namespace EcoScooter.Entities
         public Boolean isPassword(String password)
         {
             return this.Password == password;
+        }
+
+        public bool validateData(out string reason, EcoScooter eS)
+        {
+            reason = "error";
+            bool OK = true;
+            //Comprovar si es major de 16 anys
+            if(Birthdate.CompareTo(DateTime.Now.AddYears(-16)) > 0) { 
+                OK = false;
+                reason += "\n Usuari menor de 16 anys";
+            }
+            //Comprovar si la targeta es vàlida(te 8 posicions)
+            if(Number.ToString().Length != 8 || Cw == null)
+            {
+                OK = false;
+                reason += "\n Numero de targeta incorrecto";
+            }
+            //Ja existix ixe usuari?    
+            bool jaExistix = false;
+            foreach(Person p in eS.People)
+            {
+                if(p is User && !jaExistix)
+                {
+                    if(((User)p).Login.Equals(Login))
+                    {
+                        jaExistix = true;
+                        OK = false;
+                        reason += "\n Nom d'usuari ja existent";
+                    }
+                }
+            }
+            return true;
         }
 
 
