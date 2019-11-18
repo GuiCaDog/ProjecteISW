@@ -36,9 +36,11 @@ namespace EcoScooter.Entities
             return this.Password == password;
         }
 
+
+        //----------MÈTODE USAT EN RegisterUser-----------------------------------------------
         public bool validateData(out string reason, EcoScooter eS)
         {
-            reason = "error";
+            reason = "Error";
             bool OK = true;
             //Comprovar si es major de 16 anys
             if(Birthdate.CompareTo(DateTime.Now.AddYears(-16)) > 0) { 
@@ -49,7 +51,7 @@ namespace EcoScooter.Entities
             if(Number.ToString().Length != 8 || Cw == null)
             {
                 OK = false;
-                reason += "\n Numero de targeta incorrecto";
+                reason += "\n Targeta incorrecta";
             }
             //Ja existix ixe usuari?    
             bool jaExistix = false;
@@ -65,7 +67,7 @@ namespace EcoScooter.Entities
                     }
                 }
             }
-            return true;
+            return OK;
         }
 
 

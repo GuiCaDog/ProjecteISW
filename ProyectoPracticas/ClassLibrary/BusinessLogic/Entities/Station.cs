@@ -21,6 +21,35 @@ namespace EcoScooter.Entities
             Longitude = longitude;
             Id = id;
         }
-        
+
+        //--------Mètode usat en RentScooter i Register Station-----------------------------
+        public static Station findByID(string id, EcoScooter eS)
+        {
+            foreach (Station st in eS.Stations)
+            {
+                if (st.Id.Equals(id))
+                {
+                    return st;
+                }
+            }
+            return null;
+        }
+
+
+        //--------Mètode usat en RentScooter-----------------------------
+        public bool availableScooter()
+        {
+            return Scooters.Count <= 0;
+        }
+
+        //--------Mètode usat en RentScooter-----------------------------
+        public Scooter retrieveScooter(EcoScooter eS)
+        {
+            Scooter s = eS.Scooters.First();
+            eS.Scooters.Remove(s);
+            return s;
+        }
+
     }
+
 }

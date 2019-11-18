@@ -88,7 +88,8 @@ namespace EcoScooter.BusinessLogic.Services
             {
                 ecoScooter.People.Add(u);//Tenim que fer esto?
                 //dal.Insert<User>(u);//I esto tambe? Les 2 coses?
-                dal.Commit();
+                //dal.Commit();
+                saveChanges();
             }
             else
             {
@@ -160,10 +161,10 @@ namespace EcoScooter.BusinessLogic.Services
             Scooter s = new Scooter(123 ,registerDate, state);           
             if (state.Equals("available"))
             {
-                Station station = dal.GetById<Station>(stationId);
+                Station station = Station.findByID(stationId, ecoScooter);
                 if (station == null) //no existeix la estació
                 {
-                    throw new Exception("La estación no existe");
+                    throw new Exception("L'estació no existix");
                 }
                 else
                 {                                
@@ -172,7 +173,7 @@ namespace EcoScooter.BusinessLogic.Services
                 }
             } 
             else {
-                throw new Exception("Estación no disponible");
+                throw new Exception("Estació no disponible");
             }
 
 
@@ -180,7 +181,27 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void RentScooter(string stationId)
         {
+            if (personaLogejada != null)
+            {
+                Station station = Station.findByID(stationId, ecoScooter); 
+                
+                if (station == null) //no existeix la estació
+                {
+                    throw new Exception("L'estació no existix");
+                }
 
+                if(station.availableScooter())
+                {
+                    Scooter s = station.retrieveScooter(ecoScooter);
+                    Rental rent = new Rental(null, 10, station, 10,s,DateTime.Now,(User)personaLogejada);
+                    ((User)personaLogejada).Rentals.Add(rent);
+                    saveChanges();
+                }
+                else
+                {
+                    throw new Exception("No hi ha patinets disponibles a l'estació");
+                }
+            }
         }
         public void ReturnScooter(string stationId)
         {
