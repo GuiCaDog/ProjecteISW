@@ -88,5 +88,15 @@ namespace EcoScooter.Entities
             return maxID+1;
         }
 
+        public int newScooterID()
+        {
+            int maxID = -1;
+            foreach (Scooter u in Scooters)
+            {
+              if (u.Id > maxID) { maxID = u.Id; }
+            }
+            return maxID;
+        }
+
     }
 }

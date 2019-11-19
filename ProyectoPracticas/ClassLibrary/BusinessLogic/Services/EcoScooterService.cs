@@ -173,7 +173,7 @@ namespace EcoScooter.BusinessLogic.Services
         {
             //Scooter(int id, DateTime registerDate, ScooterState state) : this()
                                 //id autogenerat :(                               
-            Scooter s = new Scooter(123 ,registerDate, state);           
+            Scooter s = new Scooter(ecoScooter.newScooterID() ,registerDate, state);           
             if (state.Equals("available"))
             {
                 Station station = ecoScooter.findByID(stationId);
