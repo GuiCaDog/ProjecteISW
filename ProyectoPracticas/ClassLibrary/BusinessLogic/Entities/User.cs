@@ -75,5 +75,18 @@ namespace EcoScooter.Entities
             }
             return res;
         }
+        //Usat en el métode getRouteDescription
+        public Rental findRentalById(int id)
+        {
+            foreach(Rental r in Rentals)
+            {
+                if (r.isId(id))
+                {
+                    return r;
+                }
+            }
+            return null;
+        }
+
     }
 }

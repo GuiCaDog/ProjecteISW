@@ -29,7 +29,7 @@ namespace EcoScooter.Entities
         }
 
 
-        //Métodes implementats per als serves
+        //Métodes implementats per als serveis
         public bool inInterval(DateTime startDate, DateTime endDate)
         {
             return (startDate.CompareTo(this.StartDate) <= 0 && endDate.CompareTo(this.EndDate) <= 0);
@@ -44,7 +44,16 @@ namespace EcoScooter.Entities
         {
             Incident = i;
         }
-
-
+        //Usat en GetUserRoutes
+        public String getDescripcio()
+        {
+            return this.StartDate + ", " + this.EndDate + ", " + this.Price
+                        + ", " + this.OriginStation + ", " + this.DestinationStation;
+        }
+        //Usat en getRentalById de User
+        public bool isId(int id)
+        {
+            return this.Id == id;
+        }
     }
 }

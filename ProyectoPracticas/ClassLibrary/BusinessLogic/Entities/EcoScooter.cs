@@ -55,7 +55,7 @@ namespace EcoScooter.Entities
 
 
         //--------Mètode usat en RentScooter i Register Station-----------------------------
-        public Station findByID(string id) //IDAL dal
+        public Station findStationByID(string id) //IDAL dal
         {
             //Usant dal: return dal.GetById<Station>(id);
 
@@ -106,6 +106,44 @@ namespace EcoScooter.Entities
                 if (u.Id > maxID) { maxID = u.Id; }
             }
             return maxID;
+        }
+        //Usat en métode isLogged
+        public Person findPersonById(string id)
+        {
+            //Podriem usar dal.GetById<Person>(id)
+
+            foreach(Person p in People)
+            {
+                if (p.Dni.Equals(id))
+                {
+                    return p;
+                }
+            }
+            return null;
+        }
+        //Usat en métode loginUser
+        public List<User> obtindreLlistaUsers()
+        {
+            //Podriem fer (List<User>) dal.GetAll<User>()
+
+            List<User> res = new List<User>;
+
+            foreach(Person p in People)
+            {
+                if(p is User)
+                {
+                    res.Add((User)p);
+                }
+            }
+
+            return res;
+        }
+        //Usat en métode loginEmployee
+        public Employee findEmployeeById(string id)
+        {
+            Person p = findPersonById(id);
+            if(p!=null && p is Employee) { return (Employee)p; }
+            else { return null; }
         }
     }
 }

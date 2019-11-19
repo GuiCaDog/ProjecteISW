@@ -71,7 +71,7 @@ namespace EcoScooter.BusinessLogic.Services
         //He fet un métode per reutiliçar codi
         private bool isLogged(string dni, string type)
         {
-            Person personaBuscada = dal.GetById<Person>(dni);
+            Person personaBuscada = ecoScooter.findPersonById(dni);
             if (personaBuscada == null)
             {
                 throw new ServiceException("El dni del " +type+" es incorrecte");
@@ -112,10 +112,10 @@ namespace EcoScooter.BusinessLogic.Services
             }
         }
 
-
+        //No se si moure part a ecoscooter.
         public void LoginUser(string login, string password)
         {            
-            userList =(List<User>) dal.GetAll<User>();
+            userList =ecoScooter.obtindreLlistaUsers();
             int i = 0;
             //Busquem hasta trobar un usuari amb ixe Login
             while(i < userList.Count && !userList[i].isLogin(login)) { i++; }
@@ -137,7 +137,7 @@ namespace EcoScooter.BusinessLogic.Services
         public void LoginEmployee(String dni, int pin)
         {
             //En este cas sí podem buscar per clau primaria (Dni)
-            Employee empleat = dal.GetById<Employee>(dni);
+            Employee empleat = ecoScooter.findEmployeeById(dni);//Crida a findPerson i asegura que es un empleat. Si no es null.
             //Ha trobat el empleat asociat a ixe dni
             if (empleat != null)
             {
@@ -177,7 +177,7 @@ namespace EcoScooter.BusinessLogic.Services
             Scooter s = new Scooter(ecoScooter.newScooterID() ,registerDate, state);           
             if (state.Equals("available"))
             {
-                Station station = ecoScooter.findByID(stationId);
+                Station station = ecoScooter.findStationByID(stationId);
                 if (station == null) //no existeix la estació
                 {
                     throw new Exception("L'estació no existix");
@@ -200,7 +200,7 @@ namespace EcoScooter.BusinessLogic.Services
             //------------------Usa mètodes de Station y EcoScooter-------------------
             if (personaLogejada != null)
             {
-                Station station = ecoScooter.findByID(stationId); 
+                Station station = ecoScooter.findStationByID(stationId); 
                 
                 if (station == null) //no existeix la estació
                 {
@@ -233,7 +233,7 @@ namespace EcoScooter.BusinessLogic.Services
             //No se si esta del tot bé, o falta algo
             if (personaLogejada != null)
             {
-                Station station = ecoScooter.findByID(stationId);
+                Station station = ecoScooter.findStationByID(stationId);
 
                 if (station == null) //no existeix la estació
                 {
@@ -287,39 +287,54 @@ namespace EcoScooter.BusinessLogic.Services
         }
 
 
-        public ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
-        {
-            return null;
-        }
+
 
         public void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
         {
-            startDate = new DateTime();
-            endDate = new DateTime();
-            price = 100;
-            originStationId = 10;
-            destinationStationId = 10;
+            //Pre: es usuario y esta logueado
+            Rental r = (Rental)((User)personaLogejada).findRentalById(rentalId);
+            if (r != null)
+            {
+                startDate = r.StartDate;
+                endDate = (DateTime)(r.EndDate);
+                price = (decimal)r.Price;
+                originStationId = int.Parse(r.OriginStation.Id);
+                destinationStationId = int.Parse(r.DestinationStation.Id);
+            }
+            else { throw new ServiceException("No existix ixe id de Rental per a ixe usuari"); }
+        }
+        //No se si moure algo a ecoscooter
+
+        public ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
+        {
+            return obtindreInfoDeRentalsUser(startDate, endDate, 1);//Amb 1 colocará en el List els Ids dels rentals
         }
 
         public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
         {
-            //En la precondicó ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
+            return obtindreInfoDeRentalsUser(startDate, endDate, 0);//Amb 0 colocará en el List descripcions
+        }
+        //Métode per reutilizar codi. Si x == 0, coloca descripcions. Si x == 1, coloca la id del rental
+        private ICollection<String> obtindreInfoDeRentalsUser(DateTime startDate, DateTime endDate, int x)
+        {
+            //En la precondició ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
             //Si la data inicial es major que la final, ja ni seguim
-            if(startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecte"); }
+            if (startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecte"); }
             //Guardem els rentals de ixe usuari
-            List<Rental> llistaRentals = (List<Rental>)((User) personaLogejada).Rentals;
+            List<Rental> llistaRentals = (List<Rental>)((User)personaLogejada).Rentals;
             List<String> descripcions = new List<String>();
-            for(int i = 0; i < llistaRentals.Count; i++)
+            foreach (Rental r in llistaRentals)
             {
                 //Usem un métode implementat en Rentals que torna true si esta entre ixes dates
-                if(llistaRentals[i].inInterval(startDate, endDate))
+                if (r.inInterval(startDate, endDate))
                 {
-                    descripcions.Add(llistaRentals[i].StartDate + ", " + llistaRentals[i].EndDate + ", " + llistaRentals[i].Price
-                        + ", " + llistaRentals[i].OriginStation + ", " + llistaRentals[i].DestinationStation);
+                    //El métode getDescripcio ja ens formateja el String
+                    if (x == 0){descripcions.Add(r.getDescripcio());}
+                    else if(x == 1) { descripcions.Add(r.Id+""); }
                 }
             }
             //Si no hem trobat ninguna ruta
-            if(descripcions.Count == 0) { throw new ServiceException("No hi han rutes en ixe interval"); }
+            if (descripcions.Count == 0) { throw new ServiceException("No hi han rutes en ixe interval"); }
             return descripcions;
         }
     }
