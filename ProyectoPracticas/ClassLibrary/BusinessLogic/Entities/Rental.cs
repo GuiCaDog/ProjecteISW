@@ -32,5 +32,10 @@ namespace EcoScooter.Entities
         {
             return (startDate.CompareTo(this.StartDate) <= 0 && endDate.CompareTo(this.EndDate) <= 0);
         }
+
+        public void addEndDate(DateTime end)
+        {
+            EndDate = end;
+        }
     }
 }

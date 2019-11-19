@@ -58,6 +58,22 @@ namespace EcoScooter.Entities
             return OK;
         }
 
-
+        //-----------ReturnScooterMethods----------------
+        public Rental getLastRental()
+        {
+            Rental res = null;
+            DateTime last = DateTime.Now;
+            last.AddYears(-2000);
+            foreach(Rental r in Rentals)
+            {
+                //Si r es posterior a last
+                if(r.StartDate.CompareTo(last) > 0)
+                {
+                    last = r.StartDate;
+                    res = r;
+                }
+            }
+            return res;
+        }
     }
 }

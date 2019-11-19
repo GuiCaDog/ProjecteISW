@@ -228,7 +228,48 @@ namespace EcoScooter.BusinessLogic.Services
         
         public void ReturnScooter(string stationId)
         {
+            //------------------Usa mètodes de User i de Station-----------------------
+            //No se si esta del tot bé, o falta algo
+            if (personaLogejada != null)
+            {
+                Station station = ecoScooter.findByID(stationId);
 
+                if (station == null) //no existeix la estació
+                {
+                    throw new Exception("L'estació no existix");
+                }
+
+                else
+                {
+                    //Obtenim el alquiler mes recent
+                    Rental r = ((User)personaLogejada).getLastRental();
+                    if(r.EndDate != null)
+                    {
+                        throw new Exception("Devolució ja efectuada");
+
+                    }
+                    int numSerie = r.Scooter.Id; //Per a que el necessitem??
+                    if(wasIncident())
+                    {
+                        RegisterIncident("Accident", r.StartDate, r.Id); 
+                        //Com obtenim l'hora a la qual es va produir l'incident?
+                    }
+                    r.EndDate = DateTime.Now;
+                   // r.addEndDate(DateTime.Now); ???  com usem el setter que hem definit?
+                    station.returnScooter(r.Scooter);
+                    
+                }
+
+            }
+            else
+            {
+                throw new Exception("Usuari no identificat");
+
+            }
+        }
+        private bool wasIncident()
+        {
+            return true; // A implementar quan desenvolupem la capa de interficie
         }
 
         public void RegisterIncident(string description, DateTime timeStamp, int rentalId)

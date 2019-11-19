@@ -36,11 +36,18 @@ namespace EcoScooter.Entities
         public Scooter retrieveScooter()
         {
             Scooter s = Scooters.First();
+            s.State = ScooterState.inUse;
             Scooters.Remove(s);
             return s;
         }
         //------------------------------------------------
-       
+
+        //Tornar un Scooter a la llista
+        public void returnScooter(Scooter s)
+        {
+            s.State = ScooterState.available;
+            Scooters.Add(s);
+        }
     }
 
 }
