@@ -16,6 +16,7 @@ namespace EcoScooter.BusinessLogic.Services
 
         //Variables que usem-------------------------
         private List<User> userList;
+        private List<Incident> incidentList;
         //Hay que mantener una referencia al usuario con la sesión actualmente iniciada. Se debe declarar bajo esta línea.
         private Person personaLogejada; //Quan fa login ens guardem la seua referencia
                                         //--------------------------------------------
@@ -113,7 +114,7 @@ namespace EcoScooter.BusinessLogic.Services
 
 
         public void LoginUser(string login, string password)
-        {
+        {            
             userList =(List<User>) dal.GetAll<User>();
             int i = 0;
             //Busquem hasta trobar un usuari amb ixe Login
@@ -274,15 +275,15 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void RegisterIncident(string description, DateTime timeStamp, int rentalId)
         {
-            //Incident(string description, int id, DateTime timeStamp)
-                                                 //..id..
-            Incident i = new Incident(description, 123 , timeStamp);
+            incidentList = (List<Incident>)dal.GetAll<Incident>();
+                            //Incident(string description, int id, DateTime timeStamp)
+            Incident i = new Incident(description, ecoScooter.newIncidentID(incidentList) , timeStamp);
             //2. El	sistema	actualitza	la	informació	associada	a	un	lloguer	amb incident
             Rental r = dal.GetById<Rental>(rentalId);
-            //r.Incident(i);
-            
+            r.addIncident(i);
+            dal.Insert<Rental>(r);
+            dal.Commit();
 
-            
         }
 
 
