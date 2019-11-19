@@ -22,34 +22,25 @@ namespace EcoScooter.Entities
             Id = id;
         }
 
-        //--------Mètode usat en RentScooter i Register Station-----------------------------
-        public static Station findByID(string id, EcoScooter eS)
-        {
-            foreach (Station st in eS.Stations)
-            {
-                if (st.Id.Equals(id))
-                {
-                    return st;
-                }
-            }
-            return null;
-        }
 
 
-        //--------Mètode usat en RentScooter-----------------------------
+
+        //-------------RentScooterMethods------------------
         public bool availableScooter()
         {
-            return Scooters.Count <= 0;
+            return Scooters.Count > 0;
         }
 
-        //--------Mètode usat en RentScooter-----------------------------
-        public Scooter retrieveScooter(EcoScooter eS)
+
+        //Simplement agafar un Scooter de la llista
+        public Scooter retrieveScooter()
         {
-            Scooter s = eS.Scooters.First();
-            eS.Scooters.Remove(s);
+            Scooter s = Scooters.First();
+            Scooters.Remove(s);
             return s;
         }
-
+        //------------------------------------------------
+       
     }
 
 }

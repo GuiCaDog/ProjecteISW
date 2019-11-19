@@ -18,8 +18,8 @@ namespace EcoScooter.BusinessLogic.Services
         private List<User> userList;
         //Hay que mantener una referencia al usuario con la sesión actualmente iniciada. Se debe declarar bajo esta línea.
         private Person personaLogejada; //Quan fa login ens guardem la seua referencia
-        //--------------------------------------------
-        
+                                        //--------------------------------------------
+
         public EcoScooterService(IDAL dal)
         {
             this.dal = dal;
@@ -78,12 +78,26 @@ namespace EcoScooter.BusinessLogic.Services
             return personaBuscada.Equals(personaLogejada);
         }
 
+
+        //------------------Usa mètodes de User y EcoScooter-------------------
         public void RegisterUser(DateTime birthDate, String dni, String email, String name, int telephon, int cvv, DateTime expirationDate, string login, int number, string password)
         {
            
             User u = new User(birthDate, dni, email, name, telephon, cvv, expirationDate, login, number, password);
+            
+            //Raons per les quals ha habut error
             string reason;
-            bool validated = u.validateData(out reason, ecoScooter);
+
+            //Comprovem si la edat i la targeta estan be
+            bool validated = u.validateData(out reason);
+            
+            //Si l'usuari no es unic, no hem d'afegirlo
+            if (!ecoScooter.usuariUnic(login,dal))
+            {
+                validated = false;
+                reason += "\n Nom d'suari ja existent";
+                
+            }
             if (validated)
             {
                 ecoScooter.People.Add(u);//Tenim que fer esto?
@@ -96,6 +110,7 @@ namespace EcoScooter.BusinessLogic.Services
                 throw new ServiceException(reason);
             }
         }
+
 
         public void LoginUser(string login, string password)
         {
@@ -161,7 +176,7 @@ namespace EcoScooter.BusinessLogic.Services
             Scooter s = new Scooter(123 ,registerDate, state);           
             if (state.Equals("available"))
             {
-                Station station = Station.findByID(stationId, ecoScooter);
+                Station station = ecoScooter.findByID(stationId);
                 if (station == null) //no existeix la estació
                 {
                     throw new Exception("L'estació no existix");
@@ -181,9 +196,10 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void RentScooter(string stationId)
         {
+            //------------------Usa mètodes de Station y EcoScooter-------------------
             if (personaLogejada != null)
             {
-                Station station = Station.findByID(stationId, ecoScooter); 
+                Station station = ecoScooter.findByID(stationId); 
                 
                 if (station == null) //no existeix la estació
                 {
@@ -192,8 +208,8 @@ namespace EcoScooter.BusinessLogic.Services
 
                 if(station.availableScooter())
                 {
-                    Scooter s = station.retrieveScooter(ecoScooter);
-                    Rental rent = new Rental(null, 10, station, 10,s,DateTime.Now,(User)personaLogejada);
+                    Scooter s = station.retrieveScooter();
+                    Rental rent = new Rental(null, ecoScooter.newRentalID(), station, ecoScooter.Fare,s,DateTime.Now,(User)personaLogejada);
                     ((User)personaLogejada).Rentals.Add(rent);
                     saveChanges();
                 }
@@ -202,7 +218,14 @@ namespace EcoScooter.BusinessLogic.Services
                     throw new Exception("No hi ha patinets disponibles a l'estació");
                 }
             }
+            else
+            {
+                throw new Exception("Usuari no identificat");
+
+            }
         }
+
+        
         public void ReturnScooter(string stationId)
         {
 

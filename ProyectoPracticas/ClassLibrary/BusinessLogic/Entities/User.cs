@@ -38,7 +38,7 @@ namespace EcoScooter.Entities
 
 
         //----------MÈTODE USAT EN RegisterUser-----------------------------------------------
-        public bool validateData(out string reason, EcoScooter eS)
+        public bool validateData(out string reason)
         {
             reason = "Error";
             bool OK = true;
@@ -54,19 +54,7 @@ namespace EcoScooter.Entities
                 reason += "\n Targeta incorrecta";
             }
             //Ja existix ixe usuari?    
-            bool jaExistix = false;
-            foreach(Person p in eS.People)
-            {
-                if(p is User && !jaExistix)
-                {
-                    if(((User)p).Login.Equals(Login))
-                    {
-                        jaExistix = true;
-                        OK = false;
-                        reason += "\n Nom d'usuari ja existent";
-                    }
-                }
-            }
+            //S'ha fet en ecoScooter perque ahi es on esta la llista de Persones
             return OK;
         }
 

@@ -13,7 +13,7 @@ namespace EcoScooter.Entities
             TrackPoints = new List<TrackPoint>();
         }
 
-        public Rental(DateTime? endDate, int id, Station originStation, decimal price, Scooter scooter, DateTime startDate ,User user) : this()
+        public Rental(DateTime? endDate, int id, Station originStation, double price, Scooter scooter, DateTime startDate ,User user) : this()
         {
             
             EndDate = endDate;
@@ -23,6 +23,7 @@ namespace EcoScooter.Entities
             Scooter = scooter;
             StartDate = startDate;
             User = user;
+
         }
 
 
