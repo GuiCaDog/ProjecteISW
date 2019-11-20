@@ -44,6 +44,12 @@ namespace EcoScooter.Entities
         {
             Incident = i;
         }
+
+        public Incident getIncident()
+        {
+            return Incident;
+        }
+
         //Usat en GetUserRoutes
         public String getDescripcio()
         {

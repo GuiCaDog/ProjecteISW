@@ -175,7 +175,7 @@ namespace EcoScooter.BusinessLogic.Services
             //Scooter(int id, DateTime registerDate, ScooterState state) : this()
                                 //id autogenerat :(                               
             Scooter s = new Scooter(ecoScooter.newScooterID() ,registerDate, state);           
-            if (state.Equals("available"))
+            if (state.Equals(ScooterState.available))
             {
                 Station station = ecoScooter.findStationByID(stationId);
                 if (station == null) //no existeix la estació
@@ -183,8 +183,8 @@ namespace EcoScooter.BusinessLogic.Services
                     throw new Exception("L'estació no existix");
                 }
                 else
-                {                                
-                    dal.Insert<Scooter>(s);
+                {                                                  
+                    ecoScooter.Scooters.Add(s);
                     //dal.Commit();
                 }
             } 
@@ -275,7 +275,9 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void RegisterIncident(string description, DateTime timeStamp, int rentalId)
         {
-            incidentList = (List<Incident>)dal.GetAll<Incident>();
+            //incidentList = (List<Incident>)dal.GetAll<Incident>();  NO GASTAR
+            incidentList = ecoScooter.llistaIncidents();
+
                             //Incident(string description, int id, DateTime timeStamp)
             Incident i = new Incident(description, ecoScooter.newIncidentID(incidentList) , timeStamp);
             //2. El	sistema	actualitza	la	informació	associada	a	un	lloguer	amb incident
