@@ -50,12 +50,12 @@ namespace EcoScooter.Entities
             return Incident;
         }
 
-        //Usat en GetUserRoutes
-        public String getDescripcio()
-        {
-            return this.StartDate + ", " + this.EndDate + ", " + this.Price
-                        + ", " + this.OriginStation + ", " + this.DestinationStation;
-        }
+        ////Usat en GetUserRoutes
+        //public String getDescripcio()
+        //{
+        //    return this.StartDate + ", " + this.EndDate + ", " + this.Price
+        //                + ", " + this.OriginStation + ", " + this.DestinationStation;
+        //}
         //Usat en getRentalById de User
         public bool isId(int id)
         {
