@@ -26,8 +26,43 @@ namespace EcoScooter.Entities
             Fare = fare;
             MaxSpeed = maxSpeed;
          }
-       
 
+
+
+        //---------------------Casos d'us------------------------------
+
+        public void RentScooter(string stationId, User u)
+        {
+
+            //------------------Usa mètodes de Station y EcoScooter-------------------
+            if (u != null)
+            {
+                //Station station = dal.GetById<Station>(stationId);
+                Station station= this.findStationByID(stationId);
+
+                if (station == null) //no existeix la estació
+                {
+                    throw new Exception("L'estació no existix");
+                }
+
+                if (station.availableScooter())
+                {
+                    Scooter s = station.retrieveScooter();
+                    Rental rent = new Rental(null, newRentalID(), station, 0.0, s, DateTime.Now, u);
+                    (u).Rentals.Add(rent);
+                    
+                }
+                else
+                {
+                    throw new Exception("No hi ha patinets disponibles a l'estació");
+                }
+            }
+            else
+            {
+                throw new Exception("Usuari no identificat");
+
+            }
+        }
 
         //-----------RegisterUserMethod--------------
         //Comprovar si l'usuari es únic
@@ -95,7 +130,7 @@ namespace EcoScooter.Entities
             {
               if (u.Id > maxID) { maxID = u.Id; }
             }
-            return maxID;
+            return maxID+1;
         }
 
         public int newIncidentID(List<Incident> incidents)
@@ -105,7 +140,7 @@ namespace EcoScooter.Entities
             {
                 if (u.Id > maxID) { maxID = u.Id; }
             }
-            return maxID;
+            return maxID+1;
         }
         //Usat en métode isLogged
         public Person findPersonById(string id)

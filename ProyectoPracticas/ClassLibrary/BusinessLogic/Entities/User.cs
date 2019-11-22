@@ -88,5 +88,12 @@ namespace EcoScooter.Entities
             return null;
         }
 
+        public int Edad()
+        {
+            
+            double edad = DateTime.Now.Subtract(Birthdate).TotalDays / 365;
+            
+            return (int) edad;
+        }
     }
 }

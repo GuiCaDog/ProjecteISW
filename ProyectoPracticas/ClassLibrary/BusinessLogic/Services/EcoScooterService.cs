@@ -175,7 +175,7 @@ namespace EcoScooter.BusinessLogic.Services
             //Scooter(int id, DateTime registerDate, ScooterState state) : this()
                                 //id autogenerat :(                               
             Scooter s = new Scooter(ecoScooter.newScooterID() ,registerDate, state);           
-            if (state.Equals("available"))
+            if (state.Equals(ScooterState.available))
             {
                 Station station = ecoScooter.findStationByID(stationId);
                 if (station == null) //no existeix la estació
@@ -197,33 +197,36 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void RentScooter(string stationId)
         {
+            ecoScooter.RentScooter(stationId,(User) personaLogejada);
+            saveChanges();
             //------------------Usa mètodes de Station y EcoScooter-------------------
-            if (personaLogejada != null)
-            {
-                Station station = ecoScooter.findStationByID(stationId); 
+            //if (personaLogejada != null)
+            //{
+            //    Station station = dal.GetById<Station>(stationId);
+            //    Station station2 = ecoScooter.findStationByID(stationId); 
                 
-                if (station == null) //no existeix la estació
-                {
-                    throw new Exception("L'estació no existix");
-                }
+            //    if (station == null) //no existeix la estació
+            //    {
+            //        throw new Exception("L'estació no existix");
+            //    }
 
-                if(station.availableScooter())
-                {
-                    Scooter s = station.retrieveScooter();
-                    Rental rent = new Rental(null, ecoScooter.newRentalID(), station, ecoScooter.Fare,s,DateTime.Now,(User)personaLogejada);
-                    ((User)personaLogejada).Rentals.Add(rent);
-                    saveChanges();
-                }
-                else
-                {
-                    throw new Exception("No hi ha patinets disponibles a l'estació");
-                }
-            }
-            else
-            {
-                throw new Exception("Usuari no identificat");
+            //    if(station.availableScooter())
+            //    {
+            //        Scooter s = station.retrieveScooter();
+            //        Rental rent = new Rental(null, ecoScooter.newRentalID(), station, ecoScooter.Fare,s,DateTime.Now,(User)personaLogejada);
+            //        ((User)personaLogejada).Rentals.Add(rent);
+            //        saveChanges();
+            //    }
+            //    else
+            //    {
+            //        throw new Exception("No hi ha patinets disponibles a l'estació");
+            //    }
+            //}
+            //else
+            //{
+            //    throw new Exception("Usuari no identificat");
 
-            }
+            //}
         }
 
         
@@ -249,14 +252,22 @@ namespace EcoScooter.BusinessLogic.Services
                         throw new Exception("Devolució ja efectuada");
 
                     }
-                    int numSerie = r.Scooter.Id; //Per a que el necessitem??
+                    //int numSerie = r.Scooter.Id; //Per a que el necessitem??
                     if(wasIncident())
                     {
                         RegisterIncident("Accident", r.StartDate, r.Id); 
                         //Com obtenim l'hora a la qual es va produir l'incident?
                     }
                     r.EndDate = DateTime.Now;
-                   // r.addEndDate(DateTime.Now); ???  com usem el setter que hem definit?
+                    double min = r.EndDate.Value.Subtract(r.StartDate).TotalMinutes;
+                    r.Price = min * ecoScooter.Fare;
+                    int edad = ((User)personaLogejada).Edad();
+                    if (edad > 16 && edad < 25)
+                    {
+                        r.Price *= 0.9;
+                    }
+                    // r.addEndDate(DateTime.Now); ???  com usem el setter que hem definit?
+
                     station.returnScooter(r.Scooter);
                     
                 }
