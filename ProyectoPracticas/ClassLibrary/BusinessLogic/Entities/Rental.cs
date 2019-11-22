@@ -44,12 +44,18 @@ namespace EcoScooter.Entities
         {
             Incident = i;
         }
-        //Usat en GetUserRoutes
-        public String getDescripcio()
+
+        public Incident getIncident()
         {
-            return this.StartDate + ", " + this.EndDate + ", " + this.Price
-                        + ", " + this.OriginStation + ", " + this.DestinationStation;
+            return Incident;
         }
+
+        ////Usat en GetUserRoutes
+        //public String getDescripcio()
+        //{
+        //    return this.StartDate + ", " + this.EndDate + ", " + this.Price
+        //                + ", " + this.OriginStation + ", " + this.DestinationStation;
+        //}
         //Usat en getRentalById de User
         public bool isId(int id)
         {

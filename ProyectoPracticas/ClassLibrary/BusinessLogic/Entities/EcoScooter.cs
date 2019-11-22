@@ -142,6 +142,25 @@ namespace EcoScooter.Entities
             }
             return maxID+1;
         }
+
+        public List<Incident> llistaIncidents()
+        {
+            List<Incident> listIncident = new List<Incident>();
+            foreach (Person u in People)
+            {
+                if (u is User)
+                {
+                    foreach (Rental r in ((User)u).Rentals)
+                    {
+                        Incident a = r.getIncident();
+                        if (a != null)  { listIncident.Add(a); }
+                    }
+                }
+            }
+            return listIncident;
+
+        }
+
         //Usat en métode isLogged
         public Person findPersonById(string id)
         {
@@ -161,7 +180,7 @@ namespace EcoScooter.Entities
         {
             //Podriem fer (List<User>) dal.GetAll<User>()
 
-            List<User> res = new List<User>;
+            List<User> res = new List<User>();
 
             foreach(Person p in People)
             {

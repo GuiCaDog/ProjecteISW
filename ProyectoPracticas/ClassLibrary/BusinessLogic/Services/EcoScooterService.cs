@@ -183,8 +183,8 @@ namespace EcoScooter.BusinessLogic.Services
                     throw new Exception("L'estació no existix");
                 }
                 else
-                {                                
-                    dal.Insert<Scooter>(s);
+                {                                                  
+                    ecoScooter.Scooters.Add(s);
                     //dal.Commit();
                 }
             } 
@@ -286,7 +286,9 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void RegisterIncident(string description, DateTime timeStamp, int rentalId)
         {
-            incidentList = (List<Incident>)dal.GetAll<Incident>();
+            //incidentList = (List<Incident>)dal.GetAll<Incident>();  NO GASTAR
+            incidentList = ecoScooter.llistaIncidents();
+
                             //Incident(string description, int id, DateTime timeStamp)
             Incident i = new Incident(description, ecoScooter.newIncidentID(incidentList) , timeStamp);
             //2. El	sistema	actualitza	la	informació	associada	a	un	lloguer	amb incident
@@ -297,10 +299,24 @@ namespace EcoScooter.BusinessLogic.Services
 
         }
 
+        public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
+        {
+            List<String> ids = GetUserRoutesIds(startDate, endDate);
+            List<String> res = new List<String>();
+            DateTime tStartDate = new DateTime();
+            DateTime tEndDate = new DateTime();
+            decimal tPrice;
+            int tOriginStationId;
+            int tDestinationStationId;
+            foreach(String id in ids)
+            {
+                GetRouteDescription(int.Parse(id), out tStartDate, out tEndDate, out tPrice, out tOriginStationId, out tDestinationStationId);
+                res.Add(id + ", " + tStartDate + ", " + tEndDate + ", " + tPrice + ", " + tOriginStationId + ", " + tDestinationStationId);
+            }
+            return res;
+        }
 
-
-
-        public void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
+        private void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
         {
             //Pre: es usuario y esta logueado
             Rental r = (Rental)((User)personaLogejada).findRentalById(rentalId);
@@ -316,17 +332,7 @@ namespace EcoScooter.BusinessLogic.Services
         }
         //No se si moure algo a ecoscooter
 
-        public ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
-        {
-            return obtindreInfoDeRentalsUser(startDate, endDate, 1);//Amb 1 colocará en el List els Ids dels rentals
-        }
-
-        public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
-        {
-            return obtindreInfoDeRentalsUser(startDate, endDate, 0);//Amb 0 colocará en el List descripcions
-        }
-        //Métode per reutilizar codi. Si x == 0, coloca descripcions. Si x == 1, coloca la id del rental
-        private ICollection<String> obtindreInfoDeRentalsUser(DateTime startDate, DateTime endDate, int x)
+        private List<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
         {
             //En la precondició ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
             //Si la data inicial es major que la final, ja ni seguim
@@ -339,14 +345,62 @@ namespace EcoScooter.BusinessLogic.Services
                 //Usem un métode implementat en Rentals que torna true si esta entre ixes dates
                 if (r.inInterval(startDate, endDate))
                 {
-                    //El métode getDescripcio ja ens formateja el String
-                    if (x == 0){descripcions.Add(r.getDescripcio());}
-                    else if(x == 1) { descripcions.Add(r.Id+""); }
+                    descripcions.Add(r.Id + "");
                 }
             }
             //Si no hem trobat ninguna ruta
             if (descripcions.Count == 0) { throw new ServiceException("No hi han rutes en ixe interval"); }
             return descripcions;
         }
+        //IMPLEMENTACIÓ ANTIGA
+        //public void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
+        //{
+        //    //Pre: es usuario y esta logueado
+        //    Rental r = (Rental)((User)personaLogejada).findRentalById(rentalId);
+        //    if (r != null)
+        //    {
+        //        startDate = r.StartDate;
+        //        endDate = (DateTime)(r.EndDate);
+        //        price = (decimal)r.Price;
+        //        originStationId = int.Parse(r.OriginStation.Id);
+        //        destinationStationId = int.Parse(r.DestinationStation.Id);
+        //    }
+        //    else { throw new ServiceException("No existix ixe id de Rental per a ixe usuari"); }
+        //}
+        ////No se si moure algo a ecoscooter
+
+        //public ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
+        //{
+        //    return obtindreInfoDeRentalsUser(startDate, endDate, 1);//Amb 1 colocará en el List els Ids dels rentals
+        //}
+
+        //public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
+        //{
+        //    return obtindreInfoDeRentalsUser(startDate, endDate, 0);//Amb 0 colocará en el List descripcions
+        //}
+        ////Métode per reutilizar codi. Si x == 0, coloca descripcions. Si x == 1, coloca la id del rental
+        //private ICollection<String> obtindreInfoDeRentalsUser(DateTime startDate, DateTime endDate, int x)
+        //{
+        //    //En la precondició ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
+        //    //Si la data inicial es major que la final, ja ni seguim
+        //    if (startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecte"); }
+        //    //Guardem els rentals de ixe usuari
+        //    List<Rental> llistaRentals = (List<Rental>)((User)personaLogejada).Rentals;
+        //    List<String> descripcions = new List<String>();
+        //    foreach (Rental r in llistaRentals)
+        //    {
+        //        //Usem un métode implementat en Rentals que torna true si esta entre ixes dates
+        //        if (r.inInterval(startDate, endDate))
+        //        {
+        //            //El métode getDescripcio ja ens formateja el String
+        //            if (x == 0){descripcions.Add(r.getDescripcio());}
+        //            else if(x == 1) { descripcions.Add(r.Id+""); }
+        //        }
+        //    }
+        //    //Si no hem trobat ninguna ruta
+        //    if (descripcions.Count == 0) { throw new ServiceException("No hi han rutes en ixe interval"); }
+        //    return descripcions;
+        //}
+
     }
 }
