@@ -90,10 +90,14 @@ namespace EcoScooter.Entities
 
         public int Edad()
         {
-            
-            double edad = DateTime.Now.Subtract(Birthdate).TotalDays / 365;
-            
-            return (int) edad;
+            // Save today's date.
+            DateTime today = DateTime.Today;
+            // Calculate the age.
+            int age = today.Year - Birthdate.Year;
+            // Go back to the year the person was born in case of a leap year
+            if (Birthdate.Date > today.AddYears(-age)) age--;
+
+            return age;
         }
     }
 }

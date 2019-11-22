@@ -83,88 +83,104 @@ namespace EcoScooter.BusinessLogic.Services
         //------------------Usa mètodes de User y EcoScooter-------------------
         public void RegisterUser(DateTime birthDate, String dni, String email, String name, int telephon, int cvv, DateTime expirationDate, string login, int number, string password)
         {
-           
-            User u = new User(birthDate, dni, email, name, telephon, cvv, expirationDate, login, number, password);
-            
-            //Raons per les quals ha habut error
-            string reason;
 
-            //Comprovem si la edat i la targeta estan be
-            bool validated = u.validateData(out reason);
+            ecoScooter.RegisterUser(birthDate, dni, email, name, telephon, cvv, expirationDate, login, number, password);
+            saveChanges();
+
+
+            //User u = new User(birthDate, dni, email, name, telephon, cvv, expirationDate, login, number, password);
             
-            //Si l'usuari no es unic, no hem d'afegirlo
-            if (!ecoScooter.usuariUnic(login,dal))
-            {
-                validated = false;
-                reason += "\n Nom d'suari ja existent";
+            ////Raons per les quals ha habut error
+            //string reason;
+
+            ////Comprovem si la edat i la targeta estan be
+            //bool validated = u.validateData(out reason);
+            
+            ////Si l'usuari no es unic, no hem d'afegirlo
+            //if (!ecoScooter.usuariUnic(login,dal))
+            //{
+            //    validated = false;
+            //    reason += "\n Nom d'suari ja existent";
                 
-            }
-            if (validated)
-            {
-                ecoScooter.People.Add(u);//Tenim que fer esto?
-                //dal.Insert<User>(u);//I esto tambe? Les 2 coses?
-                //dal.Commit();
-                saveChanges();
-            }
-            else
-            {
-                throw new ServiceException(reason);
-            }
+            //}
+            //if (validated)
+            //{
+            //    ecoScooter.People.Add(u);//Tenim que fer esto?
+            //    //dal.Insert<User>(u);//I esto tambe? Les 2 coses?
+            //    //dal.Commit();
+            //    saveChanges();
+            //}
+            //else
+            //{
+            //    throw new ServiceException(reason);
+            //}
         }
 
         //No se si moure part a ecoscooter.
         public void LoginUser(string login, string password)
-        {            
-            userList =ecoScooter.obtindreLlistaUsers();
-            int i = 0;
-            //Busquem hasta trobar un usuari amb ixe Login
-            while(i < userList.Count && !userList[i].isLogin(login)) { i++; }
-            //Hem trobat un usuari amb ixe login
-            if(i < userList.Count)
-            {
-                if (userList[i].isPassword(password)) {
-                    /*El usuari se loguea correctamet. Guardem la seua referencia*/
-                    personaLogejada = userList[i];
-                }
-                //La contraseña era incorrecta
-                else { throw new ServiceException("Contraseña incorrecta"); }  
-            }
-            //Ixe login no existix
-            else { throw new ServiceException("El usuario no existe"); }
+        {
+            personaLogejada = ecoScooter.LoginUser(login, password);
+            saveChanges();
+
+
+            //userList =ecoScooter.obtindreLlistaUsers();
+            //int i = 0;
+            ////Busquem hasta trobar un usuari amb ixe Login
+            //while(i < userList.Count && !userList[i].isLogin(login)) { i++; }
+            ////Hem trobat un usuari amb ixe login
+            //if(i < userList.Count)
+            //{
+            //    if (userList[i].isPassword(password)) {
+            //        /*El usuari se loguea correctamet. Guardem la seua referencia*/
+            //        personaLogejada = userList[i];
+            //    }
+            //    //La contraseña era incorrecta
+            //    else { throw new ServiceException("Contraseña incorrecta"); }  
+            //}
+            ////Ixe login no existix
+            //else { throw new ServiceException("El usuario no existe"); }
 
         }
 
         public void LoginEmployee(String dni, int pin)
         {
-            //En este cas sí podem buscar per clau primaria (Dni)
-            Employee empleat = ecoScooter.findEmployeeById(dni);//Crida a findPerson i asegura que es un empleat. Si no es null.
-            //Ha trobat el empleat asociat a ixe dni
-            if (empleat != null)
-            {
-                if (empleat.isPin(pin) ){
-                    /*El empleat se loguea correctamet. Guardem la seua referencia*/
-                    personaLogejada = empleat;
-                }
-                //El pin era incorrecto
-                else { throw new ServiceException("El pin del empleado es incorrecto"); }
-            }
-            //No existix un empleat amb ixe dni
-            else {throw new ServiceException("El empleado no existe"); }
+
+            personaLogejada = ecoScooter.LoginEmployee(dni, pin);
+            saveChanges();
+
+            ////En este cas sí podem buscar per clau primaria (Dni)
+            //Employee empleat = ecoScooter.findEmployeeById(dni);//Crida a findPerson i asegura que es un empleat. Si no es null.
+            ////Ha trobat el empleat asociat a ixe dni
+            //if (empleat != null)
+            //{
+            //    if (empleat.isPin(pin) ){
+            //        /*El empleat se loguea correctamet. Guardem la seua referencia*/
+            //        personaLogejada = empleat;
+            //    }
+            //    //El pin era incorrecto
+            //    else { throw new ServiceException("El pin del empleado es incorrecto"); }
+            //}
+            ////No existix un empleat amb ixe dni
+            //else {throw new ServiceException("El empleado no existe"); }
         }
 
         public void RegisterStation(String address, Double latitude, Double longitude, String stationId)
         {
-            //Station(string adress, double latitude, double longitude, string id) : this()
-            Station aux = dal.GetById<Station>(stationId); //Busquem si ya existeix una estació amb ixe Id
-            if (aux == null) {
-                Station s = new Station(address, latitude, longitude, stationId);
-                //Falta comprovar si falta informació o es incorrecta
-                dal.Insert<Station>(s);
-                //dal.Commit();
-            }
-            else {
-                throw new Exception("La estación ya existe");
-            }
+
+            ecoScooter.RegisterStation(address, latitude, longitude, stationId, (Employee)personaLogejada);
+            saveChanges();
+            
+            ////Station(string adress, double latitude, double longitude, string id) : this()
+            //Station aux = dal.GetById<Station>(stationId); //Busquem si ya existeix una estació amb ixe Id
+            //if (aux == null) {
+            //    Station s = new Station(address, latitude, longitude, stationId);
+            //    //Falta comprovar si falta informació o es incorrecta
+            //    dal.Insert<Station>(s);
+            //    //dal.Commit();
+            //}
+            //else {
+            //    throw new Exception("La estación ya existe");
+            //}
 
 
 
@@ -172,25 +188,29 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void RegisterScooter(DateTime registerDate, ScooterState state, String stationId)
         {
-            //Scooter(int id, DateTime registerDate, ScooterState state) : this()
-                                //id autogenerat :(                               
-            Scooter s = new Scooter(ecoScooter.newScooterID() ,registerDate, state);           
-            if (state.Equals(ScooterState.available))
-            {
-                Station station = ecoScooter.findStationByID(stationId);
-                if (station == null) //no existeix la estació
-                {
-                    throw new Exception("L'estació no existix");
-                }
-                else
-                {                                                  
-                    ecoScooter.Scooters.Add(s);
-                    //dal.Commit();
-                }
-            } 
-            else {
-                throw new Exception("Estació no disponible");
-            }
+
+            ecoScooter.RegisterScooter(registerDate, state, stationId, (Employee) personaLogejada);
+            saveChanges();
+
+            ////Scooter(int id, DateTime registerDate, ScooterState state) : this()
+            //                    //id autogenerat :(                               
+            //Scooter s = new Scooter(ecoScooter.newScooterID() ,registerDate, state);           
+            //if (state.Equals(ScooterState.available))
+            //{
+            //    Station station = ecoScooter.findStationByID(stationId);
+            //    if (station == null) //no existeix la estació
+            //    {
+            //        throw new Exception("L'estació no existix");
+            //    }
+            //    else
+            //    {                                                  
+            //        ecoScooter.Scooters.Add(s);
+            //        //dal.Commit();
+            //    }
+            //} 
+            //else {
+            //    throw new Exception("Estació no disponible");
+            //}
 
 
         }
@@ -232,70 +252,86 @@ namespace EcoScooter.BusinessLogic.Services
         
         public void ReturnScooter(string stationId)
         {
-            //------------------Usa mètodes de User i de Station-----------------------
-            //No se si esta del tot bé, o falta algo
-            if (personaLogejada != null)
-            {
-                Station station = ecoScooter.findStationByID(stationId);
 
-                if (station == null) //no existeix la estació
-                {
-                    throw new Exception("L'estació no existix");
-                }
+            ecoScooter.ReturnScooter(stationId, (User) personaLogejada);
+            saveChanges();
 
-                else
-                {
-                    //Obtenim el alquiler mes recent
-                    Rental r = ((User)personaLogejada).getLastRental();
-                    if(r.EndDate != null)
-                    {
-                        throw new Exception("Devolució ja efectuada");
 
-                    }
-                    //int numSerie = r.Scooter.Id; //Per a que el necessitem??
-                    if(wasIncident())
-                    {
-                        RegisterIncident("Accident", r.StartDate, r.Id); 
-                        //Com obtenim l'hora a la qual es va produir l'incident?
-                    }
-                    r.EndDate = DateTime.Now;
-                    double min = r.EndDate.Value.Subtract(r.StartDate).TotalMinutes;
-                    r.Price = min * ecoScooter.Fare;
-                    int edad = ((User)personaLogejada).Edad();
-                    if (edad > 16 && edad < 25)
-                    {
-                        r.Price *= 0.9;
-                    }
-                    // r.addEndDate(DateTime.Now); ???  com usem el setter que hem definit?
+            //--------------------METODE DELEGANT EN ECOSCOOOTER--------------------------------
 
-                    station.returnScooter(r.Scooter);
+            ////------------------Usa mètodes de User i de Station-----------------------
+            ////No se si esta del tot bé, o falta algo
+            //if (personaLogejada != null)
+            //{
+            //    Station station = ecoScooter.findStationByID(stationId);
+
+            //    if (station == null) //no existeix la estació
+            //    {
+            //        throw new Exception("L'estació no existix");
+            //    }
+
+            //    else
+            //    {
+            //        //Obtenim el alquiler mes recent
+            //        Rental r = ((User)personaLogejada).getLastRental();
+            //        if(r.EndDate != null)
+            //        {
+            //            throw new Exception("Devolució ja efectuada");
+
+            //        }
+            //        //int numSerie = r.Scooter.Id; //Per a que el necessitem??
+            //        if(wasIncident())
+            //        {
+            //            RegisterIncident("Accident", r.StartDate, r.Id); 
+            //            //Com obtenim l'hora a la qual es va produir l'incident?
+            //        }
+            //        r.EndDate = DateTime.Now;
+            //        double min = r.EndDate.Value.Subtract(r.StartDate).TotalMinutes;
+            //        r.Price = min * ecoScooter.Fare;
+            //        int edad = ((User)personaLogejada).Edad();
+            //        if (edad > 16 && edad < 25)
+            //        {
+            //            r.Price *= 0.9;
+            //        }
+            //        // r.addEndDate(DateTime.Now); ???  com usem el setter que hem definit?
+
+            //        station.returnScooter(r.Scooter);
                     
-                }
+            //    }
 
-            }
-            else
-            {
-                throw new Exception("Usuari no identificat");
+            //}
+            //else
+            //{
+            //    throw new Exception("Usuari no identificat");
 
-            }
+            //}
         }
-        private bool wasIncident()
-        {
-            return true; // A implementar quan desenvolupem la capa de interficie
-        }
+
+        //private bool wasIncident()
+        //{
+        //    return true; // A implementar quan desenvolupem la capa de interficie
+        //}
 
         public void RegisterIncident(string description, DateTime timeStamp, int rentalId)
         {
-            //incidentList = (List<Incident>)dal.GetAll<Incident>();  NO GASTAR
-            incidentList = ecoScooter.llistaIncidents();
 
-                            //Incident(string description, int id, DateTime timeStamp)
-            Incident i = new Incident(description, ecoScooter.newIncidentID(incidentList) , timeStamp);
-            //2. El	sistema	actualitza	la	informació	associada	a	un	lloguer	amb incident
-            Rental r = dal.GetById<Rental>(rentalId);
-            r.addIncident(i);
-            dal.Insert<Rental>(r);
-            dal.Commit();
+            ecoScooter.RegisterIncident(description, timeStamp, rentalId);
+            saveChanges();
+
+            ////-------------------Versio sense delegar a ecoScooter-------------------------------------
+            ///
+            ////incidentList = (List<Incident>)dal.GetAll<Incident>();  NO GASTAR
+            //incidentList = ecoScooter.llistaIncidents();
+
+            //                //Incident(string description, int id, DateTime timeStamp)
+            //Incident i = new Incident(description, ecoScooter.newIncidentID(incidentList) , timeStamp);
+            ////2. El	sistema	actualitza	la	informació	associada	a	un	lloguer	amb incident
+            //Rental r = dal.GetById<Rental>(rentalId);
+            //r.addIncident(i);
+            //dal.Insert<Rental>(r);
+            //dal.Commit()
+
+            //---------------------------------------------------------------------------------------------
 
         }
 
@@ -318,6 +354,10 @@ namespace EcoScooter.BusinessLogic.Services
 
         private void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
         {
+            if(personaLogejada == null)
+            {
+                throw new Exception("Usuari no identificat");
+            }
             //Pre: es usuario y esta logueado
             Rental r = (Rental)((User)personaLogejada).findRentalById(rentalId);
             if (r != null)
@@ -334,6 +374,10 @@ namespace EcoScooter.BusinessLogic.Services
 
         private List<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
         {
+            if(personaLogejada == null)
+            {
+                throw new Exception("Usuari no identificat");
+            }
             //En la precondició ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
             //Si la data inicial es major que la final, ja ni seguim
             if (startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecte"); }
