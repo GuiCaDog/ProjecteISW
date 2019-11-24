@@ -3,6 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using EcoScooter.Entities;
 using EcoScooter.BusinessLogic.Services;
 using System.Linq;
+using Microsoft.ServiceFabric.Services.Communication;
 
 namespace UnitTestServiceEcoScooter
 {

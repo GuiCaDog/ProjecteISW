@@ -342,8 +342,8 @@ namespace EcoScooter.BusinessLogic.Services
             DateTime tStartDate = new DateTime();
             DateTime tEndDate = new DateTime();
             decimal tPrice;
-            int tOriginStationId;
-            int tDestinationStationId;
+            String tOriginStationId;
+            String tDestinationStationId;
             foreach(String id in ids)
             {
                 GetRouteDescription(int.Parse(id), out tStartDate, out tEndDate, out tPrice, out tOriginStationId, out tDestinationStationId);
@@ -351,8 +351,8 @@ namespace EcoScooter.BusinessLogic.Services
             }
             return res;
         }
-
-        public void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
+        //rentalId.Id, out DateTime startDate, out DateTime endDate, out decimal price, out String originStationId, out String destinationStationId);
+        public void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out String originStationId, out String destinationStationId)
         {
             if(personaLogejada == null)
             {
@@ -365,8 +365,11 @@ namespace EcoScooter.BusinessLogic.Services
                 startDate = r.StartDate;
                 endDate = (DateTime)(r.EndDate);
                 price = (decimal)r.Price;
-                originStationId = int.Parse(r.OriginStation.Id);
-                destinationStationId = int.Parse(r.DestinationStation.Id);
+                // originStationId = int.Parse(r.OriginStation.Id);
+                // destinationStationId = int.Parse(r.DestinationStation.Id);
+                originStationId = r.OriginStation.Id;
+                destinationStationId = r.DestinationStation.Id;
+
             }
             else { throw new ServiceException("No existix ixe id de Rental per a ixe usuari"); }
         }
