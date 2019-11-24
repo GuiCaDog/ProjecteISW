@@ -4,6 +4,7 @@ using EcoScooter.BusinessLogic.Services;
 using EcoScooter.Persistence;
 using EcoScooter.Entities;
 using System.Linq;
+//using Microsoft.ServiceFabric.Services.Communication; 
 
 namespace UnitTestServiceEcoScooter
 {

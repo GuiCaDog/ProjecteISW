@@ -14,7 +14,8 @@ namespace EcoScooter.Entities
             OriginRentals = new List<Rental>();
             Scooters = new List<Scooter>();
         }
-        public Station(string adress, double latitude, double longitude, string id) : this()
+        //EXPECTED_ADDRESS, EXPECTED_ID, EXPECTED_LAT, EXPECTED_LONG
+        public Station(string adress, string id, double latitude, double longitude) : this()
         {
             Address = adress;
             Latitude = latitude;

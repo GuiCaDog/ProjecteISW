@@ -124,11 +124,11 @@ namespace EcoScooter.Entities
             {
                 throw new ServiceException("L'empleat no està loguejat!");
             }
-            //Station(string adress, double latitude, double longitude, string id) : this()
+            //Station(string adress, string id,  double latitude, double longitude) : this()
             Station aux = findStationByID(stationId); //Busquem si ya existeix una estació amb ixe Id
             if (aux == null)
             {
-                Station s = new Station(address, latitude, longitude, stationId);
+                Station s = new Station(address, stationId, latitude, longitude);
                 //Falta comprovar si falta informació o es incorrecta
                 Stations.Add(s);
                 //dal.Commit();

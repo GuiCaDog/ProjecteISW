@@ -169,8 +169,8 @@ namespace EcoScooter.BusinessLogic.Services
 
             ecoScooter.RegisterStation(address, latitude, longitude, stationId, (Employee)personaLogejada);
             saveChanges();
-            
-            ////Station(string adress, double latitude, double longitude, string id) : this()
+
+            ////Station(string adress, string id,  double latitude, double longitude) : this()
             //Station aux = dal.GetById<Station>(stationId); //Busquem si ya existeix una estació amb ixe Id
             //if (aux == null) {
             //    Station s = new Station(address, latitude, longitude, stationId);
