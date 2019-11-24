@@ -25,7 +25,7 @@ namespace EcoScooter.Entities
             Employees.Add(employee);
             People.Add(employee); //Nova linia afegida
             DiscountYounger = discountYounger;
-            Fare = fare;
+            Fare = Convert.ToDecimal(fare);
             MaxSpeed = maxSpeed;
          }
 
@@ -151,7 +151,7 @@ namespace EcoScooter.Entities
                 throw new ServiceException("L'empleat no està loguejat");
             }
             //Falta comprovar que la informacio introduida es correcta també
-            Scooter s = new Scooter(newScooterID(), registerDate, state);
+            Scooter s = new Scooter(registerDate, state);
             if (state.Equals(ScooterState.available))
             {
                 Station station = findStationByID(stationId);
@@ -191,7 +191,7 @@ namespace EcoScooter.Entities
                 if (station.availableScooter())
                 {
                     Scooter s = station.retrieveScooter();
-                    Rental rent = new Rental(null, newRentalID(), station, 0.0, s, DateTime.Now, u);
+                    Rental rent = new Rental(null, Fare, DateTime.Now, station, s,  u);
                     (u).Rentals.Add(rent);
                     
                 }
@@ -236,12 +236,12 @@ namespace EcoScooter.Entities
                         //Com obtenim l'hora a la qual es va produir l'incident?
                     }
                     r.EndDate = DateTime.Now;
-                    double min = r.EndDate.Value.Subtract(r.StartDate).TotalMinutes;
+                    decimal min = Convert.ToDecimal(r.EndDate.Value.Subtract(r.StartDate).TotalMinutes);
                     r.Price = min * Fare;
                     int edad = (u).Edad();
                     if (edad > 16 && edad < 25)
                     {
-                        r.Price *= 0.9;
+                        r.Price *= Convert.ToDecimal(0.9);
                     }
                     // r.addEndDate(DateTime.Now); ???  com usem el setter que hem definit?
 

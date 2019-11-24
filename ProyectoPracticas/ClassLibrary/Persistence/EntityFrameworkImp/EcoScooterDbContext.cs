@@ -1,6 +1,5 @@
 ﻿using System;
 using EcoScooter.Entities;
-using System;
 using System.Data.Entity;
 using System.Reflection;
 using System.Linq;

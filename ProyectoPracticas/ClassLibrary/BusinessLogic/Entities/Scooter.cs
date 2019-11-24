@@ -14,9 +14,9 @@ namespace EcoScooter.Entities
             PlanningWork = new List<PlanningWork>();
         }
 
-        public Scooter(int id, DateTime registerDate, ScooterState state) : this()
+        public Scooter(DateTime registerDate, ScooterState state) : this()
 {
-           Id = id;
+           //Id = id;
            RegisterDate = registerDate;
            State = state;
         }

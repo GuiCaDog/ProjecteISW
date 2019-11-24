@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EcoScooter.BusinessLogic.Services
 {
-    class ServiceException : Exception
+    public class ServiceException : Exception
     {
         public ServiceException()
         {

@@ -15,8 +15,8 @@ namespace EcoScooter.BusinessLogic.Services
         private EcoScooter.Entities.EcoScooter ecoScooter;
 
         //Variables que usem-------------------------
-        private List<User> userList;
-        private List<Incident> incidentList;
+        //private List<User> userList;
+        //private List<Incident> incidentList;
         //Hay que mantener una referencia al usuario con la sesión actualmente iniciada. Se debe declarar bajo esta línea.
         private Person personaLogejada; //Quan fa login ens guardem la seua referencia
                                         //--------------------------------------------
@@ -36,7 +36,7 @@ namespace EcoScooter.BusinessLogic.Services
                 dal.Commit();
             }
         }
-        public void UpdateEcoScooterData(double discountYounger, double fare, double maxSpeed)
+        public void UpdateEcoScooterData(double discountYounger, decimal fare, double maxSpeed)
         {
             ecoScooter.DiscountYounger = discountYounger;
             ecoScooter.Fare = fare;

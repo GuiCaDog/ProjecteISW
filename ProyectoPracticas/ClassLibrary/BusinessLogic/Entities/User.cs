@@ -8,7 +8,7 @@ namespace EcoScooter.Entities
 {
     public partial class User:Person
     {
-        public User(DateTime birthDate, string dni, string email, string name, int telephon) : base()
+        public User() : base()
         {
                 Rentals = new List<Rental>();
         }

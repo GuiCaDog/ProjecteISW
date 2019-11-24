@@ -15,7 +15,7 @@ namespace EcoScooter.Entities
             get;
             set;
         }
-        public double Fare
+        public decimal Fare
         {
             get;
             set;

@@ -2,7 +2,6 @@
 using EcoScooter.Entities;
 using EcoScooter.BusinessLogic.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.ServiceFabric.Services.Communication;
 
 namespace UnitTestServiceEcoScooter
 {

@@ -24,7 +24,7 @@ namespace EcoScooter.Entities
             set;
         }
 
-        public double Price
+        public decimal Price
         {
             get;
             set;

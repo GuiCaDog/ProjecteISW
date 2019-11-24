@@ -132,7 +132,7 @@ namespace EcoScooter.BusinessLogic.Services
         /// <param name="originStationId"></param>
         /// <param name="destinationStationId"></param>
         /// <exception cref="ServiceException"> Thrown when the there is not a rental with the rentalId provided </exception> 
-        void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId);
+        void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out string originStationId, out string destinationStationId);
 
         /// <summary>
         /// Gets the descriptions of the user's routes  made within the date interval provided. 
