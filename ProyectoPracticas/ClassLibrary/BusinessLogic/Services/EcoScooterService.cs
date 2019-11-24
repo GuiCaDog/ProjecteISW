@@ -337,7 +337,7 @@ namespace EcoScooter.BusinessLogic.Services
 
         public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
         {
-            List<String> ids = GetUserRoutesIds(startDate, endDate);
+            List<String> ids = (List<String>)GetUserRoutesIds(startDate, endDate);
             List<String> res = new List<String>();
             DateTime tStartDate = new DateTime();
             DateTime tEndDate = new DateTime();
@@ -352,7 +352,7 @@ namespace EcoScooter.BusinessLogic.Services
             return res;
         }
 
-        private void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
+        public void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
         {
             if(personaLogejada == null)
             {
@@ -372,7 +372,7 @@ namespace EcoScooter.BusinessLogic.Services
         }
         //No se si moure algo a ecoscooter
 
-        private List<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
+        public ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
         {
             if(personaLogejada == null)
             {
