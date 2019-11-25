@@ -165,7 +165,8 @@ namespace EcoScooter.Entities
                 throw new ServiceException("L'empleat no està loguejat");
             }
             //Falta comprovar que la informacio introduida es correcta també
-            Scooter s = new Scooter(registerDate, state);
+            Scooter s = new Scooter(registerDate, state); 
+            if (registerDate == null) { throw new ServiceException("Error en la Data de registre"); }
             if (state.Equals(ScooterState.available))
             {
                 Station station = findStationByID(stationId);
@@ -175,6 +176,7 @@ namespace EcoScooter.Entities
                 }
                 else
                 {
+                   // s.State = ScooterState.inUse;
                     Scooters.Add(s);
                     //dal.Commit();
                 }
