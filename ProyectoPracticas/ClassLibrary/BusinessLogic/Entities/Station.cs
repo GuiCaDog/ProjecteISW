@@ -41,13 +41,19 @@ namespace EcoScooter.Entities
             Scooters.Remove(s);
             return s;
         }
+
+        public void addOriginRental(Rental r)
+        {
+            OriginRentals.Add(r);
+        }
         //------------------------------------------------
 
         //Tornar un Scooter a la llista
-        public void returnScooter(Scooter s)
+        public void returnScooter(Scooter s, Rental r)
         {
             s.State = ScooterState.available;
             Scooters.Add(s);
+            DestinationRentals.Add(r);
         }
     }
 

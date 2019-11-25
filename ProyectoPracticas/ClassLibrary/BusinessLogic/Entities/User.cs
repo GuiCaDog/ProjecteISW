@@ -67,7 +67,7 @@ namespace EcoScooter.Entities
         {
             Rental res = null;
             DateTime last = DateTime.Now;
-            last.AddYears(-2000);
+            last = last.AddYears(-2000);
             foreach(Rental r in Rentals)
             {
                 //Si r es posterior a last

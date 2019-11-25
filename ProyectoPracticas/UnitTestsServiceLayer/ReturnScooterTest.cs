@@ -121,6 +121,7 @@ namespace UnitTestServiceEcoScooter
             {
                 ecoScooterService.LoginUser(EXPECTED_LOGIN, EXPECTED_PASSWORD); //It is not possible to check individually
                 ecoScooterService.ReturnScooter(EXPECTED_ID);
+                
                 Rental rentalDAL = dal.GetAll<Rental>().First();
                 Assert.IsNotNull(rentalDAL, "Rental is not stored in the database by ReturnScooter service");
                 Assert.AreEqual(ScooterState.available, rentalDAL.Scooter.State, "The state of the Scooter is not updated in the database to available by ReturnScooter service");

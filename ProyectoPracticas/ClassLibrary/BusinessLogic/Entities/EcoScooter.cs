@@ -166,6 +166,10 @@ namespace EcoScooter.Entities
             }
             //Falta comprovar que la informacio introduida es correcta també
             Scooter s = new Scooter(registerDate, state); 
+            if(registerDate.CompareTo(DateTime.Now) > 0)
+            {
+                throw new ServiceException("La data de registre es posterior a la actual");
+            }
             if (registerDate == null) { throw new ServiceException("Error en la Data de registre"); }
             if (state.Equals(ScooterState.available))
             {
@@ -176,6 +180,7 @@ namespace EcoScooter.Entities
                 }
                 else
                 {
+                    station.Scooters.Add(s);
                    // s.State = ScooterState.inUse;
                     Scooters.Add(s);
                     //dal.Commit();
@@ -183,7 +188,8 @@ namespace EcoScooter.Entities
             }
             else
             {
-                throw new ServiceException("Estació no disponible");
+                    Scooters.Add(s);
+
             }
 
 
@@ -208,6 +214,7 @@ namespace EcoScooter.Entities
                 {
                     Scooter s = station.retrieveScooter();
                     Rental rent = new Rental(null, Fare, DateTime.Now, station, s,  u);
+                    station.addOriginRental(rent);
                     (u).Rentals.Add(rent);
                     
                 }
@@ -239,7 +246,11 @@ namespace EcoScooter.Entities
                 else
                 {
                     //Obtenim el alquiler mes recent
-                    Rental r = (u).getLastRental();
+                    Rental r = u.getLastRental();
+                    if(r == null)
+                    {
+                        throw new ServiceException("L'usuari no ha efectuat cap alquiler");
+                    }
                     if (r.EndDate != null)
                     {
                         throw new ServiceException("Devolució ja efectuada");
@@ -252,16 +263,16 @@ namespace EcoScooter.Entities
                         //Com obtenim l'hora a la qual es va produir l'incident?
                     }
                     r.EndDate = DateTime.Now;
-                    decimal min = Convert.ToDecimal(r.EndDate.Value.Subtract(r.StartDate).TotalMinutes);
-                    r.Price = min * Fare;
+                    double min = (r.EndDate.Value.Subtract(r.StartDate).TotalMinutes);
+                    r.Price = Convert.ToDecimal(min) * Fare;
                     int edad = (u).Edad();
-                    if (edad > 16 && edad < 25)
+                    if (edad >= 16 && edad <= 25)
                     {
-                        r.Price *= Convert.ToDecimal(0.9);
+                        r.Price =r.Price * Convert.ToDecimal(0.9);
                     }
                     // r.addEndDate(DateTime.Now); ???  com usem el setter que hem definit?
 
-                    station.returnScooter(r.Scooter);
+                    station.returnScooter(r.Scooter, r);
 
                 }
 
