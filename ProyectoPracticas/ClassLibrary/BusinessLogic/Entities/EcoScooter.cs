@@ -461,5 +461,16 @@ namespace EcoScooter.Entities
             if(p!=null && p is Employee) { return (Employee)p; }
             else { return null; }
         }
+
+        public bool isLogged(string dni, string type, Person personaLogejada)
+        {
+            Person personaBuscada = findPersonById(dni);
+            if (personaBuscada == null)
+            {
+                throw new ServiceException("El dni del " + type + " es incorrecte");
+            }
+            return personaBuscada.Equals(personaLogejada);
+        }
+
     }
 }

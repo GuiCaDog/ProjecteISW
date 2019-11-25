@@ -61,23 +61,23 @@ namespace EcoScooter.BusinessLogic.Services
             dal.Commit();
         }
         public bool isLoggedAsUser(string dni) {
-            return isLogged(dni, "usuari");
+            return ecoScooter.isLogged(dni, "usuari",personaLogejada);
         }
 
         public bool isLoggedAsEmployee(string dni) {
-            return isLogged(dni, "empleat");
+            return ecoScooter.isLogged(dni, "empleat",personaLogejada);
         }
 
         //He fet un métode per reutiliçar codi
-        private bool isLogged(string dni, string type)
-        {
-            Person personaBuscada = ecoScooter.findPersonById(dni);
-            if (personaBuscada == null)
-            {
-                throw new ServiceException("El dni del " +type+" es incorrecte");
-            }
-            return personaBuscada.Equals(personaLogejada);
-        }
+        //private bool isLogged(string dni, string type)
+        //{
+        //    Person personaBuscada = ecoScooter.findPersonById(dni);
+        //    if (personaBuscada == null)
+        //    {
+        //        throw new ServiceException("El dni del " +type+" es incorrecte");
+        //    }
+        //    return personaBuscada.Equals(personaLogejada);
+        //}
 
 
         //------------------Usa mètodes de User y EcoScooter-------------------
