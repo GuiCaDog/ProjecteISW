@@ -119,11 +119,9 @@ namespace EcoScooter.BusinessLogic.Services
         //No se si moure part a ecoscooter.
         public void LoginUser(string login, string password)
         {
-            if (personaLogejada != null) { throw new ServiceException("Usuari ja loguejat"); }
-            try
-            {
-                personaLogejada = ecoScooter.LoginUser(login, password);
-            }catch(ServiceException) { throw; }
+            
+            personaLogejada = ecoScooter.LoginUser(login, password, (User) personaLogejada);
+            
             saveChanges();
 
 
@@ -148,12 +146,9 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void LoginEmployee(String dni, int pin)
         {
-            if (personaLogejada != null) { throw new ServiceException("Empleat ja loguejat"); }
-            try
-            {
-                personaLogejada = ecoScooter.LoginEmployee(dni, pin);
-            }
-            catch (ServiceException e) { throw e; }
+            
+            personaLogejada = ecoScooter.LoginEmployee(dni, pin, (Employee) personaLogejada);
+            
             saveChanges();
 
             ////En este cas sí podem buscar per clau primaria (Dni)
@@ -322,11 +317,8 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void RegisterIncident(string description, DateTime timeStamp, int rentalId)
         {
-            if (personaLogejada == null)
-            {
-                throw new ServiceException("Usuari no identificat");
-            }
-            ecoScooter.RegisterIncident(description, timeStamp, rentalId);
+            
+            ecoScooter.RegisterIncident(description, timeStamp, rentalId, (User) personaLogejada);
             saveChanges();
 
             ////-------------------Versio sense delegar a ecoScooter-------------------------------------
@@ -389,7 +381,7 @@ namespace EcoScooter.BusinessLogic.Services
 
         public ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
         {
-            if(personaLogejada == null)
+            if (personaLogejada == null)
             {
                 throw new ServiceException("Usuari no identificat");
             }

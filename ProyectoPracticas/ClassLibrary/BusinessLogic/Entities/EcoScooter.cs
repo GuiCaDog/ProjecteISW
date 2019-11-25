@@ -52,6 +52,11 @@ namespace EcoScooter.Entities
                 reason += "\n Nom d'suari ja existent";
 
             }
+            else if (!dniValid(dni))
+            {
+                validated = false;
+                reason += "\n DNI ja existent";
+            }
             if (validated)
             {
                 People.Add(u);//Tenim que fer esto?
@@ -65,8 +70,9 @@ namespace EcoScooter.Entities
             }
         }
 
-        public Person LoginUser(string login, string password)
+        public Person LoginUser(string login, string password, User personaLogejada)
         {
+                if (personaLogejada != null) { throw new ServiceException("Usuari ja loguejat"); }
                 List<User> userList = obtindreLlistaUsers();
                 int i = 0;
                 //Busquem hasta trobar un usuari amb ixe Login
@@ -88,9 +94,10 @@ namespace EcoScooter.Entities
             
         }
 
-        public Person LoginEmployee(String dni, int pin)
+        public Person LoginEmployee(String dni, int pin, Employee personaLogejada)
         {
             //En este cas sí podem buscar per clau primaria (Dni)
+            if (personaLogejada != null) { throw new ServiceException("Empleat ja loguejat"); }
             Employee empleat = findEmployeeById(dni);//Crida a findPerson i asegura que es un empleat. Si no es null.
             //Ha trobat el empleat asociat a ixe dni
             if (empleat != null)
@@ -106,8 +113,12 @@ namespace EcoScooter.Entities
             //No existix un empleat amb ixe dni
             else { throw new ServiceException("El empleado no existe"); }
         }
-        public void RegisterIncident(string description, DateTime timeStamp, int rentalId)
+        public void RegisterIncident(string description, DateTime timeStamp, int rentalId, User personaLogejada)
         {
+            if (personaLogejada == null)
+            {
+                throw new ServiceException("Usuari no identificat");
+            }
             //incidentList = (List<Incident>)dal.GetAll<Incident>();  NO GASTAR
             List<Incident> incidentList = llistaIncidents();
 
@@ -233,7 +244,7 @@ namespace EcoScooter.Entities
                     //int numSerie = r.Scooter.Id; //Per a que el necessitem??
                     if (wasIncident())
                     {
-                        RegisterIncident("Accident", r.StartDate, r.Id);
+                        RegisterIncident("Accident", r.StartDate, r.Id, u);
                         //Com obtenim l'hora a la qual es va produir l'incident?
                     }
                     r.EndDate = DateTime.Now;
@@ -291,6 +302,24 @@ namespace EcoScooter.Entities
              
         }
 
+        public bool dniValid(string dni)
+        {
+            bool OK = true;
+            bool jaExistix = false;
+            foreach (Person p in People)
+            {
+                if (!jaExistix)
+                {
+                    if (p.Dni.Equals(dni))
+                    {
+                        jaExistix = true;
+                        OK = false;
+                        //reason += "\n Nom d'usuari ja existent";
+                    }
+                }
+            }
+            return OK;
+        }
 
         //--------Mètode usat en RentScooter i Register Station-----------------------------
         public Station findStationByID(string id) //IDAL dal
