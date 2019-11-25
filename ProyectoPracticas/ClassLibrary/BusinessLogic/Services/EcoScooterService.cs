@@ -119,7 +119,11 @@ namespace EcoScooter.BusinessLogic.Services
         //No se si moure part a ecoscooter.
         public void LoginUser(string login, string password)
         {
-            personaLogejada = ecoScooter.LoginUser(login, password);
+            if (personaLogejada != null) { throw new ServiceException("Usuari ja loguejat"); }
+            try
+            {
+                personaLogejada = ecoScooter.LoginUser(login, password);
+            }catch(ServiceException) { throw; }
             saveChanges();
 
 
@@ -144,8 +148,12 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void LoginEmployee(String dni, int pin)
         {
-
-            personaLogejada = ecoScooter.LoginEmployee(dni, pin);
+            if (personaLogejada != null) { throw new ServiceException("Empleat ja loguejat"); }
+            try
+            {
+                personaLogejada = ecoScooter.LoginEmployee(dni, pin);
+            }
+            catch (ServiceException e) { throw e; }
             saveChanges();
 
             ////En este cas sí podem buscar per clau primaria (Dni)
@@ -314,7 +322,10 @@ namespace EcoScooter.BusinessLogic.Services
 
         public void RegisterIncident(string description, DateTime timeStamp, int rentalId)
         {
-
+            if (personaLogejada == null)
+            {
+                throw new ServiceException("Usuari no identificat");
+            }
             ecoScooter.RegisterIncident(description, timeStamp, rentalId);
             saveChanges();
 
@@ -337,6 +348,7 @@ namespace EcoScooter.BusinessLogic.Services
 
         public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
         {
+            
             List<String> ids = (List<String>)GetUserRoutesIds(startDate, endDate);
             List<String> res = new List<String>();
             DateTime tStartDate = new DateTime();
@@ -347,7 +359,7 @@ namespace EcoScooter.BusinessLogic.Services
             foreach(String id in ids)
             {
                 GetRouteDescription(int.Parse(id), out tStartDate, out tEndDate, out tPrice, out tOriginStationId, out tDestinationStationId);
-                res.Add(id + ", " + tStartDate + ", " + tEndDate + ", " + tPrice + ", " + tOriginStationId + ", " + tDestinationStationId);
+                res.Add(tStartDate + ", " + tEndDate + ", " + tPrice + ", " + tOriginStationId + ", " + tDestinationStationId);
             }
             return res;
         }
@@ -356,7 +368,7 @@ namespace EcoScooter.BusinessLogic.Services
         {
             if(personaLogejada == null)
             {
-                throw new Exception("Usuari no identificat");
+                throw new ServiceException("Usuari no identificat");
             }
             //Pre: es usuario y esta logueado
             Rental r = (Rental)((User)personaLogejada).findRentalById(rentalId);
@@ -379,8 +391,9 @@ namespace EcoScooter.BusinessLogic.Services
         {
             if(personaLogejada == null)
             {
-                throw new Exception("Usuari no identificat");
+                throw new ServiceException("Usuari no identificat");
             }
+
             //En la precondició ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
             //Si la data inicial es major que la final, ja ni seguim
             if (startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecte"); }
@@ -397,6 +410,7 @@ namespace EcoScooter.BusinessLogic.Services
             }
             //Si no hem trobat ninguna ruta
             if (descripcions.Count == 0) { throw new ServiceException("No hi han rutes en ixe interval"); }
+            
             return descripcions;
         }
         //IMPLEMENTACIÓ ANTIGA

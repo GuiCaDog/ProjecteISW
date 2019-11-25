@@ -53,6 +53,10 @@ namespace EcoScooter.Entities
                 OK = false;
                 reason += "\n Targeta incorrecta";
             }
+            if(ExpirationDate.CompareTo(DateTime.Now) < 0) {
+                OK = false;
+                reason += "\n Ha expirat la data";
+            } 
             //Ja existix ixe usuari?    
             //S'ha fet en ecoScooter perque ahi es on esta la llista de Persones
             return OK;

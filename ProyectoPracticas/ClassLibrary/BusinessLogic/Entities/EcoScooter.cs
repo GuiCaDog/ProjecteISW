@@ -67,23 +67,24 @@ namespace EcoScooter.Entities
 
         public Person LoginUser(string login, string password)
         {
-            List<User> userList = obtindreLlistaUsers();
-            int i = 0;
-            //Busquem hasta trobar un usuari amb ixe Login
-            while (i < userList.Count && !userList[i].isLogin(login)) { i++; }
-            //Hem trobat un usuari amb ixe login
-            if (i < userList.Count)
-            {
-                if (userList[i].isPassword(password))
+                List<User> userList = obtindreLlistaUsers();
+                int i = 0;
+                //Busquem hasta trobar un usuari amb ixe Login
+                while (i < userList.Count && !userList[i].isLogin(login)) { i++; }
+                //Hem trobat un usuari amb ixe login
+                if (i < userList.Count)
                 {
-                    /*El usuari se loguea correctamet. Guardem la seua referencia*/
-                    return userList[i];
+                    if (userList[i].isPassword(password))
+                    {
+                        /*El usuari se loguea correctamet. Guardem la seua referencia*/
+                        return userList[i];
+                    }
+                    //La contraseña era incorrecta
+                    else { throw new ServiceException("Contraseña incorrecta"); }
                 }
-                //La contraseña era incorrecta
-                else { throw new ServiceException("Contraseña incorrecta"); }
-            }
-            //Ixe login no existix
-            else { throw new ServiceException("El usuario no existe"); }
+                //Ixe login no existix
+                else { throw new ServiceException("El usuario no existe"); }
+     
             
         }
 

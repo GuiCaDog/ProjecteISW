@@ -32,7 +32,7 @@ namespace EcoScooter.Entities
         //Métodes implementats per als serveis
         public bool inInterval(DateTime startDate, DateTime endDate)
         {
-            return (startDate.CompareTo(this.StartDate) <= 0 && endDate.CompareTo(this.EndDate) <= 0);
+            return (startDate.CompareTo(this.StartDate) < 0 && endDate.CompareTo(this.EndDate) > 0);
         }
 
         public void addEndDate(DateTime end)
