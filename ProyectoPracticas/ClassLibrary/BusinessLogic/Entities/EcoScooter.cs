@@ -139,9 +139,11 @@ namespace EcoScooter.Entities
             //Station(string adress, string id,  double latitude, double longitude) : this()
             Station aux = findStationByID(stationId); //Busquem si ya existeix una estació amb ixe Id
             if (aux == null)
-            {
+            {   
+                if (address.Equals("") ) { throw new ServiceException("Error en la latitude"); }
+                if ((latitude < -180 || latitude > 180) || (latitude < -90 || latitude > 90)) { throw new ServiceException("Error en la latitude"); }
+                if (longitude < -180 || longitude > 180) { throw new ServiceException("Error en la longitude"); }
                 Station s = new Station(address, stationId, latitude, longitude);
-                //Falta comprovar si falta informació o es incorrecta
                 Stations.Add(s);
                 //dal.Commit();
             }
