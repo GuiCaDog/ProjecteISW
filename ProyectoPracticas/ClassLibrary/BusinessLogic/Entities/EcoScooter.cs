@@ -186,7 +186,7 @@ namespace EcoScooter.Entities
                     //dal.Commit();
                 }
             }
-            else
+            else if(state.Equals(ScooterState.inMaintenance))
             {
                     Scooters.Add(s);
 
@@ -282,6 +282,76 @@ namespace EcoScooter.Entities
                 throw new ServiceException("Usuari no identificat");
 
             }
+        }
+
+        public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate,User u)
+        {
+
+            List<String> ids = (List<String>)GetUserRoutesIds(startDate, endDate, u);
+            List<String> res = new List<String>();
+            DateTime tStartDate = new DateTime();
+            DateTime tEndDate = new DateTime();
+            decimal tPrice;
+            String tOriginStationId;
+            String tDestinationStationId;
+            foreach (String id in ids)
+            {
+                GetRouteDescription(int.Parse(id), out tStartDate, out tEndDate, out tPrice, out tOriginStationId, out tDestinationStationId,u);
+                res.Add(tStartDate + ", " + tEndDate + ", " + tPrice + ", " + tOriginStationId + ", " + tDestinationStationId);
+            }
+            return res;
+        }
+
+        public void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out String originStationId, out String destinationStationId,User u)
+        {
+            if (u == null)
+            {
+                throw new ServiceException("Usuari no identificat");
+            }
+            //Pre: es usuario y esta logueado
+            Rental r = (Rental)(u).findRentalById(rentalId);
+            if (r != null)
+            {
+                startDate = r.StartDate;
+                endDate = (DateTime)(r.EndDate);
+                price = (decimal)r.Price;
+                // originStationId = int.Parse(r.OriginStation.Id);
+                // destinationStationId = int.Parse(r.DestinationStation.Id);
+                originStationId = r.OriginStation.Id;
+                destinationStationId = r.DestinationStation.Id;
+
+            }
+            else { throw new ServiceException("No existix ixe id de Rental per a ixe usuari");
+            }
+
+            
+        }
+
+        public ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate, User u)
+        {
+            if (u == null)
+            {
+                throw new ServiceException("Usuari no identificat");
+            }
+
+            //En la precondició ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
+            //Si la data inicial es major que la final, ja ni seguim
+            if (startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecte"); }
+            //Guardem els rentals de ixe usuari
+            List<Rental> llistaRentals = (List<Rental>)(u).Rentals;
+            List<String> descripcions = new List<String>();
+            foreach (Rental r in llistaRentals)
+            {
+                //Usem un métode implementat en Rentals que torna true si esta entre ixes dates
+                if (r.inInterval(startDate, endDate))
+                {
+                    descripcions.Add(r.Id + "");
+                }
+            }
+            //Si no hem trobat ninguna ruta
+            if (descripcions.Count == 0) { throw new ServiceException("No hi han rutes en ixe interval"); }
+
+            return descripcions;
         }
 
         private bool wasIncident()

@@ -340,70 +340,72 @@ namespace EcoScooter.BusinessLogic.Services
 
         public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)
         {
-            
-            List<String> ids = (List<String>)GetUserRoutesIds(startDate, endDate);
-            List<String> res = new List<String>();
-            DateTime tStartDate = new DateTime();
-            DateTime tEndDate = new DateTime();
-            decimal tPrice;
-            String tOriginStationId;
-            String tDestinationStationId;
-            foreach(String id in ids)
-            {
-                GetRouteDescription(int.Parse(id), out tStartDate, out tEndDate, out tPrice, out tOriginStationId, out tDestinationStationId);
-                res.Add(tStartDate + ", " + tEndDate + ", " + tPrice + ", " + tOriginStationId + ", " + tDestinationStationId);
-            }
-            return res;
+            return ecoScooter.GetUserRoutes(startDate, endDate, (User) personaLogejada);
+            //List<String> ids = (List<String>)GetUserRoutesIds(startDate, endDate);
+            //List<String> res = new List<String>();
+            //DateTime tStartDate = new DateTime();
+            //DateTime tEndDate = new DateTime();
+            //decimal tPrice;
+            //String tOriginStationId;
+            //String tDestinationStationId;
+            //foreach(String id in ids)
+            //{
+            //    GetRouteDescription(int.Parse(id), out tStartDate, out tEndDate, out tPrice, out tOriginStationId, out tDestinationStationId);
+            //    res.Add(tStartDate + ", " + tEndDate + ", " + tPrice + ", " + tOriginStationId + ", " + tDestinationStationId);
+            //}
+            //return res;
         }
         //rentalId.Id, out DateTime startDate, out DateTime endDate, out decimal price, out String originStationId, out String destinationStationId);
         public void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out String originStationId, out String destinationStationId)
         {
-            if(personaLogejada == null)
-            {
-                throw new ServiceException("Usuari no identificat");
-            }
-            //Pre: es usuario y esta logueado
-            Rental r = (Rental)((User)personaLogejada).findRentalById(rentalId);
-            if (r != null)
-            {
-                startDate = r.StartDate;
-                endDate = (DateTime)(r.EndDate);
-                price = (decimal)r.Price;
-                // originStationId = int.Parse(r.OriginStation.Id);
-                // destinationStationId = int.Parse(r.DestinationStation.Id);
-                originStationId = r.OriginStation.Id;
-                destinationStationId = r.DestinationStation.Id;
+            ecoScooter.GetRouteDescription(rentalId, out startDate, out endDate, out price, out originStationId, out destinationStationId, (User)personaLogejada);
+            //if(personaLogejada == null)
+            //{
+            //    throw new ServiceException("Usuari no identificat");
+            //}
+            ////Pre: es usuario y esta logueado
+            //Rental r = (Rental)((User)personaLogejada).findRentalById(rentalId);
+            //if (r != null)
+            //{
+            //    startDate = r.StartDate;
+            //    endDate = (DateTime)(r.EndDate);
+            //    price = (decimal)r.Price;
+            //    // originStationId = int.Parse(r.OriginStation.Id);
+            //    // destinationStationId = int.Parse(r.DestinationStation.Id);
+            //    originStationId = r.OriginStation.Id;
+            //    destinationStationId = r.DestinationStation.Id;
 
-            }
-            else { throw new ServiceException("No existix ixe id de Rental per a ixe usuari"); }
+            //}
+            //else { throw new ServiceException("No existix ixe id de Rental per a ixe usuari"); }
         }
         //No se si moure algo a ecoscooter
 
         public ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
         {
-            if (personaLogejada == null)
-            {
-                throw new ServiceException("Usuari no identificat");
-            }
+            return ecoScooter.GetUserRoutesIds(startDate, endDate, (User)personaLogejada);
+            //if (personaLogejada == null)
+            //{
+            //    throw new ServiceException("Usuari no identificat");
+            //}
 
-            //En la precondició ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
-            //Si la data inicial es major que la final, ja ni seguim
-            if (startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecte"); }
-            //Guardem els rentals de ixe usuari
-            List<Rental> llistaRentals = (List<Rental>)((User)personaLogejada).Rentals;
-            List<String> descripcions = new List<String>();
-            foreach (Rental r in llistaRentals)
-            {
-                //Usem un métode implementat en Rentals que torna true si esta entre ixes dates
-                if (r.inInterval(startDate, endDate))
-                {
-                    descripcions.Add(r.Id + "");
-                }
-            }
-            //Si no hem trobat ninguna ruta
-            if (descripcions.Count == 0) { throw new ServiceException("No hi han rutes en ixe interval"); }
+            ////En la precondició ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
+            ////Si la data inicial es major que la final, ja ni seguim
+            //if (startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecte"); }
+            ////Guardem els rentals de ixe usuari
+            //List<Rental> llistaRentals = (List<Rental>)((User)personaLogejada).Rentals;
+            //List<String> descripcions = new List<String>();
+            //foreach (Rental r in llistaRentals)
+            //{
+            //    //Usem un métode implementat en Rentals que torna true si esta entre ixes dates
+            //    if (r.inInterval(startDate, endDate))
+            //    {
+            //        descripcions.Add(r.Id + "");
+            //    }
+            //}
+            ////Si no hem trobat ninguna ruta
+            //if (descripcions.Count == 0) { throw new ServiceException("No hi han rutes en ixe interval"); }
             
-            return descripcions;
+            //return descripcions;
         }
         //IMPLEMENTACIÓ ANTIGA
         //public void GetRouteDescription(int rentalId, out DateTime startDate, out DateTime endDate, out decimal price, out int originStationId, out int destinationStationId)
