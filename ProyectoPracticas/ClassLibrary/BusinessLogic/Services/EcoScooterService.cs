@@ -378,7 +378,7 @@ namespace EcoScooter.BusinessLogic.Services
             //}
             //else { throw new ServiceException("No existix ixe id de Rental per a ixe usuari"); }
         }
-        //No se si moure algo a ecoscooter
+        
 
         public ICollection<String> GetUserRoutesIds(DateTime startDate, DateTime endDate)
         {
