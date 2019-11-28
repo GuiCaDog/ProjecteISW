@@ -11,18 +11,14 @@ using EcoScooter.BusinessLogic.Services;
 
 namespace GUIEcoScotter
 {
-    public partial class EcoScooterApp : EcoScooterFormBase
+    public partial class EcoScooterRegistrarPatineteForm : EcoScooterFormAtrasAceptar
     {
 
-        public EcoScooterApp(IEcoScooterService ecoService) : base(ecoService)
+        public EcoScooterRegistrarPatineteForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
 
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }

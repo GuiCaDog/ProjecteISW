@@ -1,6 +1,6 @@
 ﻿namespace GUIEcoScotter
 {
-    partial class EcoScooterApp
+    partial class EcoScooterAlquilarPatineteForm
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,34 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(172, 38);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(422, 324);
-            this.exitButton.TabIndex = 0;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
-            // 
-            // EcoScooterApp
+            // EcoScooterEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.exitButton);
-            this.Name = "EcoScooterApp";
+            this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Name = "EcoScooterEmployeeForm";
             this.Text = "EcoScooter ";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button exitButton;
     }
 }
 

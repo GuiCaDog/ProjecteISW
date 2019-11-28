@@ -9,20 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EcoScooter.BusinessLogic.Services;
 
-
 namespace GUIEcoScotter
 {
-
-    public partial class EcoScooterFormBase : Form
+    public partial class EcoScooterUserForm : EcoScooterFormBase
     {
-        private IEcoScooterService ecoService;
 
-        public EcoScooterFormBase()
+        public EcoScooterUserForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
-        }
-        public EcoScooterFormBase(IEcoScooterService ecoService) : this() {
-            this.ecoService = ecoService;
+
         }
 
     }

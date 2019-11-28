@@ -56,17 +56,77 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EcoScooterFormBase.cs">
+    <Compile Include="Employee\EcoScooterRegistrarPatineteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EcoScooterFormBase.Designer.cs">
+    <Compile Include="Employee\EcoScooterRegistrarPatineteForm.Designer.cs">
+      <DependentUpon>EcoScooterRegistrarPatineteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EcoScooterRegistrarEstacionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\EcoScooterRegistrarEstacionForm.Designer.cs">
+      <DependentUpon>EcoScooterRegistrarEstacionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRegister\EcoScooterRegistrarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginRegister\EcoScooterRegistrarForm.Designer.cs">
+      <DependentUpon>EcoScooterRegistrarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\EcoScooteDevolverPatineteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\EcoScooteDevolverPatineteForm.Designer.cs">
+      <DependentUpon>EcoScooteDevolverPatineteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\EcoScooterObtenerRecorridosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\EcoScooterObtenerRecorridosForm.Designer.cs">
+      <DependentUpon>EcoScooterObtenerRecorridosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\EcoScooterRegistrarIncidenteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\EcoScooterRegistrarIncidenteForm.Designer.cs">
+      <DependentUpon>EcoScooterRegistrarIncidenteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\EcoScooterAlquilarPatineteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\EcoScooterAlquilarPatineteForm.Designer.cs">
+      <DependentUpon>EcoScooterAlquilarPatineteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\EcoScooterUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\EcoScooterUserForm.Designer.cs">
+      <DependentUpon>EcoScooterUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Employee\EcoScooterEmployeeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Employee\EcoScooterEmployeeForm.Designer.cs">
+      <DependentUpon>EcoScooterEmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EcoScooterFormAtrasAceptar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\EcoScooterFormAtrasAceptar.Designer.cs">
+      <DependentUpon>EcoScooterFormAtrasAceptar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EcoScooterFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Models\EcoScooterFormBase.Designer.cs">
       <DependentUpon>EcoScooterFormBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="LoginRegister\EcoScooterAppForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="LoginRegister\EcoScooterAppForm.Designer.cs">
+      <DependentUpon>EcoScooterAppForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Prova.cs">
       <SubType>Form</SubType>
@@ -76,8 +136,41 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Employee\EcoScooterRegistrarPatineteForm.resx">
+      <DependentUpon>EcoScooterRegistrarPatineteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EcoScooterRegistrarEstacionForm.resx">
+      <DependentUpon>EcoScooterRegistrarEstacionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginRegister\EcoScooterRegistrarForm.resx">
+      <DependentUpon>EcoScooterRegistrarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\EcoScooteDevolverPatineteForm.resx">
+      <DependentUpon>EcoScooteDevolverPatineteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\EcoScooterObtenerRecorridosForm.resx">
+      <DependentUpon>EcoScooterObtenerRecorridosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\EcoScooterRegistrarIncidenteForm.resx">
+      <DependentUpon>EcoScooterRegistrarIncidenteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\EcoScooterAlquilarPatineteForm.resx">
+      <DependentUpon>EcoScooterAlquilarPatineteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\EcoScooterUserForm.resx">
+      <DependentUpon>EcoScooterUserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Employee\EcoScooterEmployeeForm.resx">
+      <DependentUpon>EcoScooterEmployeeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\EcoScooterFormAtrasAceptar.resx">
+      <DependentUpon>EcoScooterFormAtrasAceptar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\EcoScooterFormBase.resx">
+      <DependentUpon>EcoScooterFormBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginRegister\EcoScooterAppForm.resx">
+      <DependentUpon>EcoScooterAppForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
