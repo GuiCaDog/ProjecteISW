@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EcoScooterFormBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EcoScooterFormBase.Designer.cs">
+      <DependentUpon>EcoScooterFormBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

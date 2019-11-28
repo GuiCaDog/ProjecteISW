@@ -11,14 +11,12 @@ using EcoScooter.BusinessLogic.Services;
 
 namespace GUIEcoScotter
 {
-    public partial class Prova : Form
+    public partial class Prova :  EcoScooterFormBase //EcoScooterApp
     {
-        private IEcoScooterService ecoService;
 
         public Prova(IEcoScooterService ecoService)
         {
             InitializeComponent();
-            this.ecoService = ecoService;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -28,7 +26,22 @@ namespace GUIEcoScotter
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            http://www.upv.es
+           
+        }
+
+        private void Prova_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -9,20 +9,21 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EcoScooter.BusinessLogic.Services;
 
+
 namespace GUIEcoScotter
 {
-    public partial class EcoScooterApp : EcoScooterFormBase
-    {
 
-        public EcoScooterApp(IEcoScooterService ecoService) : base(ecoService)
+    public partial class EcoScooterFormBase : Form
+    {
+        private IEcoScooterService ecoService;
+
+        public EcoScooterFormBase()
         {
             InitializeComponent();
-
+        }
+        public EcoScooterFormBase(IEcoScooterService ecoService) : this() {
+            this.ecoService = ecoService;
         }
 
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
     }
 }
