@@ -15,7 +15,7 @@ namespace GUIEcoScotter
 
     public partial class EcoScooterFormBase : Form
     {
-        private IEcoScooterService ecoService;
+        protected IEcoScooterService ecoService;
 
         public EcoScooterFormBase()
         {
