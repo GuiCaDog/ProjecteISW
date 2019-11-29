@@ -34,7 +34,7 @@
             this.buttonRegistrarse = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.textLogin = new System.Windows.Forms.TextBox();
             this.exitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +49,7 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonRegistrarse, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPassword, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.textBoxLogin, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textLogin, 1, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(313, 137);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
@@ -110,12 +110,13 @@
             this.textBoxPassword.TabIndex = 5;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
-            // textBoxLogin
+            // textLogin
             // 
-            this.textBoxLogin.Location = new System.Drawing.Point(227, 3);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(187, 20);
-            this.textBoxLogin.TabIndex = 4;
+            this.textLogin.Location = new System.Drawing.Point(227, 3);
+            this.textLogin.Name = "textLogin";
+            this.textLogin.Size = new System.Drawing.Size(187, 20);
+            this.textLogin.TabIndex = 4;
+            this.textLogin.TextChanged += new System.EventHandler(this.TextBoxLogin_TextChanged);
             // 
             // exitButton
             // 
@@ -149,7 +150,7 @@
         private System.Windows.Forms.Button buttonIniciarSesion;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBoxLogin;
+        private System.Windows.Forms.TextBox textLogin;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Button buttonRegistrarse;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

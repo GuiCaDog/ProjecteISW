@@ -20,5 +20,19 @@ namespace GUIEcoScotter
 
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            EcoScooterRegistrarEstacionForm eRE = new EcoScooterRegistrarEstacionForm(ecoService);
+            eRE.Show();
+            //this.Hide();
+
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            EcoScooterRegistrarPatineteForm eRP = new EcoScooterRegistrarPatineteForm(ecoService);
+            eRP.Show();
+            //this.Hide();
+        }
     }
 }
