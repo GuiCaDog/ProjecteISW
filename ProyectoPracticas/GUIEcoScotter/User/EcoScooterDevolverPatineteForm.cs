@@ -20,5 +20,11 @@ namespace GUIEcoScotter
 
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            EcoScooterRegistrarIncidenteForm eRI = new EcoScooterRegistrarIncidenteForm(ecoService);
+            eRI.Show();
+            //this.Hide();
+        }
     }
 }
