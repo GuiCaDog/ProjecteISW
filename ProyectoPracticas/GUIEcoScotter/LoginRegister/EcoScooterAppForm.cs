@@ -31,7 +31,7 @@ namespace GUIEcoScotter
         private void ButtonIniciarSesion_Click(object sender, EventArgs e)
         {
             
-            if (textLogin.Equals("0"))
+            if (textLogin.Text.Equals("0"))
             {
                 EcoScooterEmployeeForm eF = new EcoScooterEmployeeForm(ecoService);
                 eF.Show();
