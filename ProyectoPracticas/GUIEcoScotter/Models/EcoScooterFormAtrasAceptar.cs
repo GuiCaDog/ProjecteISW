@@ -30,12 +30,11 @@ namespace GUIEcoScotter
 
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        protected virtual void Button1_Click(object sender, EventArgs e)
         {
-
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        protected virtual void Button2_Click(object sender, EventArgs e)
         {
 
         }

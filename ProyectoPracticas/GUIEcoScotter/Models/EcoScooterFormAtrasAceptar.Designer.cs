@@ -62,7 +62,6 @@
             this.Controls.Add(this.buttonAceptar);
             this.Controls.Add(this.buttonAtras);
             this.Name = "EcoScooterFormAtrasAceptar";
-            this.Text = "EcoScooter";
             this.Load += new System.EventHandler(this.EcoScooterFormBase_Load);
             this.ResumeLayout(false);
 
