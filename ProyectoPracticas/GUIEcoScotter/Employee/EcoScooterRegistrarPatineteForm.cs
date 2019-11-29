@@ -20,5 +20,14 @@ namespace GUIEcoScotter
 
         }
 
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
