@@ -67,7 +67,6 @@
             this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 2;
             this.label1.Text = "Login:";
-            //this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
@@ -78,7 +77,6 @@
             this.label2.Size = new System.Drawing.Size(97, 24);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password:";
-            //this.label2.Click += new System.EventHandler(this.Label2_Click);
             // 
             // textBoxLogin
             // 
@@ -119,6 +117,7 @@
             this.Controls.Add(this.exitButton);
             this.Name = "EcoScooterAppForm";
             this.Text = "EcoScooter ";
+            this.Load += new System.EventHandler(this.EcoScooterAppForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

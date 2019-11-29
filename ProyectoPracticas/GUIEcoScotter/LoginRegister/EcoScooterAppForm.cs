@@ -13,13 +13,13 @@ namespace GUIEcoScotter
 {
     public partial class EcoScooterAppForm : EcoScooterFormBase
     {
-        EcoScooterEmployeeForm eF;
+        //EcoScooterEmployeeForm eF;
         public EcoScooterAppForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
-            eF = new EcoScooterEmployeeForm(ecoService);
-            eF.Show();
-            eF.Visible = false;
+            //eF = new EcoScooterEmployeeForm(ecoService);
+            //eF.Show();
+            //eF.Visible = false;
 
         }
 
@@ -30,14 +30,22 @@ namespace GUIEcoScotter
 
         private void ButtonIniciarSesion_Click(object sender, EventArgs e)
         {
-
-            this.Visible = false;
-            eF.Visible = true;
+            EcoScooterEmployeeForm eF = new EcoScooterEmployeeForm(ecoService);
+            eF.Show();
+            this.Hide();
+            
+            //this.Visible = false;
+            //eF.Visible = true;
 
         }
 
 
         private void ButtonRegistrarse_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EcoScooterAppForm_Load(object sender, EventArgs e)
         {
 
         }
