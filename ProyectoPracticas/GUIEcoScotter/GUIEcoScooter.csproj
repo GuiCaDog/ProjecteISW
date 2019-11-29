@@ -74,11 +74,11 @@
     <Compile Include="LoginRegister\EcoScooterRegistrarForm.Designer.cs">
       <DependentUpon>EcoScooterRegistrarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User\EcoScooteDevolverPatineteForm.cs">
+    <Compile Include="User\EcoScooterDevolverPatineteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="User\EcoScooteDevolverPatineteForm.Designer.cs">
-      <DependentUpon>EcoScooteDevolverPatineteForm.cs</DependentUpon>
+    <Compile Include="User\EcoScooterDevolverPatineteForm.Designer.cs">
+      <DependentUpon>EcoScooterDevolverPatineteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User\EcoScooterObtenerRecorridosForm.cs">
       <SubType>Form</SubType>
@@ -145,8 +145,8 @@
     <EmbeddedResource Include="LoginRegister\EcoScooterRegistrarForm.resx">
       <DependentUpon>EcoScooterRegistrarForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="User\EcoScooteDevolverPatineteForm.resx">
-      <DependentUpon>EcoScooteDevolverPatineteForm.cs</DependentUpon>
+    <EmbeddedResource Include="User\EcoScooterDevolverPatineteForm.resx">
+      <DependentUpon>EcoScooterDevolverPatineteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User\EcoScooterObtenerRecorridosForm.resx">
       <DependentUpon>EcoScooterObtenerRecorridosForm.cs</DependentUpon>
