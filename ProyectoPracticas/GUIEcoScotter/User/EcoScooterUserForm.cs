@@ -20,8 +20,7 @@ namespace GUIEcoScotter
 
         }
 
-
-        private void Button1_Click(object sender, EventArgs e)
+        private void ButtonAlquilarPatinete(object sender, EventArgs e)
         {
             EcoScooterAlquilarPatineteForm eAP = new EcoScooterAlquilarPatineteForm(ecoService);
             eAP.Show();
@@ -29,20 +28,19 @@ namespace GUIEcoScotter
 
         }
 
-        private void Button2_Click(object sender, EventArgs e)
+        private void ButtonDevolverPatinete(object sender, EventArgs e)
         {
             EcoScooterDevolverPatineteForm eDP = new EcoScooterDevolverPatineteForm(ecoService);
             eDP.Show();
-           // this.Hide();
+            // this.Hide();
 
         }
 
-        private void Button3_Click(object sender, EventArgs e)
+        private void ButtonObtenerRecorridos(object sender, EventArgs e)
         {
             EcoScooterObtenerRecorridosForm eOR = new EcoScooterObtenerRecorridosForm(ecoService);
             eOR.Show();
-           // this.Hide();
-
+            // this.Hide();
         }
     }
 }
