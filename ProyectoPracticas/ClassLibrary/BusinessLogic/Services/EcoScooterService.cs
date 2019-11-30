@@ -116,6 +116,17 @@ namespace EcoScooter.BusinessLogic.Services
             //}
         }
 
+        public void addEmployee(DateTime birthDate, String dni, String email, String name, int telephon, String iban, int pin, String position, Decimal salary)
+        {
+            //ecoScooter.Employees.Clear();
+            Employee e = new Employee(birthDate, dni, email, name, telephon, iban, pin, position, salary);
+            ecoScooter.Employees.Add(e);
+            //saveChanges();
+        }
+        public void clearEmployees()
+        {
+            ecoScooter.Employees.Clear();
+        }
         //No se si moure part a ecoscooter.
         public void LoginUser(string login, string password)
         {
@@ -149,7 +160,7 @@ namespace EcoScooter.BusinessLogic.Services
             
             personaLogejada = ecoScooter.LoginEmployee(dni, pin, (Employee) personaLogejada);
             
-            saveChanges();
+            //saveChanges();
 
             ////En este cas sí podem buscar per clau primaria (Dni)
             //Employee empleat = ecoScooter.findEmployeeById(dni);//Crida a findPerson i asegura que es un empleat. Si no es null.

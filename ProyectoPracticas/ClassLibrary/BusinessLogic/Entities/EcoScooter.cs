@@ -527,9 +527,17 @@ namespace EcoScooter.Entities
         //Usat en métode loginEmployee
         public Employee findEmployeeById(string id)
         {
-            Person p = findPersonById(id);
-            if(p!=null && p is Employee) { return (Employee)p; }
-            else { return null; }
+            foreach (Employee p in Employees)
+            {
+                if (p.Dni.Equals(id))
+                {
+                    return p;
+                }
+            }
+            return null;
+            //Person p = findPersonById(id);
+            //if(p!=null && p is Employee) { return (Employee)p; }
+            //else { return null; }
         }
 
         public bool isLogged(string dni, string type, Person personaLogejada)

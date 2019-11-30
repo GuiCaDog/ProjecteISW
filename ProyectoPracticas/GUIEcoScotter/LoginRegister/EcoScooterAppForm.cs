@@ -30,16 +30,34 @@ namespace GUIEcoScotter
 
         private void ButtonIniciarSesion_Click(object sender, EventArgs e)
         {
-            
-            if (textLogin.Text.Equals("0"))
+            string user = textLogin.Text;
+            string password = textBoxPassword.Text;
+            if (textLogin.Text.Equals("PACO"))
             {
+                try
+                {
+                    ((EcoScooterService)ecoService).addEmployee(DateTime.Now.AddYears(-20), "11112222", "noEmail", "PACO", 55, "123", 0000, "bona", 1000);
+                    ecoService.LoginEmployee("11112222", int.Parse(password));
+                    ((EcoScooterService)ecoService).clearEmployees();
+                }
+                catch (ServiceException ex)
+                {
+                    Console.WriteLine(ex);
+                }
                 EcoScooterEmployeeForm eF = new EcoScooterEmployeeForm(ecoService);
                 eF.Show();
                 //this.Hide();
             }
             else
             {
-
+                try
+                {
+                    ecoService.LoginUser(user, password);
+                }
+                catch(ServiceException ex)
+                {
+                    Console.WriteLine(ex);
+                }
                 EcoScooterUserForm eU = new EcoScooterUserForm(ecoService);
                 eU.Show();
                 //this.Hide();
@@ -54,7 +72,8 @@ namespace GUIEcoScotter
 
         private void ButtonRegistrarse_Click(object sender, EventArgs e)
         {
-
+            EcoScooterRegistrarForm r = new EcoScooterRegistrarForm(ecoService);
+            r.Show();
         }
 
         private void EcoScooterAppForm_Load(object sender, EventArgs e)

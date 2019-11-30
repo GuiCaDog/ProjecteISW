@@ -18,7 +18,6 @@ namespace GUIEcoScotter
         {
 
             IEcoScooterService ecoService = new EcoScooterService(new EntityFrameworkDAL(new EcoScooterDbContext()));
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new EcoScooterAppForm(ecoService));

@@ -15,13 +15,15 @@ namespace GUIEcoScotter
 
     public partial class EcoScooterFormAtrasAceptar : EcoScooterFormBase
     {
-        private IEcoScooterService ecoService;
+        //private IEcoScooterService ecoService;
 
         public EcoScooterFormAtrasAceptar()
         {
             InitializeComponent();
         }
         public EcoScooterFormAtrasAceptar(IEcoScooterService ecoService) : this() {
+            InitializeComponent();
+
             this.ecoService = ecoService;
         }
 
