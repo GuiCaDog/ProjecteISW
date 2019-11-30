@@ -35,7 +35,9 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
             this.listViewEstaciones = new System.Windows.Forms.ListView();
-            this.label4 = new System.Windows.Forms.Label();
+            this.labelEstaciones = new System.Windows.Forms.Label();
+            this.textoError1 = new System.Windows.Forms.Label();
+            this.textoError2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,6 +98,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(296, 26);
             this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.comboBoxEstado_SelectedIndexChanged);
             // 
             // comboBoxEstado
             // 
@@ -110,32 +113,66 @@
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(296, 28);
             this.comboBoxEstado.TabIndex = 6;
+            this.comboBoxEstado.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstado_SelectedIndexChanged);
             // 
             // listViewEstaciones
             // 
+            this.listViewEstaciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listViewEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.listViewEstaciones.FullRowSelect = true;
+            this.listViewEstaciones.GridLines = true;
+            this.listViewEstaciones.HideSelection = false;
             this.listViewEstaciones.Location = new System.Drawing.Point(210, 325);
+            this.listViewEstaciones.MultiSelect = false;
             this.listViewEstaciones.Name = "listViewEstaciones";
-            this.listViewEstaciones.Size = new System.Drawing.Size(604, 194);
+            this.listViewEstaciones.Size = new System.Drawing.Size(604, 168);
             this.listViewEstaciones.TabIndex = 11;
             this.listViewEstaciones.UseCompatibleStateImageBehavior = false;
+            this.listViewEstaciones.View = System.Windows.Forms.View.List;
+            this.listViewEstaciones.SelectedIndexChanged += new System.EventHandler(this.ListViewEstaciones_SelectedIndexChanged);
             // 
-            // label4
+            // labelEstaciones
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label4.Location = new System.Drawing.Point(213, 298);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(107, 24);
-            this.label4.TabIndex = 12;
-            this.label4.Text = "Estaciones:";
-            this.label4.Click += new System.EventHandler(this.Label4_Click);
+            this.labelEstaciones.AutoSize = true;
+            this.labelEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.labelEstaciones.Location = new System.Drawing.Point(213, 298);
+            this.labelEstaciones.Name = "labelEstaciones";
+            this.labelEstaciones.Size = new System.Drawing.Size(107, 24);
+            this.labelEstaciones.TabIndex = 12;
+            this.labelEstaciones.Text = "Estaciones:";
+            this.labelEstaciones.Click += new System.EventHandler(this.Label4_Click);
+            // 
+            // textoError1
+            // 
+            this.textoError1.AutoSize = true;
+            this.textoError1.BackColor = System.Drawing.SystemColors.Control;
+            this.textoError1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoError1.ForeColor = System.Drawing.Color.Red;
+            this.textoError1.Location = new System.Drawing.Point(207, 250);
+            this.textoError1.Name = "textoError1";
+            this.textoError1.Size = new System.Drawing.Size(0, 16);
+            this.textoError1.TabIndex = 13;
+            // 
+            // textoError2
+            // 
+            this.textoError2.AutoSize = true;
+            this.textoError2.BackColor = System.Drawing.SystemColors.Control;
+            this.textoError2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoError2.ForeColor = System.Drawing.Color.Red;
+            this.textoError2.Location = new System.Drawing.Point(207, 500);
+            this.textoError2.Name = "textoError2";
+            this.textoError2.Size = new System.Drawing.Size(0, 16);
+            this.textoError2.TabIndex = 14;
             // 
             // EcoScooterRegistrarPatineteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textoError2);
+            this.Controls.Add(this.textoError1);
+            this.Controls.Add(this.labelEstaciones);
             this.Controls.Add(this.listViewEstaciones);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -144,7 +181,9 @@
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.listViewEstaciones, 0);
-            this.Controls.SetChildIndex(this.label4, 0);
+            this.Controls.SetChildIndex(this.labelEstaciones, 0);
+            this.Controls.SetChildIndex(this.textoError1, 0);
+            this.Controls.SetChildIndex(this.textoError2, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -160,7 +199,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBoxEstado;
         private System.Windows.Forms.ListView listViewEstaciones;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelEstaciones;
+        private System.Windows.Forms.Label textoError1;
+        private System.Windows.Forms.Label textoError2;
     }
 }
 

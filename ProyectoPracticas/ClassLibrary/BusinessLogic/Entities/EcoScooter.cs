@@ -168,15 +168,15 @@ namespace EcoScooter.Entities
             Scooter s = new Scooter(registerDate, state); 
             if(registerDate.CompareTo(DateTime.Now) > 0)
             {
-                throw new ServiceException("La data de registre es posterior a la actual");
+                throw new ServiceException("La fecha del registro es posterior a la actual");
             }
-            if (registerDate == null) { throw new ServiceException("Error en la Data de registre"); }
+            if (registerDate == null) { throw new ServiceException("La fecha no puede dejarse vacía"); }
             if (state.Equals(ScooterState.available))
             {
                 Station station = findStationByID(stationId);
                 if (station == null) //no existeix la estació
                 {
-                    throw new ServiceException("L'estació no existix");
+                    throw new ServiceException("La estación no existe");
                 }
                 else
                 {
