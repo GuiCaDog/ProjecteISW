@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listViewEstaciones = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
@@ -42,7 +42,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.listView1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.listViewEstaciones, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(236, 111);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -51,14 +51,16 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(578, 430);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // listView1
+            // listViewEstaciones
             // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(572, 209);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listViewEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewEstaciones.Location = new System.Drawing.Point(3, 3);
+            this.listViewEstaciones.Name = "listViewEstaciones";
+            this.listViewEstaciones.Size = new System.Drawing.Size(572, 209);
+            this.listViewEstaciones.TabIndex = 0;
+            this.listViewEstaciones.UseCompatibleStateImageBehavior = false;
+            this.listViewEstaciones.View = System.Windows.Forms.View.List;
+            this.listViewEstaciones.SelectedIndexChanged += new System.EventHandler(this.ListViewEstaciones_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -102,7 +104,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listViewEstaciones;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
     }
