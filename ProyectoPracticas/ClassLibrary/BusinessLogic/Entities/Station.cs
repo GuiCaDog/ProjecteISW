@@ -55,6 +55,11 @@ namespace EcoScooter.Entities
             Scooters.Add(s);
             DestinationRentals.Add(r);
         }
+
+        public override String ToString()
+        {
+            return "Dirección: " + Address + ". ID: " + Id + ".      (Lat.: " + Latitude + ", Long.: " + Longitude+")";
+        }
     }
 
 }

@@ -468,5 +468,9 @@ namespace EcoScooter.BusinessLogic.Services
         //    return descripcions;
         //}
 
+
+        public ICollection<String> GetStations() {
+            return ecoScooter.GetStations();
+        }
     }
 }

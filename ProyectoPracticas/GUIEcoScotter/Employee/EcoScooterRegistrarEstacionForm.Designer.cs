@@ -47,6 +47,7 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.textBoxId = new System.Windows.Forms.TextBox();
+            this.textoError = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
@@ -269,11 +270,24 @@
             this.textBoxId.Size = new System.Drawing.Size(186, 26);
             this.textBoxId.TabIndex = 3;
             // 
+            // textoError
+            // 
+            this.textoError.AutoSize = true;
+            this.textoError.BackColor = System.Drawing.SystemColors.Control;
+            this.textoError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoError.ForeColor = System.Drawing.Color.Red;
+            this.textoError.Location = new System.Drawing.Point(210, 473);
+            this.textoError.Name = "textoError";
+            this.textoError.Size = new System.Drawing.Size(0, 16);
+            this.textoError.TabIndex = 9;
+            this.textoError.Click += new System.EventHandler(this.Label11_Click);
+            // 
             // EcoScooterRegistrarEstacionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.textoError);
             this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -290,6 +304,7 @@
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             this.Controls.SetChildIndex(this.label9, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel3, 0);
+            this.Controls.SetChildIndex(this.textoError, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -322,6 +337,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxId;
+        private System.Windows.Forms.Label textoError;
     }
 }
 

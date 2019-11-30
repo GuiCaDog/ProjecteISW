@@ -140,16 +140,16 @@ namespace EcoScooter.Entities
             Station aux = findStationByID(stationId); //Busquem si ya existeix una estació amb ixe Id
             if (aux == null)
             {   
-                if (address.Equals("") ) { throw new ServiceException("Error en la latitude"); }
-                if ((latitude < -180 || latitude > 180) || (latitude < -90 || latitude > 90)) { throw new ServiceException("Error en la latitude"); }
-                if (longitude < -180 || longitude > 180) { throw new ServiceException("Error en la longitude"); }
+                if (address.Equals("") || address.Equals(", , ")) { throw new ServiceException("Debe rellenar algun dato de la dirección."); }
+                if ((latitude < -180 || latitude > 180) || (latitude < -90 || latitude > 90)) { throw new ServiceException("Error en la latitud. Latitud debe estar entre (-90, 90)"); }
+                if (longitude < -180 || longitude > 180) { throw new ServiceException("Error en la longitud. Longitud debe estar entre (-180, 180)"); }
                 Station s = new Station(address, stationId, latitude, longitude);
                 Stations.Add(s);
                 //dal.Commit();
             }
             else
             {
-                throw new ServiceException("La estación ya existe");
+                throw new ServiceException("El identificador de la estación ya está en uso");
             }
 
 
@@ -548,6 +548,16 @@ namespace EcoScooter.Entities
                 throw new ServiceException("El dni del " + type + " es incorrecte");
             }
             return personaBuscada.Equals(personaLogejada);
+        }
+
+        public ICollection<String> GetStations()
+        {
+            ICollection<String> estacionsString = new List<String>();
+            foreach(Station s in Stations)
+            {
+                estacionsString.Add(s.ToString());
+            }
+            return estacionsString;
         }
 
     }

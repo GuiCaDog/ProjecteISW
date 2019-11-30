@@ -17,6 +17,17 @@ namespace GUIEcoScotter
         public EcoScooterRegistrarPatineteForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
+            List<String> stationList = (List<String>)ecoService.GetStations();
+            foreach(String station in stationList)
+            {
+                Console.WriteLine(station);
+                listViewEstaciones.Items.Add(station);
+            }
+            
+
+        }
+        protected override void Button2_Click(object sender, EventArgs e)
+        {
 
         }
 

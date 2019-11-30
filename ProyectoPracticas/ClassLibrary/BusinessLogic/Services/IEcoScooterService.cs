@@ -143,5 +143,9 @@ namespace EcoScooter.BusinessLogic.Services
         /// <exception cref="ServiceException"> Thrown when the interval marked between the start and end date is wrong 
         /// or there are not available routes in that period </exception> 
         ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate);
+
+
+        //Metode implementat auxiliar
+        ICollection<String> GetStations();
     }
 }

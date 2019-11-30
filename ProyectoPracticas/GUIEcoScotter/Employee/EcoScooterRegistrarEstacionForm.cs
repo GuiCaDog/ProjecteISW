@@ -22,21 +22,38 @@ namespace GUIEcoScotter
         //Aceptar
         protected override void Button2_Click(object sender, EventArgs e)
         {
-            String ciudad = textBoxCiudad.Text;
-            String calle = textBoxCalle.Text;
-            String numero = textBoxNumero.Text;
-            double latitud = Double.Parse(textBoxLatitud.Text);
-            double longitud = Double.Parse(textBoxLongitud.Text);
-            String id = textBoxId.Text;
-
-            String direccion = calle + ", " + numero + ", " + ciudad;
-            Console.WriteLine(direccion + ", " + latitud + ", " + longitud + ", " + id);
             try
             {
+                
+                String ciudad = textBoxCiudad.Text;
+                String calle = textBoxCalle.Text;
+                String numero = textBoxNumero.Text;
+                
+                double latitud = Double.Parse(textBoxLatitud.Text);
+                double longitud = Double.Parse(textBoxLongitud.Text);
+                String id = textBoxId.Text;
+
+                String direccion = calle + ", " + numero + ", " + ciudad;
+                Console.WriteLine(direccion + ", " + latitud + ", " + longitud + ", " + id);
+            
                 ecoService.RegisterStation(direccion, latitud, longitud, id);
-            }catch(ServiceException) { Console.WriteLine("Excepció"); }
+                this.Close();
+            }
+            catch (ServiceException excepcio) { textoError.Text = excepcio.Message; }
+            catch(System.FormatException) {
+                if(textBoxLatitud.Text == "" || textBoxLongitud.Text == "")
+                {
+                    textoError.Text = "Latitud y longitud deben tener un valor";
+                }
+                textoError.Text = "La latitud y la longitud deben contener NÚMEROS";
+            }
         }
 
+        //Atrás
+        protected override void Button1_Click(Object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
         private void Label1_Click(object sender, EventArgs e)
         {
@@ -64,6 +81,11 @@ namespace GUIEcoScotter
         }
 
         private void Label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label11_Click(object sender, EventArgs e)
         {
 
         }
