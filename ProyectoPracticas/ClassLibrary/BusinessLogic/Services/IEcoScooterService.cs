@@ -147,5 +147,9 @@ namespace EcoScooter.BusinessLogic.Services
 
         //Metode implementat auxiliar
         ICollection<String> GetStations();
+
+        List<Incident> GetIncidents();
+        int newIncidentID(List<Incident> incidents);
+        Station findStationByID(string id);
     }
 }
