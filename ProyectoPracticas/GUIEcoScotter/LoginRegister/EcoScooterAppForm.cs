@@ -20,6 +20,8 @@ namespace GUIEcoScotter
             //eF = new EcoScooterEmployeeForm(ecoService);
             //eF.Show();
             //eF.Visible = false;
+            
+            
 
         }
 
@@ -30,43 +32,70 @@ namespace GUIEcoScotter
 
         private void ButtonIniciarSesion_Click(object sender, EventArgs e)
         {
+            //-----------------
+            //((EcoScooterService)ecoService).addEmployee(DateTime.Now.AddYears(-20), "11112222", "noEmail", "PACO", 55, "123", 0000, "bona", 1000);
+            //-----------------
             string user = textLogin.Text;
             string password = textBoxPassword.Text;
-            if (textLogin.Text.Equals("PACO"))
+            if (user.Equals("") || password.Equals("")) { textoError.Text = "Rellena los 2 campos"; }
+            else
             {
+                //if (textLogin.Text.Equals("PACO"))
+                //{
+                //    try
+                //    {
+                //        ((EcoScooterService)ecoService).addEmployee(DateTime.Now.AddYears(-20), "11112222", "noEmail", "PACO", 55, "123", 0000, "bona", 1000);
+                //        ecoService.LoginEmployee("11112222", int.Parse(password));
+                //        ((EcoScooterService)ecoService).clearEmployees();
+                //    }
+                //    catch (ServiceException ex)
+                //    {
+                //        Console.WriteLine(ex);
+                //    }
+                //    EcoScooterEmployeeForm eF = new EcoScooterEmployeeForm(ecoService);
+                //    eF.Show();
+                //    //this.Hide();
+                //}
+                //else
+                //{
                 try
                 {
-                    ((EcoScooterService)ecoService).addEmployee(DateTime.Now.AddYears(-20), "11112222", "noEmail", "PACO", 55, "123", 0000, "bona", 1000);
-                    ecoService.LoginEmployee("11112222", int.Parse(password));
-                    ((EcoScooterService)ecoService).clearEmployees();
+                    try
+                    {
+                        ecoService.LoginUser(user, password);
+                        EcoScooterUserForm eU = new EcoScooterUserForm(ecoService);
+                        eU.Show();
+                    }
+                    catch (ServiceException ex)
+                    {
+                        if (!ex.Message.StartsWith("Contraseña"))
+                        {
+                            ecoService.LoginEmployee(user, int.Parse(password));
+                            EcoScooterEmployeeForm eF = new EcoScooterEmployeeForm(ecoService);
+                            eF.Show();
+                        }
+                        else {
+                            textoError.Text = ex.Message;
+                        }
+                    }
+                    catch (System.FormatException)
+                    {
+                    }
                 }
                 catch (ServiceException ex)
                 {
-                    Console.WriteLine(ex);
+                    textoError.Text = ex.Message;
                 }
-                EcoScooterEmployeeForm eF = new EcoScooterEmployeeForm(ecoService);
-                eF.Show();
-                //this.Hide();
-            }
-            else
-            {
-                try
-                {
-                    ecoService.LoginUser(user, password);
-                }
-                catch(ServiceException ex)
-                {
-                    Console.WriteLine(ex);
-                }
-                EcoScooterUserForm eU = new EcoScooterUserForm(ecoService);
-                eU.Show();
-                //this.Hide();
-            }
+                catch (System.FormatException) {
 
-            
-            //this.Visible = false;
-            //eF.Visible = true;
+                }
+                //this.Hide();
+                //}
 
+
+                //this.Visible = false;
+                //eF.Visible = true;
+            }
         }
 
 

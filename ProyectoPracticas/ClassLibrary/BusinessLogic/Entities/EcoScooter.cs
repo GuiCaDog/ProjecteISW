@@ -49,13 +49,13 @@ namespace EcoScooter.Entities
             if (!usuariUnic(login))
             {
                 validated = false;
-                reason += "\n Nom d'suari ja existent";
+                reason += "\n Nombre de usuario ya existente";
 
             }
             else if (!dniValid(dni))
             {
                 validated = false;
-                reason += "\n DNI ja existent";
+                reason += "\n DNI ya existente";
             }
             if (validated)
             {
@@ -72,7 +72,8 @@ namespace EcoScooter.Entities
 
         public Person LoginUser(string login, string password, Person personaLogejada)
         {
-                if (personaLogejada != null) { throw new ServiceException("Usuari ja loguejat"); }
+                if(People.Count == 0) { throw new ServiceException("No existe nadie con ese login"); }
+                if (personaLogejada != null) { throw new ServiceException("Usuario ya logueado"); }
                 List<User> userList = obtindreLlistaUsers();
                 int i = 0;
                 //Busquem hasta trobar un usuari amb ixe Login
@@ -89,16 +90,19 @@ namespace EcoScooter.Entities
                     else { throw new ServiceException("Contraseña incorrecta"); }
                 }
                 //Ixe login no existix
-                else { throw new ServiceException("El usuario no existe"); }
+                else { throw new ServiceException("No existe nadie con ese login"); }
      
             
         }
 
         public Person LoginEmployee(String dni, int pin, Person personaLogejada)
         {
+            if (People.Count == 0) { throw new ServiceException("No existe nadie con ese login"); }
             //En este cas sí podem buscar per clau primaria (Dni)
             if (personaLogejada != null) { throw new ServiceException("Empleat ja loguejat"); }
+            Console.WriteLine("1");
             Employee empleat = findEmployeeById(dni);//Crida a findPerson i asegura que es un empleat. Si no es null.
+            Console.WriteLine("4");
             //Ha trobat el empleat asociat a ixe dni
             if (empleat != null)
             {
@@ -111,7 +115,7 @@ namespace EcoScooter.Entities
                 else { throw new ServiceException("El pin del empleado es incorrecto"); }
             }
             //No existix un empleat amb ixe dni
-            else { throw new ServiceException("El empleado no existe"); }
+            else { throw new ServiceException("No existe nadie con ese login"); }
         }
         public void RegisterIncident(string description, DateTime timeStamp, int rentalId, User personaLogejada)
         {
@@ -506,9 +510,10 @@ namespace EcoScooter.Entities
         public Person findPersonById(string id)
         {
             //Podriem usar dal.GetById<Person>(id)
-
-            foreach(Person p in People)
+            Console.WriteLine(People.Count);
+            foreach (Person p in People)
             {
+                Console.WriteLine(p.Dni);
                 if (p.Dni.Equals(id))
                 {
                     return p;
@@ -525,7 +530,8 @@ namespace EcoScooter.Entities
 
             foreach(Person p in People)
             {
-                if(p is User)
+                
+                if (p is User)
                 {
                     res.Add((User)p);
                 }
@@ -536,17 +542,21 @@ namespace EcoScooter.Entities
         //Usat en métode loginEmployee
         public Employee findEmployeeById(string id)
         {
-            foreach (Employee p in Employees)
-            {
-                if (p.Dni.Equals(id))
-                {
-                    return p;
-                }
+            //foreach (Employee p in Employees)
+            //{
+            //    if (p.Dni.Equals(id))
+            //    {
+            //        return p;
+            //    }
+            //}
+            //return null;
+            Person p = findPersonById(id);
+            Console.WriteLine("2, "+p);
+            if (p != null && p is Employee) {
+                Console.WriteLine("3, " + p);
+                return (Employee)p;
             }
-            return null;
-            //Person p = findPersonById(id);
-            //if(p!=null && p is Employee) { return (Employee)p; }
-            //else { return null; }
+            else { return null; }
         }
 
         public bool isLogged(string dni, string type, Person personaLogejada)

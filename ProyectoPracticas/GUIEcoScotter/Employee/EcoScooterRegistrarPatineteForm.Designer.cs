@@ -113,6 +113,7 @@
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(296, 28);
             this.comboBoxEstado.TabIndex = 6;
+            this.comboBoxEstado.Text = "Mantenimiento";
             this.comboBoxEstado.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstado_SelectedIndexChanged);
             // 
             // listViewEstaciones

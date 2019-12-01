@@ -394,11 +394,11 @@
             // mistakes
             // 
             this.mistakes.AutoSize = true;
-            this.mistakes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.mistakes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.mistakes.Location = new System.Drawing.Point(747, 499);
+            this.mistakes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mistakes.ForeColor = System.Drawing.Color.Red;
+            this.mistakes.Location = new System.Drawing.Point(739, 431);
             this.mistakes.Name = "mistakes";
-            this.mistakes.Size = new System.Drawing.Size(0, 18);
+            this.mistakes.Size = new System.Drawing.Size(0, 16);
             this.mistakes.TabIndex = 10;
             // 
             // EcoScooterRegistrarForm

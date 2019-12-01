@@ -120,8 +120,8 @@ namespace EcoScooter.BusinessLogic.Services
         {
             //ecoScooter.Employees.Clear();
             Employee e = new Employee(birthDate, dni, email, name, telephon, iban, pin, position, salary);
-            ecoScooter.Employees.Add(e);
-            //saveChanges();
+            ecoScooter.People.Add(e);
+            saveChanges();
         }
         public void clearEmployees()
         {

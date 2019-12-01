@@ -39,27 +39,33 @@ namespace GUIEcoScotter
                     throw new ServiceException("Debes rellenar todos los campos");
                 }
                 String estado = comboBoxEstado.Text;
-                int scooterState = 0;
-                if (estado.Equals("Mantenimiento")) { scooterState = 2; }
-                else{
-                    scooterState = 1;
+                EcoScooter.Entities.ScooterState scooterState = EcoScooter.Entities.ScooterState.inMaintenance;
+                if (estado.Equals("Mantenimiento")) { scooterState = EcoScooter.Entities.ScooterState.inMaintenance; }
+                else{ scooterState = EcoScooter.Entities.ScooterState.available; }
 
-                }
-
-                if (listViewEstaciones.FocusedItem == null)
+                if (listViewEstaciones.FocusedItem == null && estado.Equals("Disponible") && textoError1.Text.Equals(""))
                 {
                     throw new ServiceException("Debes de seleccionar una estación.");
                 }
-
-                String estacion = listViewEstaciones.FocusedItem.ToString();
-                estacion = estacion.Substring(estacion.IndexOf("ID: "));
-                estacion = estacion.Substring(0, estacion.IndexOf("."));
+                String estacion;
+                if (listViewEstaciones.FocusedItem != null)
+                {
+                    estacion = listViewEstaciones.FocusedItem.ToString();
+                    estacion = estacion.Substring(estacion.IndexOf("ID: ") + 4);
+                    estacion = estacion.Substring(0, estacion.IndexOf("."));
+                }
+                else
+                {
+                    estacion = null;
+                }
                 Console.WriteLine(fechaRegistro + ", " + estado + ", " + scooterState + ", " + estacion + ".");
-                //ecoService.RegisterScooter(fechaRegistro, scooterState, estacion);
+                ecoService.RegisterScooter(fechaRegistro,scooterState, estacion);
+                this.Close();
+                
             }
             catch (ServiceException excepcio)
             {
-                textoError2.Text = excepcio.Message;
+                if(!excepcio.Message.StartsWith("La fecha"))textoError2.Text = excepcio.Message;
             }
         }
         //Atrás
@@ -79,11 +85,15 @@ namespace GUIEcoScotter
             {
                 listViewEstaciones.Visible = false;
                 labelEstaciones.Visible = false;
+                textoError2.Text = "";
             }
 
             if (dateTimePicker1.Value == null || dateTimePicker1.Value.CompareTo(DateTime.Now) > 0)
             {
                 textoError1.Text = "La fecha de registro debe ser anterior a la actual";
+                listViewEstaciones.Visible = false;
+                labelEstaciones.Visible = false;
+                textoError2.Text = "";
             }
             else if(dateTimePicker1.Value != null && dateTimePicker1.Value.CompareTo(DateTime.Now) <= 0)
             {

@@ -36,42 +36,53 @@ namespace GUIEcoScotter
         }
         protected override void Button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("aa" + ecoService);
+            this.Close();
         }
         protected override void Button2_Click(object sender, EventArgs e)
         {
-            String nombre = textBoxNombre.Text;
-            String dni = textBoxDNI.Text;
-            String email = textBoxEmail.Text;
-            int telefono = int.Parse(textBoxTelefono.Text);
-            DateTime birth = dateTimePickerNac.Value;
-
-            int numeroTarjeta = int.Parse(textBoxNumeroTarjeta.Text);
-            int cVV= int.Parse(textBoxCVV.Text);
-            DateTime caducidad = dateTimePickerCaducidad.Value;
-
-            String usuario = textBoxUsuario.Text;
-            String contraseña = textBoxContraseña.Text;
-            String rContraseña = textBoxRepContraseña.Text;
-            if (contraseña.Equals(rContraseña))
+            try
             {
-                try
+                if (emptyFields()) { mistakes.Text = "No pueden haber campos vacios"; }
+                else
                 {
-                    Console.WriteLine(birth + "\n" + dni + "\n" + email + "\n" + nombre + "\n" + telefono + "\n" + cVV + "\n"+ caducidad + "\n" + usuario + "\n" + numeroTarjeta + "\n" + contraseña);
-                    ecoService.RegisterUser(birth, dni, email, nombre, telefono, cVV, caducidad, usuario, numeroTarjeta, contraseña);
-                    this.Hide();
-                }
-                catch(ServiceException exc)
-                {
-                    Console.WriteLine(exc);
+                    String nombre = textBoxNombre.Text;
+                    String dni = textBoxDNI.Text;
+                    String email = textBoxEmail.Text;
+                    int telefono = int.Parse(textBoxTelefono.Text);
+                    DateTime birth = dateTimePickerNac.Value;
+
+                    int numeroTarjeta = int.Parse(textBoxNumeroTarjeta.Text);
+                    int cVV = int.Parse(textBoxCVV.Text);
+                    DateTime caducidad = dateTimePickerCaducidad.Value;
+
+                    String usuario = textBoxUsuario.Text;
+                    String contraseña = textBoxContraseña.Text;
+                    String rContraseña = textBoxRepContraseña.Text;
+                    if (contraseña.Equals(rContraseña))
+                    {
+                        Console.WriteLine(birth + "\n" + dni + "\n" + email + "\n" + nombre + "\n" + telefono + "\n" + cVV + "\n" + caducidad + "\n" + usuario + "\n" + numeroTarjeta + "\n" + contraseña);
+                        ecoService.RegisterUser(birth, dni, email, nombre, telefono, cVV, caducidad, usuario, numeroTarjeta, contraseña);
+                        this.Hide();
+                    }
+                    else
+                    {
+                        mistakes.Text = "Contraseña no coincide";
+                    }
                 }
             }
-            else
+            catch (ServiceException exc)
             {
-                mistakes.Text = "Contraseña no coincide";
+                mistakes.Text = exc.Message;
             }
+            catch (System.OverflowException) { }
         }
 
+        private bool emptyFields()
+        {
+            return textBoxNombre.Text.Equals("") || textBoxDNI.Text.Equals("") || textBoxEmail.Text.Equals("")
+                || textBoxTelefono.Text.Equals("") || textBoxCVV.Text.Equals("") || textBoxUsuario.Text.Equals("") || textBoxContraseña.Text.Equals("")
+                || textBoxRepContraseña.Text.Equals("") || dateTimePickerCaducidad.Value == null;
+        }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
