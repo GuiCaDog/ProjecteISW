@@ -34,6 +34,7 @@ namespace GUIEcoScotter
 
         protected virtual void Button1_Click(object sender, EventArgs e)
         {
+            Hide();
         }
 
         protected virtual void Button2_Click(object sender, EventArgs e)

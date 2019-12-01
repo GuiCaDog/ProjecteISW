@@ -131,7 +131,7 @@ namespace EcoScooter.BusinessLogic.Services
         public void LoginUser(string login, string password)
         {
             
-            personaLogejada = ecoScooter.LoginUser(login, password, (User) personaLogejada);
+            personaLogejada = ecoScooter.LoginUser(login, password, personaLogejada);
             
             saveChanges();
 
@@ -158,7 +158,7 @@ namespace EcoScooter.BusinessLogic.Services
         public void LoginEmployee(String dni, int pin)
         {
             
-            personaLogejada = ecoScooter.LoginEmployee(dni, pin, (Employee) personaLogejada);
+            personaLogejada = ecoScooter.LoginEmployee(dni, pin, personaLogejada);
             
             //saveChanges();
 
@@ -347,6 +347,11 @@ namespace EcoScooter.BusinessLogic.Services
 
             //---------------------------------------------------------------------------------------------
 
+        }
+
+        public void wasIncident(string description, DateTime timeStam)
+        {
+            ecoScooter.wasIncident(description, timeStam);
         }
 
         public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate)

@@ -32,6 +32,7 @@
             this.listViewEstaciones = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.textError = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,6 +44,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.listViewEstaciones, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.textError, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(236, 111);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
@@ -54,6 +56,7 @@
             // listViewEstaciones
             // 
             this.listViewEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewEstaciones.HideSelection = false;
             this.listViewEstaciones.Location = new System.Drawing.Point(3, 3);
             this.listViewEstaciones.Name = "listViewEstaciones";
             this.listViewEstaciones.Size = new System.Drawing.Size(572, 209);
@@ -82,6 +85,16 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Elegir Estación: ";
             // 
+            // textError
+            // 
+            this.textError.AutoSize = true;
+            this.textError.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textError.ForeColor = System.Drawing.Color.DarkRed;
+            this.textError.Location = new System.Drawing.Point(3, 215);
+            this.textError.Name = "textError";
+            this.textError.Size = new System.Drawing.Size(0, 25);
+            this.textError.TabIndex = 4;
+            // 
             // EcoScooterAlquilarPatineteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,6 +109,7 @@
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,6 +121,7 @@
         private System.Windows.Forms.ListView listViewEstaciones;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label textError;
     }
 }
 

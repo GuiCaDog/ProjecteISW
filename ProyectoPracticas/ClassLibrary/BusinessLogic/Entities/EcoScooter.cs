@@ -70,7 +70,7 @@ namespace EcoScooter.Entities
             }
         }
 
-        public Person LoginUser(string login, string password, User personaLogejada)
+        public Person LoginUser(string login, string password, Person personaLogejada)
         {
                 if (personaLogejada != null) { throw new ServiceException("Usuari ja loguejat"); }
                 List<User> userList = obtindreLlistaUsers();
@@ -94,7 +94,7 @@ namespace EcoScooter.Entities
             
         }
 
-        public Person LoginEmployee(String dni, int pin, Employee personaLogejada)
+        public Person LoginEmployee(String dni, int pin, Person personaLogejada)
         {
             //En este cas sí podem buscar per clau primaria (Dni)
             if (personaLogejada != null) { throw new ServiceException("Empleat ja loguejat"); }
@@ -124,6 +124,7 @@ namespace EcoScooter.Entities
 
             //Incident(string description, int id, DateTime timeStamp)
             Incident i = new Incident(description, newIncidentID(incidentList), timeStamp);
+            
             //2. El	sistema	actualitza	la	informació	associada	a	un	lloguer	amb incident
             Rental r = findRentalByID(rentalId);//dal.GetById<Rental>(rentalId);
             r.addIncident(i);
@@ -230,6 +231,9 @@ namespace EcoScooter.Entities
             }
         }
 
+        private bool waIncident;
+        private string description;
+        private DateTime dia;
         public void ReturnScooter(string stationId, User u)
         {
             //------------------Usa mètodes de User i de Station-----------------------
@@ -257,9 +261,9 @@ namespace EcoScooter.Entities
 
                     }
                     //int numSerie = r.Scooter.Id; //Per a que el necessitem??
-                    if (wasIncident())
+                    if (waIncident)
                     {
-                        RegisterIncident("Accident", r.StartDate, r.Id, u);
+                        RegisterIncident(description, dia, r.Id, u);
                         //Com obtenim l'hora a la qual es va produir l'incident?
                     }
                     r.EndDate = DateTime.Now;
@@ -282,6 +286,14 @@ namespace EcoScooter.Entities
                 throw new ServiceException("Usuari no identificat");
 
             }
+        }
+
+        public void wasIncident(string descr, DateTime stamp)
+        {
+            waIncident = true;
+            description = descr;
+            dia = stamp;
+           // return true; // A implementar quan desenvolupem la capa de interficie
         }
 
         public ICollection<String> GetUserRoutes(DateTime startDate, DateTime endDate,User u)
@@ -354,10 +366,7 @@ namespace EcoScooter.Entities
             return descripcions;
         }
 
-        private bool wasIncident()
-        {
-            return true; // A implementar quan desenvolupem la capa de interficie
-        }
+        
 
 
 

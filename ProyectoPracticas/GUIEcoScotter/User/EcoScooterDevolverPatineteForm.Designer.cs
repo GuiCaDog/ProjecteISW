@@ -31,8 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Si = new System.Windows.Forms.Button();
+            this.estaciones = new System.Windows.Forms.TableLayoutPanel();
+            this.listViewEstaciones = new System.Windows.Forms.ListView();
+            this.labelError = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
+            this.estaciones.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -48,54 +52,95 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button1, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(176, 146);
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.97938F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.02062F));
+            this.tableLayoutPanel1.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Si, 1, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(298, 361);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(591, 274);
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(430, 103);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 91);
+            this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(289, 75);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "¿Se ha producido algun incidente durante el alquiler? (En tal caso pulsar SI)";
+            this.label3.Size = new System.Drawing.Size(246, 75);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "¿Se ha producido algun incidente durante el alquiler? ";
+            this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
-            // button1
+            // Si
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(298, 94);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(290, 85);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Sí";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.Si.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.Si.Location = new System.Drawing.Point(286, 3);
+            this.Si.Name = "Si";
+            this.Si.Size = new System.Drawing.Size(141, 97);
+            this.Si.TabIndex = 9;
+            this.Si.Text = "Sí";
+            this.Si.UseVisualStyleBackColor = true;
+            this.Si.Click += new System.EventHandler(this.Si_Click);
+            // 
+            // estaciones
+            // 
+            this.estaciones.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.estaciones.ColumnCount = 1;
+            this.estaciones.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.estaciones.Controls.Add(this.listViewEstaciones, 0, 0);
+            this.estaciones.Location = new System.Drawing.Point(225, 128);
+            this.estaciones.Name = "estaciones";
+            this.estaciones.RowCount = 1;
+            this.estaciones.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.estaciones.Size = new System.Drawing.Size(578, 186);
+            this.estaciones.TabIndex = 6;
+            // 
+            // listViewEstaciones
+            // 
+            this.listViewEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewEstaciones.HideSelection = false;
+            this.listViewEstaciones.Location = new System.Drawing.Point(3, 3);
+            this.listViewEstaciones.Name = "listViewEstaciones";
+            this.listViewEstaciones.Size = new System.Drawing.Size(572, 180);
+            this.listViewEstaciones.TabIndex = 0;
+            this.listViewEstaciones.UseCompatibleStateImageBehavior = false;
+            this.listViewEstaciones.View = System.Windows.Forms.View.List;
+            this.listViewEstaciones.SelectedIndexChanged += new System.EventHandler(this.listViewEstaciones_SelectedIndexChanged);
+            // 
+            // labelError
+            // 
+            this.labelError.AutoSize = true;
+            this.labelError.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelError.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelError.Location = new System.Drawing.Point(259, 493);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(0, 25);
+            this.labelError.TabIndex = 9;
             // 
             // EcoScooterDevolverPatineteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.labelError);
+            this.Controls.Add(this.estaciones);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "EcoScooterDevolverPatineteForm";
             this.Text = "EcoScooter ";
+            this.Load += new System.EventHandler(this.EcoScooterDevolverPatineteForm_Load);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.estaciones, 0);
+            this.Controls.SetChildIndex(this.labelError, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.estaciones.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -106,7 +151,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Si;
+        private System.Windows.Forms.TableLayoutPanel estaciones;
+        private System.Windows.Forms.ListView listViewEstaciones;
+        private System.Windows.Forms.Label labelError;
     }
 }
 

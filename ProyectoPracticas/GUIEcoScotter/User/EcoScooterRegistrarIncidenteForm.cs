@@ -14,7 +14,7 @@ namespace GUIEcoScotter
 {
     public partial class EcoScooterRegistrarIncidenteForm : EcoScooterFormAtrasAceptar
     {
-
+        //private EcoScooterDevolverPatineteForm dPat;
         public EcoScooterRegistrarIncidenteForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
@@ -24,16 +24,30 @@ namespace GUIEcoScotter
         //Botó Aceptar
         protected override void Button2_Click(object sender, EventArgs e)
         {
-                String descripcion = textDescripcion.Text;
-                String hora = textHora.Text;
-                DateTime dia = dateTimePickerDia.Value;
+
+            String descripcion = textDescripcion.Text;
+            String hora = textHora.Text;
+            DateTime dia = dateTimePickerDia.Value;
+            //dia.AddHours(int.Parse(hora));
+            if (dia != null)
+            {
+                ((EcoScooterService)ecoService).wasIncident(descripcion, dia);
+
+               //dPat.setIncidentInfo(descripcion, dia);
+                Close();
+            }
+            else
+            {
+                errorLabel.Text = "Introduce una fecha";
+            }
+            // ecoService.RegisterIncident(descripcion, dia, rentalID);
 
             //List<Incident> l = ecoService.llistaIncidents();
-                                //newIncidentID(List < Incident > incidents)           
-                                //canviar ID
-            Incident inc = new Incident(descripcion, 1, dia) ;
+            //newIncidentID(List < Incident > incidents)           
+            //canviar ID
+            //Incident inc = new Incident(descripcion, 1, dia) ;
 
-            
+
 
 
         }
@@ -43,5 +57,9 @@ namespace GUIEcoScotter
         {
 
         }
+        //public void setParent(EcoScooterDevolverPatineteForm dP)
+        //{
+        //    dPat = dP;
+        //}
     }
 }

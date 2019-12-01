@@ -36,6 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textHora = new System.Windows.Forms.TextBox();
             this.dateTimePickerDia = new System.Windows.Forms.DateTimePicker();
+            this.errorLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,17 +124,28 @@
             this.dateTimePickerDia.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerDia.TabIndex = 5;
             // 
+            // errorLabel
+            // 
+            this.errorLabel.AutoSize = true;
+            this.errorLabel.ForeColor = System.Drawing.Color.DarkRed;
+            this.errorLabel.Location = new System.Drawing.Point(332, 489);
+            this.errorLabel.Name = "errorLabel";
+            this.errorLabel.Size = new System.Drawing.Size(0, 13);
+            this.errorLabel.TabIndex = 5;
+            // 
             // EcoScooterRegistrarIncidenteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "EcoScooterRegistrarIncidenteForm";
             this.Text = "EcoScooter ";
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
+            this.Controls.SetChildIndex(this.errorLabel, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -151,6 +163,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textHora;
         private System.Windows.Forms.DateTimePicker dateTimePickerDia;
+        private System.Windows.Forms.Label errorLabel;
     }
 }
 
