@@ -24,14 +24,18 @@ namespace GUIEcoScotter
         //Botó Aceptar
         protected override void Button2_Click(object sender, EventArgs e)
         {
+                //Falta obtenir informacio del rental
+
                 String descripcion = textDescripcion.Text;
-                String hora = textHora.Text;
+                String hora = textHora.Text; //No el utilitzem de moment
                 DateTime dia = dateTimePickerDia.Value;
 
-            //List<Incident> l = ecoService.llistaIncidents();
-                                //newIncidentID(List < Incident > incidents)           
-                                //canviar ID
-            Incident inc = new Incident(descripcion, 1, dia) ;
+            //List<Incident> l = ecoService.GetIncidents();
+           // int id = ecoService.newIncidentID(l);
+            //Incident inc = new Incident(descripcion, id, dia) ;
+
+                                                    //rentalId
+            ecoService.RegisterIncident(descripcion, dia, 1);
 
             
 

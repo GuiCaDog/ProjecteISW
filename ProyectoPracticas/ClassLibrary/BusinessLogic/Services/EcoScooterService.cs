@@ -472,5 +472,18 @@ namespace EcoScooter.BusinessLogic.Services
         public ICollection<String> GetStations() {
             return ecoScooter.GetStations();
         }
+
+        public List<Incident> GetIncidents() {      
+            return ecoScooter.llistaIncidents();
+        }
+        public int newIncidentID(List<Incident> incidents)
+        {
+            return ecoScooter.newIncidentID(incidents);
+        }
+
+         public Station findStationByID(string id)
+        {
+            return ecoScooter.findStationByID(id);
+        }
     }
 }
