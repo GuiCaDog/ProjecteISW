@@ -44,14 +44,13 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.listViewEstaciones, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.textError, 0, 1);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(236, 111);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(578, 430);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(578, 204);
             this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
             // 
             // listViewEstaciones
             // 
@@ -59,7 +58,7 @@
             this.listViewEstaciones.HideSelection = false;
             this.listViewEstaciones.Location = new System.Drawing.Point(3, 3);
             this.listViewEstaciones.Name = "listViewEstaciones";
-            this.listViewEstaciones.Size = new System.Drawing.Size(572, 209);
+            this.listViewEstaciones.Size = new System.Drawing.Size(572, 198);
             this.listViewEstaciones.TabIndex = 0;
             this.listViewEstaciones.UseCompatibleStateImageBehavior = false;
             this.listViewEstaciones.View = System.Windows.Forms.View.List;
@@ -74,6 +73,7 @@
             this.label1.Size = new System.Drawing.Size(211, 31);
             this.label1.TabIndex = 3;
             this.label1.Text = "Alquilar Patinete";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // label2
             // 
@@ -84,22 +84,25 @@
             this.label2.Size = new System.Drawing.Size(168, 25);
             this.label2.TabIndex = 4;
             this.label2.Text = "Elegir Estación: ";
+            this.label2.Click += new System.EventHandler(this.Label2_Click_1);
             // 
             // textError
             // 
             this.textError.AutoSize = true;
-            this.textError.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textError.ForeColor = System.Drawing.Color.DarkRed;
-            this.textError.Location = new System.Drawing.Point(3, 215);
+            this.textError.BackColor = System.Drawing.SystemColors.Control;
+            this.textError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textError.ForeColor = System.Drawing.Color.Red;
+            this.textError.Location = new System.Drawing.Point(236, 355);
             this.textError.Name = "textError";
-            this.textError.Size = new System.Drawing.Size(0, 25);
-            this.textError.TabIndex = 4;
+            this.textError.Size = new System.Drawing.Size(0, 16);
+            this.textError.TabIndex = 11;
             // 
             // EcoScooterAlquilarPatineteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.textError);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -108,8 +111,8 @@
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.textError, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

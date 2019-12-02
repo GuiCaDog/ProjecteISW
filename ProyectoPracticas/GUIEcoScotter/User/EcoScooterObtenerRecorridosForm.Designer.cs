@@ -34,10 +34,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonAtras = new System.Windows.Forms.Button();
+            this.textoError = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -75,6 +75,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(261, 20);
             this.dateTimePicker2.TabIndex = 9;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.Fecha_Seleccionada);
             // 
             // label2
             // 
@@ -105,47 +106,60 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(258, 20);
             this.dateTimePicker1.TabIndex = 8;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.Fecha_Seleccionada);
             // 
-            // tableLayoutPanel2
+            // buttonAtras
             // 
-            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.listView1, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(169, 209);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(698, 318);
-            this.tableLayoutPanel2.TabIndex = 5;
+            this.buttonAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAtras.Location = new System.Drawing.Point(41, 528);
+            this.buttonAtras.Name = "buttonAtras";
+            this.buttonAtras.Size = new System.Drawing.Size(100, 41);
+            this.buttonAtras.TabIndex = 6;
+            this.buttonAtras.Text = "Atrás";
+            this.buttonAtras.UseVisualStyleBackColor = true;
+            this.buttonAtras.Click += new System.EventHandler(this.Button1_Click);
+            // 
+            // textoError
+            // 
+            this.textoError.AutoSize = true;
+            this.textoError.BackColor = System.Drawing.SystemColors.Control;
+            this.textoError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textoError.ForeColor = System.Drawing.Color.Red;
+            this.textoError.Location = new System.Drawing.Point(169, 489);
+            this.textoError.Name = "textoError";
+            this.textoError.Size = new System.Drawing.Size(0, 16);
+            this.textoError.TabIndex = 10;
             // 
             // listView1
             // 
-            this.listView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listView1.Location = new System.Drawing.Point(3, 3);
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(172, 219);
+            this.listView1.MultiSelect = false;
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(692, 312);
-            this.listView1.TabIndex = 0;
+            this.listView1.Size = new System.Drawing.Size(692, 253);
+            this.listView1.TabIndex = 13;
             this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.List;
             // 
             // EcoScooterObtenerRecorridosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
-            this.Controls.Add(this.tableLayoutPanel2);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.textoError);
+            this.Controls.Add(this.buttonAtras);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "EcoScooterObtenerRecorridosForm";
             this.Text = "EcoScooter ";
-            this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
-            this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,7 +173,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Button buttonAtras;
+        private System.Windows.Forms.Label textoError;
         private System.Windows.Forms.ListView listView1;
     }
 }

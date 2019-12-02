@@ -46,28 +46,31 @@ namespace GUIEcoScotter
 
         protected override void Button2_Click(object sender, EventArgs e)
         {
-            if (listViewEstaciones.FocusedItem == null)
+            try
             {
-                throw new ServiceException("Debes de seleccionar una estación.");
-            }
-            else
-            {
-
-                String estacion = listViewEstaciones.FocusedItem.ToString();
-                Console.WriteLine(estacion + "\n");
-                estacion = estacion.Substring(estacion.IndexOf("ID: "));
-                Console.WriteLine(estacion + "\n");
-                estacion = estacion.Substring(4, estacion.IndexOf(".") - 4);
-                Console.WriteLine(estacion + "\n");
-                try
+                if (listViewEstaciones.FocusedItem == null)
                 {
-                    ecoService.ReturnScooter(estacion);
-                    Close();
+                    throw new ServiceException("Debes de seleccionar una estación.");
                 }
-                catch(ServiceException ex) {
-                    labelError.Text = ex.Message;   
+                else
+                {
+
+                    String estacion = listViewEstaciones.FocusedItem.ToString();
+                    Console.WriteLine(estacion + "\n");
+                    estacion = estacion.Substring(estacion.IndexOf("ID: "));
+                    Console.WriteLine(estacion + "\n");
+                    estacion = estacion.Substring(4, estacion.IndexOf(".") - 4);
+                    Console.WriteLine(estacion + "\n");
+
+                    ecoService.ReturnScooter(estacion);
+                    this.Close();
                 }
             }
+            catch (ServiceException ex)
+            {
+                labelError.Text = ex.Message;
+            }
+            
         }
 
         private void label2_Click(object sender, EventArgs e)

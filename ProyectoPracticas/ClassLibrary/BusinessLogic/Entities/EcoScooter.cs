@@ -352,7 +352,7 @@ namespace EcoScooter.Entities
 
             //En la precondició ya comprobem que el usuari está logueat y es un usuari (podem downcastear)
             //Si la data inicial es major que la final, ja ni seguim
-            if (startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecte"); }
+            if (startDate.CompareTo(endDate) > 0) { throw new ServiceException("El intervalo es incorrecto"); }
             //Guardem els rentals de ixe usuari
             List<Rental> llistaRentals = (List<Rental>)(u).Rentals;
             List<String> descripcions = new List<String>();
@@ -365,7 +365,7 @@ namespace EcoScooter.Entities
                 }
             }
             //Si no hem trobat ninguna ruta
-            if (descripcions.Count == 0) { throw new ServiceException("No hi han rutes en ixe interval"); }
+            if (descripcions.Count == 0) { throw new ServiceException("No hay rutas en ese intervalo"); }
 
             return descripcions;
         }

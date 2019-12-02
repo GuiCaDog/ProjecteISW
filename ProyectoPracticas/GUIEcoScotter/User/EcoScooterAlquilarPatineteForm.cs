@@ -46,29 +46,45 @@ namespace GUIEcoScotter
         }
         protected override void Button2_Click(object sender, EventArgs e)
         {
-            if (listViewEstaciones.FocusedItem == null)
-            {
-                throw new ServiceException("Debes de seleccionar una estación.");
-            }
-
-            String estacion = listViewEstaciones.FocusedItem.ToString();
-            Console.WriteLine(estacion + "\n");
-            estacion = estacion.Substring(estacion.IndexOf("ID: "));
-            Console.WriteLine(estacion + "\n");
-            estacion = estacion.Substring(4, estacion.IndexOf(".")-4);
-            Console.WriteLine(estacion + "\n");
-            
-
             try
             {
-                ecoService.RentScooter(estacion);
-                Close();
-            }
+                if (listViewEstaciones.FocusedItem == null)
+                {
+                    throw new ServiceException("Debes de seleccionar una estación.");
+                }
+
+                String estacion = listViewEstaciones.FocusedItem.ToString();
+                Console.WriteLine(estacion + "\n");
+                estacion = estacion.Substring(estacion.IndexOf("ID: "));
+                Console.WriteLine(estacion + "\n");
+                estacion = estacion.Substring(4, estacion.IndexOf(".")-4);
+                Console.WriteLine(estacion + "\n");
+            
+
+            
+                    ecoService.RentScooter(estacion);
+                    Close();
+                }
             catch(ServiceException ex)
             {
                 textError.Text = ex.Message;
             }
             
+        }
+
+        private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

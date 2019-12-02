@@ -36,7 +36,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textHora = new System.Windows.Forms.TextBox();
             this.dateTimePickerDia = new System.Windows.Forms.DateTimePicker();
-            this.errorLabel = new System.Windows.Forms.Label();
+            this.textError = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,6 +67,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(650, 372);
             this.tableLayoutPanel1.TabIndex = 4;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
@@ -124,28 +125,30 @@
             this.dateTimePickerDia.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerDia.TabIndex = 5;
             // 
-            // errorLabel
+            // textError
             // 
-            this.errorLabel.AutoSize = true;
-            this.errorLabel.ForeColor = System.Drawing.Color.DarkRed;
-            this.errorLabel.Location = new System.Drawing.Point(332, 489);
-            this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(0, 13);
-            this.errorLabel.TabIndex = 5;
+            this.textError.AutoSize = true;
+            this.textError.BackColor = System.Drawing.SystemColors.Control;
+            this.textError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textError.ForeColor = System.Drawing.Color.Red;
+            this.textError.Location = new System.Drawing.Point(199, 485);
+            this.textError.Name = "textError";
+            this.textError.Size = new System.Drawing.Size(0, 16);
+            this.textError.TabIndex = 12;
             // 
             // EcoScooterRegistrarIncidenteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
-            this.Controls.Add(this.errorLabel);
+            this.Controls.Add(this.textError);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "EcoScooterRegistrarIncidenteForm";
             this.Text = "EcoScooter ";
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
-            this.Controls.SetChildIndex(this.errorLabel, 0);
+            this.Controls.SetChildIndex(this.textError, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -163,7 +166,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textHora;
         private System.Windows.Forms.DateTimePicker dateTimePickerDia;
-        private System.Windows.Forms.Label errorLabel;
+        private System.Windows.Forms.Label textError;
     }
 }
 
