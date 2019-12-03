@@ -204,6 +204,11 @@
       <Name>EcoScooterClassLibrary</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Employee\StyleSheet1.css" />
+    <Content Include="LoginRegister\StyleSheet1.css" />
+    <Content Include="StyleSheet1.css" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
