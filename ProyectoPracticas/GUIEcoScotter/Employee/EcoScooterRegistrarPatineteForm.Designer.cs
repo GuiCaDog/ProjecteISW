@@ -130,7 +130,7 @@
             this.listViewEstaciones.Size = new System.Drawing.Size(604, 168);
             this.listViewEstaciones.TabIndex = 11;
             this.listViewEstaciones.UseCompatibleStateImageBehavior = false;
-            this.listViewEstaciones.View = System.Windows.Forms.View.Details;
+            this.listViewEstaciones.View = System.Windows.Forms.View.List;
             this.listViewEstaciones.SelectedIndexChanged += new System.EventHandler(this.ListViewEstaciones_SelectedIndexChanged);
             // 
             // labelEstaciones

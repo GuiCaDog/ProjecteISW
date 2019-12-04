@@ -326,9 +326,13 @@ namespace EcoScooter.Entities
             }
             //Pre: es usuario y esta logueado
             Rental r = (Rental)(u).findRentalById(rentalId);
-            if (r != null)
+            if (r != null) 
             {
                 startDate = r.StartDate;
+                if(r.EndDate == null)
+                {
+                    throw new ServiceException("El usuario no ha devuelto el Scooter actual");
+                }
                 endDate = (DateTime)(r.EndDate);
                 price = (decimal)r.Price;
                 // originStationId = int.Parse(r.OriginStation.Id);
