@@ -8,10 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Library", "Library", "{FC79734A-CF75-4969-A6FF-F7C5286CD656}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{B8F17DB0-E1AE-4D91-A97A-D23E98E90FA1}"
-	ProjectSection(SolutionItems) = preProject
-		CSS.css = CSS.css
-		StyleSheet1.css = StyleSheet1.css
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{5D400B17-E343-456E-BFAE-32DC28E9004F}"
 EndProject
