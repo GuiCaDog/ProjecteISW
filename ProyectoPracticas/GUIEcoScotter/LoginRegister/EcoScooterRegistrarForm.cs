@@ -51,7 +51,12 @@ namespace GUIEcoScotter
                     int telefono = int.Parse(textBoxTelefono.Text);
                     DateTime birth = dateTimePickerNac.Value;
 
+                    if (textBoxNumeroTarjeta.Text.Length != 8)
+                    {
+                        throw new System.FormatException();
+                    }
                     int numeroTarjeta = int.Parse(textBoxNumeroTarjeta.Text);
+                    
                     int cVV = int.Parse(textBoxCVV.Text);
                     DateTime caducidad = dateTimePickerCaducidad.Value;
 
@@ -73,6 +78,9 @@ namespace GUIEcoScotter
             catch (ServiceException exc)
             {
                 mistakes.Text = exc.Message;
+            }
+            catch (System.FormatException){
+                mistakes.Text = "La tarjeta solo contiene 8 números";
             }
             catch (System.OverflowException) { }
         }

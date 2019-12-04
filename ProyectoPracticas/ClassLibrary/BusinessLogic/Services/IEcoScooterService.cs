@@ -94,12 +94,15 @@ namespace EcoScooter.BusinessLogic.Services
         /// <exception cref="ServiceException">Thrown when the station doesn't exist or there isn't an available scooter in the station </exception> 
         void RentScooter(string stationId);
 
+
+
         /// <summary>
-        /// Returns a scooter in rental. The scooter state and the rental price is updated.
+        /// Tells whether there was an incident during the rental. Includes a description of the incident and which day and hour happend
         /// </summary>
-        /// <param name="stationId"></param>
+        /// <param name="description"></param>
+        /// <param name="incidentHour"></param>
         /// <exception cref="ServiceException">Thrown when the station doesn't exist or if the last rental already was returned</exception> 
-        void ReturnScooter(string stationId);
+        void wasIncident(string description, DateTime incidentHour);
 
         /// <summary>
         /// Register a new incident associated to a rental
