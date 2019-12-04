@@ -34,7 +34,9 @@ namespace GUIEcoScotter
                 String hora = textHora.Text;
                 DateTime dia = dateTimePickerDia.Value;
                 //dia.AddHours(int.Parse(hora));
-                ((EcoScooterService)ecoService).wasIncident(descripcion, dia);
+                //((EcoScooterService)ecoService).wasIncident(descripcion, dia);
+                ecoService.wasIncident(descripcion, dia);
+
 
                 //dPat.setIncidentInfo(descripcion, dia);
                 this.Close();
