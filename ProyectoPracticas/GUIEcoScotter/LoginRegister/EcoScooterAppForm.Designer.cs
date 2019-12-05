@@ -35,13 +35,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.textLogin = new System.Windows.Forms.TextBox();
-            this.exitButton = new System.Windows.Forms.Button();
             this.textoError = new System.Windows.Forms.Label();
+            this.exitButton = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.OliveDrab;
+            this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -51,20 +58,22 @@
             this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.textBoxPassword, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.textLogin, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(313, 137);
+            this.tableLayoutPanel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(253, 112);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(448, 217);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(510, 265);
             this.tableLayoutPanel1.TabIndex = 7;
+            this.tableLayoutPanel1.TabStop = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(6, 3);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 24);
             this.label1.TabIndex = 2;
@@ -72,8 +81,9 @@
             // 
             // buttonIniciarSesion
             // 
+            this.buttonIniciarSesion.AutoSize = true;
             this.buttonIniciarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonIniciarSesion.Location = new System.Drawing.Point(227, 147);
+            this.buttonIniciarSesion.Location = new System.Drawing.Point(259, 180);
             this.buttonIniciarSesion.Name = "buttonIniciarSesion";
             this.buttonIniciarSesion.Size = new System.Drawing.Size(132, 31);
             this.buttonIniciarSesion.TabIndex = 1;
@@ -84,7 +94,7 @@
             // buttonRegistrarse
             // 
             this.buttonRegistrarse.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.buttonRegistrarse.Location = new System.Drawing.Point(3, 147);
+            this.buttonRegistrarse.Location = new System.Drawing.Point(6, 180);
             this.buttonRegistrarse.Name = "buttonRegistrarse";
             this.buttonRegistrarse.Size = new System.Drawing.Size(135, 31);
             this.buttonRegistrarse.TabIndex = 6;
@@ -96,7 +106,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.Location = new System.Drawing.Point(3, 72);
+            this.label2.Location = new System.Drawing.Point(6, 90);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 24);
             this.label2.TabIndex = 3;
@@ -105,29 +115,19 @@
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Location = new System.Drawing.Point(227, 75);
+            this.textBoxPassword.Location = new System.Drawing.Point(259, 93);
             this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(187, 20);
+            this.textBoxPassword.Size = new System.Drawing.Size(187, 31);
             this.textBoxPassword.TabIndex = 5;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // textLogin
             // 
-            this.textLogin.Location = new System.Drawing.Point(227, 3);
+            this.textLogin.Location = new System.Drawing.Point(259, 6);
             this.textLogin.Name = "textLogin";
-            this.textLogin.Size = new System.Drawing.Size(187, 20);
+            this.textLogin.Size = new System.Drawing.Size(187, 31);
             this.textLogin.TabIndex = 4;
             this.textLogin.TextChanged += new System.EventHandler(this.TextBoxLogin_TextChanged);
-            // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(35, 545);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(134, 30);
-            this.exitButton.TabIndex = 0;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // textoError
             // 
@@ -138,6 +138,19 @@
             this.textoError.Name = "textoError";
             this.textoError.Size = new System.Drawing.Size(0, 16);
             this.textoError.TabIndex = 11;
+            // 
+            // exitButton
+            // 
+            this.exitButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitButton.Image = global::GUIEcoScotter.Properties.Resources.exit;
+            this.exitButton.Location = new System.Drawing.Point(35, 496);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(90, 79);
+            this.exitButton.TabIndex = 0;
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // EcoScooterAppForm
             // 

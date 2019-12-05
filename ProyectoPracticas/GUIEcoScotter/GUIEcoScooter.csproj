@@ -206,8 +206,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\comprobado.png" />
-    <Content Include="images\responder %284%29.png" />
+    <None Include="Resources\exit.png" />
     <None Include="Resources\comprobado.png" />
     <None Include="Resources\responder %284%29.png" />
   </ItemGroup>
