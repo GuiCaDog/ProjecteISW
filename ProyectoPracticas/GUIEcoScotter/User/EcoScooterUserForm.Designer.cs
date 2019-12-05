@@ -32,6 +32,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonAtras = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,6 +43,8 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.button3, 0, 2);
@@ -68,9 +71,9 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(3, 147);
+            this.button3.Location = new System.Drawing.Point(6, 148);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(293, 66);
+            this.button3.Size = new System.Drawing.Size(287, 62);
             this.button3.TabIndex = 5;
             this.button3.Text = "Obtener Recorridos";
             this.button3.UseVisualStyleBackColor = false;
@@ -87,9 +90,9 @@
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 75);
+            this.button2.Location = new System.Drawing.Point(6, 77);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(293, 66);
+            this.button2.Size = new System.Drawing.Size(287, 62);
             this.button2.TabIndex = 4;
             this.button2.Text = "Devolver Patinete";
             this.button2.UseVisualStyleBackColor = false;
@@ -106,19 +109,33 @@
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Location = new System.Drawing.Point(6, 6);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(293, 66);
+            this.button1.Size = new System.Drawing.Size(287, 62);
             this.button1.TabIndex = 3;
             this.button1.Text = "Alquilar Patinete";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.ButtonAlquilarPatinete);
+            // 
+            // buttonAtras
+            // 
+            this.buttonAtras.BackgroundImage = global::GUIEcoScotter.Properties.Resources.responder__4_;
+            this.buttonAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAtras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.buttonAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAtras.Location = new System.Drawing.Point(41, 494);
+            this.buttonAtras.Name = "buttonAtras";
+            this.buttonAtras.Size = new System.Drawing.Size(75, 75);
+            this.buttonAtras.TabIndex = 7;
+            this.buttonAtras.UseVisualStyleBackColor = true;
             // 
             // EcoScooterUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.buttonAtras);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EcoScooterUserForm";
             this.Text = "EcoScooter ";
@@ -134,6 +151,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonAtras;
     }
 }
 

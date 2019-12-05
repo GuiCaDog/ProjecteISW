@@ -53,6 +53,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
@@ -77,7 +79,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 223);
+            this.label3.Location = new System.Drawing.Point(6, 222);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 25);
             this.label3.TabIndex = 2;
@@ -87,7 +89,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(6, 3);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(131, 25);
             this.label2.TabIndex = 0;
@@ -97,17 +99,17 @@
             // 
             this.textDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textDescripcion.Location = new System.Drawing.Point(198, 3);
+            this.textDescripcion.Location = new System.Drawing.Point(201, 6);
             this.textDescripcion.Multiline = true;
             this.textDescripcion.Name = "textDescripcion";
-            this.textDescripcion.Size = new System.Drawing.Size(449, 217);
+            this.textDescripcion.Size = new System.Drawing.Size(443, 210);
             this.textDescripcion.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 297);
+            this.label4.Location = new System.Drawing.Point(6, 297);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 25);
             this.label4.TabIndex = 3;
@@ -116,7 +118,7 @@
             // textHora
             // 
             this.textHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textHora.Location = new System.Drawing.Point(198, 226);
+            this.textHora.Location = new System.Drawing.Point(201, 225);
             this.textHora.Name = "textHora";
             this.textHora.Size = new System.Drawing.Size(100, 29);
             this.textHora.TabIndex = 4;
@@ -124,9 +126,9 @@
             // dateTimePickerDia
             // 
             this.dateTimePickerDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDia.Location = new System.Drawing.Point(198, 300);
+            this.dateTimePickerDia.Location = new System.Drawing.Point(201, 300);
             this.dateTimePickerDia.Name = "dateTimePickerDia";
-            this.dateTimePickerDia.Size = new System.Drawing.Size(449, 29);
+            this.dateTimePickerDia.Size = new System.Drawing.Size(443, 29);
             this.dateTimePickerDia.TabIndex = 5;
             // 
             // textError

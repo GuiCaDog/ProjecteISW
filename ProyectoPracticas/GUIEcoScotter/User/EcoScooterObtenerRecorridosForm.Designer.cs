@@ -55,6 +55,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.tableLayoutPanel1.ColumnCount = 4;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.06229F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.76784F));
@@ -75,9 +77,9 @@
             // 
             this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(548, 3);
+            this.dateTimePicker2.Location = new System.Drawing.Point(551, 6);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(332, 26);
+            this.dateTimePicker2.Size = new System.Drawing.Size(326, 26);
             this.dateTimePicker2.TabIndex = 9;
             this.dateTimePicker2.ValueChanged += new System.EventHandler(this.Fecha_Seleccionada);
             // 
@@ -86,9 +88,9 @@
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(6, 3);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 68);
+            this.label2.Size = new System.Drawing.Size(124, 62);
             this.label2.TabIndex = 5;
             this.label2.Text = "Data inicio:";
             // 
@@ -97,9 +99,9 @@
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(441, 0);
+            this.label3.Location = new System.Drawing.Point(443, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(101, 68);
+            this.label3.Size = new System.Drawing.Size(99, 62);
             this.label3.TabIndex = 7;
             this.label3.Text = "Data fin:";
             // 
@@ -107,9 +109,9 @@
             // 
             this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(135, 3);
+            this.dateTimePicker1.Location = new System.Drawing.Point(139, 6);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(300, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(295, 26);
             this.dateTimePicker1.TabIndex = 8;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.Fecha_Seleccionada);
             // 

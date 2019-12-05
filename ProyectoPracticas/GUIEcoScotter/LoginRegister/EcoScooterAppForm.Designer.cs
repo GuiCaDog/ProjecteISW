@@ -46,7 +46,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.OliveDrab;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DarkCyan;
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.tableLayoutPanel1.ColumnCount = 2;

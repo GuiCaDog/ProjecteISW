@@ -51,6 +51,8 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 65.97938F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.02062F));
@@ -67,7 +69,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Location = new System.Drawing.Point(6, 3);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(246, 75);
             this.label3.TabIndex = 8;
@@ -77,15 +79,16 @@
             // Si
             // 
             this.Si.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Si.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Si.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Si.FlatAppearance.BorderSize = 4;
             this.Si.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
             this.Si.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.Si.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Si.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.Si.Location = new System.Drawing.Point(286, 3);
+            this.Si.Location = new System.Drawing.Point(286, 6);
             this.Si.Name = "Si";
-            this.Si.Size = new System.Drawing.Size(141, 97);
+            this.Si.Size = new System.Drawing.Size(138, 91);
             this.Si.TabIndex = 9;
             this.Si.Text = "Sí";
             this.Si.UseVisualStyleBackColor = false;
