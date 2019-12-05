@@ -34,6 +34,7 @@
             // 
             // buttonAceptar
             // 
+            this.buttonAceptar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAceptar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.buttonAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -50,7 +51,7 @@
             this.buttonAtras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.buttonAtras.BackgroundImage = global::GUIEcoScotter.Properties.Resources.responder__4_;
             this.buttonAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonAtras.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonAtras.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonAtras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.buttonAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

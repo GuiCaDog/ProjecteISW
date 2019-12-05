@@ -96,6 +96,7 @@
             // textDescripcion
             // 
             this.textDescripcion.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textDescripcion.Location = new System.Drawing.Point(198, 3);
             this.textDescripcion.Multiline = true;
             this.textDescripcion.Name = "textDescripcion";
@@ -114,16 +115,18 @@
             // 
             // textHora
             // 
+            this.textHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textHora.Location = new System.Drawing.Point(198, 226);
             this.textHora.Name = "textHora";
-            this.textHora.Size = new System.Drawing.Size(100, 20);
+            this.textHora.Size = new System.Drawing.Size(100, 29);
             this.textHora.TabIndex = 4;
             // 
             // dateTimePickerDia
             // 
+            this.dateTimePickerDia.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerDia.Location = new System.Drawing.Point(198, 300);
             this.dateTimePickerDia.Name = "dateTimePickerDia";
-            this.dateTimePickerDia.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerDia.Size = new System.Drawing.Size(449, 29);
             this.dateTimePickerDia.TabIndex = 5;
             // 
             // textError

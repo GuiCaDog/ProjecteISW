@@ -76,13 +76,19 @@
             // 
             // Si
             // 
+            this.Si.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.Si.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.Si.FlatAppearance.BorderSize = 4;
+            this.Si.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
+            this.Si.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Si.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Si.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.Si.Location = new System.Drawing.Point(286, 3);
             this.Si.Name = "Si";
             this.Si.Size = new System.Drawing.Size(141, 97);
             this.Si.TabIndex = 9;
             this.Si.Text = "Sí";
-            this.Si.UseVisualStyleBackColor = true;
+            this.Si.UseVisualStyleBackColor = false;
             this.Si.Click += new System.EventHandler(this.Si_Click);
             // 
             // estaciones
@@ -103,6 +109,7 @@
             // listViewEstaciones
             // 
             this.listViewEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewEstaciones.HideSelection = false;
             this.listViewEstaciones.Location = new System.Drawing.Point(3, 3);
             this.listViewEstaciones.Name = "listViewEstaciones";
