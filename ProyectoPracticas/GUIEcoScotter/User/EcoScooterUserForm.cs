@@ -24,7 +24,8 @@ namespace GUIEcoScotter
         {
             EcoScooterAlquilarPatineteForm eAP = new EcoScooterAlquilarPatineteForm(ecoService);
             eAP.Show();
-            //this.Hide();
+            this.Close();
+           // this.Hide();
 
         }
 
@@ -32,6 +33,7 @@ namespace GUIEcoScotter
         {
             EcoScooterDevolverPatineteForm eDP = new EcoScooterDevolverPatineteForm(ecoService);
             eDP.Show();
+            this.Close();
             // this.Hide();
 
         }
@@ -40,7 +42,13 @@ namespace GUIEcoScotter
         {
             EcoScooterObtenerRecorridosForm eOR = new EcoScooterObtenerRecorridosForm(ecoService);
             eOR.Show();
-            // this.Hide();
+            this.Close();
+            //this.Hide();
+        }
+
+        private void ButtonAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

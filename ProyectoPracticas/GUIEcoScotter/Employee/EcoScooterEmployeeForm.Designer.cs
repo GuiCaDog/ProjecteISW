@@ -31,6 +31,7 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.buttonAtras = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -94,11 +95,26 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // buttonAtras
+            // 
+            this.buttonAtras.BackgroundImage = global::GUIEcoScotter.Properties.Resources.responder__4_;
+            this.buttonAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAtras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.buttonAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAtras.Location = new System.Drawing.Point(41, 494);
+            this.buttonAtras.Name = "buttonAtras";
+            this.buttonAtras.Size = new System.Drawing.Size(75, 75);
+            this.buttonAtras.TabIndex = 8;
+            this.buttonAtras.UseVisualStyleBackColor = true;
+            this.buttonAtras.Click += new System.EventHandler(this.ButtonAtras_Click);
+            // 
             // EcoScooterEmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.buttonAtras);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EcoScooterEmployeeForm";
             this.Text = "EcoScooter ";
@@ -113,6 +129,7 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonAtras;
     }
 }
 

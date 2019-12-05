@@ -24,6 +24,7 @@ namespace GUIEcoScotter
         {
             EcoScooterRegistrarEstacionForm eRE = new EcoScooterRegistrarEstacionForm(ecoService);
             eRE.Show();
+            this.Close();
             //this.Hide();
 
         }
@@ -32,7 +33,13 @@ namespace GUIEcoScotter
         {
             EcoScooterRegistrarPatineteForm eRP = new EcoScooterRegistrarPatineteForm(ecoService);
             eRP.Show();
+            this.Close();
             //this.Hide();
+        }
+
+        private void ButtonAtras_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

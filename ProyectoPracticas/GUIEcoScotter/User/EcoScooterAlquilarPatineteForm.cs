@@ -44,6 +44,16 @@ namespace GUIEcoScotter
         {
 
         }
+
+        //Atras
+        protected override void Button1_Click(object sender, EventArgs e)
+        {
+            EcoScooterUserForm eUF = new EcoScooterUserForm(ecoService);
+            eUF.Show();
+            this.Close();
+        }
+
+        //Aceptar
         protected override void Button2_Click(object sender, EventArgs e)
         {
             try

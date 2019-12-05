@@ -49,9 +49,11 @@ namespace GUIEcoScotter
             }
         }
 
-        //Atrás
-        protected override void Button1_Click(Object sender, EventArgs e)
+        //Atras
+        protected override void Button1_Click(object sender, EventArgs e)
         {
+            EcoScooterEmployeeForm eUF = new EcoScooterEmployeeForm(ecoService);
+            eUF.Show();
             this.Close();
         }
 

@@ -129,6 +129,7 @@
             this.buttonAtras.Size = new System.Drawing.Size(75, 75);
             this.buttonAtras.TabIndex = 7;
             this.buttonAtras.UseVisualStyleBackColor = true;
+            this.buttonAtras.Click += new System.EventHandler(this.ButtonAtras_Click);
             // 
             // EcoScooterUserForm
             // 

@@ -41,13 +41,15 @@ namespace GUIEcoScotter
                  textoError.Text = excepcio.Message;
             }
         }
-
+        //Atras
         private void Button1_Click(object sender, EventArgs e)
         {
+            EcoScooterUserForm eUF = new EcoScooterUserForm(ecoService);
+            eUF.Show();
             this.Close();
         }
 
-        private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+            private void TableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

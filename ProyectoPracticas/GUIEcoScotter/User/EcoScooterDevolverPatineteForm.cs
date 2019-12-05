@@ -25,9 +25,14 @@ namespace GUIEcoScotter
                 listViewEstaciones.Items.Add(station);
             }
         }
-
-        private void Button1_Click(object sender, EventArgs e)
+        //Atras
+        protected override void Button1_Click(object sender, EventArgs e)
         {
+            EcoScooterUserForm eUF = new EcoScooterUserForm(ecoService);
+            eUF.Show();
+            this.Close();
+             
+
             //EcoScooterRegistrarIncidenteForm eRI = new EcoScooterRegistrarIncidenteForm(ecoService);
             //if (listViewEstaciones.FocusedItem == null)
             //{
@@ -42,8 +47,12 @@ namespace GUIEcoScotter
             //Console.WriteLine(estacion + "\n");
             //eRI.setRentalId(estacion);
             //this.Hide();
+            
+           
+
         }
 
+        //Aceptar
         protected override void Button2_Click(object sender, EventArgs e)
         {
             try
@@ -95,6 +104,7 @@ namespace GUIEcoScotter
             EcoScooterRegistrarIncidenteForm eRI = new EcoScooterRegistrarIncidenteForm(ecoService);
             //eRI.setParent(this);
             eRI.Show();
+            this.Close();
             
 
         }

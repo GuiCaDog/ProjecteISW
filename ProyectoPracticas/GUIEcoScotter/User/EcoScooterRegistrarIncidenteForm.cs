@@ -21,6 +21,15 @@ namespace GUIEcoScotter
 
 
         }
+
+        //Atras
+        protected override void Button1_Click(object sender, EventArgs e)
+        {
+            EcoScooterDevolverPatineteForm eUF = new EcoScooterDevolverPatineteForm(ecoService);
+            eUF.Show();
+            this.Close();
+        }
+
         //Botó Aceptar
         protected override void Button2_Click(object sender, EventArgs e)
         {
