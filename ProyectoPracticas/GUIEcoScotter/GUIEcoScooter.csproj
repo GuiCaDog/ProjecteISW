@@ -180,6 +180,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Prova.resx">
       <DependentUpon>Prova.cs</DependentUpon>
@@ -203,6 +204,12 @@
       <Project>{5f2c37c2-3f27-4511-a976-effb8c6f1238}</Project>
       <Name>EcoScooterClassLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\comprobado.png" />
+    <Content Include="images\responder %284%29.png" />
+    <None Include="Resources\comprobado.png" />
+    <None Include="Resources\responder %284%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
