@@ -30,7 +30,7 @@ namespace GUIEcoScotter
             foreach (String station in stationList)
             {
                 Console.WriteLine(station);
-                listViewEstaciones.Items.Add(station);
+                //listViewEstaciones.Items.Add(station);
             }
 
         }

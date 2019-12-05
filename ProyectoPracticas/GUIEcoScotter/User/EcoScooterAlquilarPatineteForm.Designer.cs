@@ -28,41 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.listViewEstaciones = new System.Windows.Forms.ListView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textError = new System.Windows.Forms.Label();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.listViewEstaciones = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Dirección = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Coordenadas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.listViewEstaciones, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(236, 111);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(578, 204);
-            this.tableLayoutPanel1.TabIndex = 2;
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
-            // 
-            // listViewEstaciones
-            // 
-            this.listViewEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewEstaciones.HideSelection = false;
-            this.listViewEstaciones.Location = new System.Drawing.Point(3, 3);
-            this.listViewEstaciones.Name = "listViewEstaciones";
-            this.listViewEstaciones.Size = new System.Drawing.Size(572, 198);
-            this.listViewEstaciones.TabIndex = 0;
-            this.listViewEstaciones.UseCompatibleStateImageBehavior = false;
-            this.listViewEstaciones.View = System.Windows.Forms.View.List;
-            this.listViewEstaciones.SelectedIndexChanged += new System.EventHandler(this.ListViewEstaciones_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -97,6 +72,52 @@
             this.textError.Size = new System.Drawing.Size(0, 16);
             this.textError.TabIndex = 11;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.listViewEstaciones, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(236, 111);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(572, 204);
+            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
+            // 
+            // listViewEstaciones
+            // 
+            this.listViewEstaciones.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Dirección,
+            this.Coordenadas});
+            this.listViewEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewEstaciones.HideSelection = false;
+            this.listViewEstaciones.Location = new System.Drawing.Point(3, 3);
+            this.listViewEstaciones.Name = "listViewEstaciones";
+            this.listViewEstaciones.Size = new System.Drawing.Size(566, 198);
+            this.listViewEstaciones.TabIndex = 0;
+            this.listViewEstaciones.UseCompatibleStateImageBehavior = false;
+            this.listViewEstaciones.View = System.Windows.Forms.View.Details;
+            this.listViewEstaciones.SelectedIndexChanged += new System.EventHandler(this.ListViewEstaciones_SelectedIndexChanged);
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // Dirección
+            // 
+            this.Dirección.Text = "Dirección";
+            this.Dirección.Width = 400;
+            // 
+            // Coordenadas
+            // 
+            this.Coordenadas.Text = "Coordenadas";
+            this.Coordenadas.Width = 100;
+            // 
             // EcoScooterAlquilarPatineteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,12 +140,14 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ListView listViewEstaciones;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label textError;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.ListView listViewEstaciones;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Dirección;
+        private System.Windows.Forms.ColumnHeader Coordenadas;
     }
 }
 
