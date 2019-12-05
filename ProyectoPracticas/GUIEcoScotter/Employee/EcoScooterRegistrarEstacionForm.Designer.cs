@@ -55,6 +55,10 @@
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -71,7 +75,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(383, 90);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(382, 90);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // label2
@@ -113,7 +117,7 @@
             this.textBoxCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxCiudad.Location = new System.Drawing.Point(194, 3);
             this.textBoxCiudad.Name = "textBoxCiudad";
-            this.textBoxCiudad.Size = new System.Drawing.Size(186, 26);
+            this.textBoxCiudad.Size = new System.Drawing.Size(185, 26);
             this.textBoxCiudad.TabIndex = 3;
             // 
             // textBoxCalle
@@ -123,7 +127,7 @@
             this.textBoxCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxCalle.Location = new System.Drawing.Point(194, 33);
             this.textBoxCalle.Name = "textBoxCalle";
-            this.textBoxCalle.Size = new System.Drawing.Size(186, 26);
+            this.textBoxCalle.Size = new System.Drawing.Size(185, 26);
             this.textBoxCalle.TabIndex = 4;
             // 
             // textBoxNumero
@@ -133,7 +137,7 @@
             this.textBoxNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxNumero.Location = new System.Drawing.Point(194, 63);
             this.textBoxNumero.Name = "textBoxNumero";
-            this.textBoxNumero.Size = new System.Drawing.Size(186, 26);
+            this.textBoxNumero.Size = new System.Drawing.Size(185, 26);
             this.textBoxNumero.TabIndex = 5;
             // 
             // label1
@@ -170,6 +174,10 @@
             // 
             // tableLayoutPanel2
             // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -183,7 +191,7 @@
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(383, 59);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(382, 58);
             this.tableLayoutPanel2.TabIndex = 6;
             // 
             // label7
@@ -214,7 +222,7 @@
             this.textBoxLatitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxLatitud.Location = new System.Drawing.Point(194, 3);
             this.textBoxLatitud.Name = "textBoxLatitud";
-            this.textBoxLatitud.Size = new System.Drawing.Size(186, 26);
+            this.textBoxLatitud.Size = new System.Drawing.Size(185, 26);
             this.textBoxLatitud.TabIndex = 3;
             // 
             // textBoxLongitud
@@ -224,7 +232,7 @@
             this.textBoxLongitud.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxLongitud.Location = new System.Drawing.Point(194, 32);
             this.textBoxLongitud.Name = "textBoxLongitud";
-            this.textBoxLongitud.Size = new System.Drawing.Size(186, 26);
+            this.textBoxLongitud.Size = new System.Drawing.Size(185, 26);
             this.textBoxLongitud.TabIndex = 4;
             // 
             // label9
@@ -240,6 +248,10 @@
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel3.AutoSize = true;
             this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -250,7 +262,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(383, 31);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(382, 31);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
             // label10
@@ -270,7 +282,7 @@
             this.textBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxId.Location = new System.Drawing.Point(194, 3);
             this.textBoxId.Name = "textBoxId";
-            this.textBoxId.Size = new System.Drawing.Size(186, 26);
+            this.textBoxId.Size = new System.Drawing.Size(185, 26);
             this.textBoxId.TabIndex = 3;
             // 
             // textoError
