@@ -45,17 +45,17 @@ namespace EcoScooter.Entities
             //Comprovar si es major de 16 anys
             if(Birthdate.CompareTo(DateTime.Now.AddYears(-16)) > 0) { 
                 OK = false;
-                reason += "\n Usuari menor de 16 anys";
+                reason += "\n Usuario menor de 16 años";
             }
             //Comprovar si la targeta es vàlida(te 8 posicions)
             if(Number.ToString().Length != 8 || Cw == null)
             {
                 OK = false;
-                reason += "\n Targeta incorrecta";
+                reason += "\n Tarjeta incorrecta";
             }
             if(ExpirationDate.CompareTo(DateTime.Now) < 0) {
                 OK = false;
-                reason += "\n Ha expirat la data";
+                reason += "\n Ha expirado la fecha";
             } 
             //Ja existix ixe usuari?    
             //S'ha fet en ecoScooter perque ahi es on esta la llista de Persones
