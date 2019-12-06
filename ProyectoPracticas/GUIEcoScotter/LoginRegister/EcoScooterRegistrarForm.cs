@@ -36,6 +36,8 @@ namespace GUIEcoScotter
         }
         protected override void Button1_Click(object sender, EventArgs e)
         {
+            //EcoScooterAppForm eAF = new EcoScooterAppForm(ecoService);
+           // eAF.Show();
             this.Close();
         }
         protected override void Button2_Click(object sender, EventArgs e)

@@ -30,6 +30,7 @@
         {
             this.buttonAceptar = new System.Windows.Forms.Button();
             this.buttonAtras = new System.Windows.Forms.Button();
+            this.personLoginLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonAceptar
@@ -63,12 +64,24 @@
             this.buttonAtras.UseVisualStyleBackColor = false;
             this.buttonAtras.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // personLoginLabel
+            // 
+            this.personLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personLoginLabel.Location = new System.Drawing.Point(845, 9);
+            this.personLoginLabel.Name = "personLoginLabel";
+            this.personLoginLabel.Size = new System.Drawing.Size(182, 23);
+            this.personLoginLabel.TabIndex = 2;
+            this.personLoginLabel.Text = "label1";
+            this.personLoginLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.personLoginLabel.Click += new System.EventHandler(this.PersonLoginLabel_Click);
+            // 
             // EcoScooterFormAtrasAceptar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.personLoginLabel);
             this.Controls.Add(this.buttonAceptar);
             this.Controls.Add(this.buttonAtras);
             this.Name = "EcoScooterFormAtrasAceptar";
@@ -81,5 +94,6 @@
 
         private System.Windows.Forms.Button buttonAtras;
         private System.Windows.Forms.Button buttonAceptar;
+        private System.Windows.Forms.Label personLoginLabel;
     }
 }

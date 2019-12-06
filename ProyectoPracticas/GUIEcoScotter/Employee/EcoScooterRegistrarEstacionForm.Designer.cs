@@ -32,9 +32,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxCiudad = new System.Windows.Forms.TextBox();
             this.textBoxCalle = new System.Windows.Forms.TextBox();
             this.textBoxNumero = new System.Windows.Forms.TextBox();
+            this.textBoxCiudad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -111,15 +111,6 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Número:";
             // 
-            // textBoxCiudad
-            // 
-            this.textBoxCiudad.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.textBoxCiudad.Location = new System.Drawing.Point(195, 6);
-            this.textBoxCiudad.Name = "textBoxCiudad";
-            this.textBoxCiudad.Size = new System.Drawing.Size(180, 26);
-            this.textBoxCiudad.TabIndex = 3;
-            // 
             // textBoxCalle
             // 
             this.textBoxCalle.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -137,6 +128,15 @@
             this.textBoxNumero.Name = "textBoxNumero";
             this.textBoxNumero.Size = new System.Drawing.Size(180, 26);
             this.textBoxNumero.TabIndex = 5;
+            // 
+            // textBoxCiudad
+            // 
+            this.textBoxCiudad.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textBoxCiudad.Location = new System.Drawing.Point(195, 6);
+            this.textBoxCiudad.Name = "textBoxCiudad";
+            this.textBoxCiudad.Size = new System.Drawing.Size(180, 26);
+            this.textBoxCiudad.TabIndex = 3;
             // 
             // label1
             // 

@@ -14,9 +14,12 @@ namespace GUIEcoScotter
     public partial class EcoScooterAppForm : EcoScooterFormBase
     {
         //EcoScooterEmployeeForm eF;
+        String usuario;
         public EcoScooterAppForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
+            usuario = "0";
+            
             //eF = new EcoScooterEmployeeForm(ecoService);
             //eF.Show();
             //eF.Visible = false;
@@ -64,7 +67,11 @@ namespace GUIEcoScotter
                     {
                         ecoService.LoginUser(user, password);
                         EcoScooterUserForm eU = new EcoScooterUserForm(ecoService);
+                        usuario = "User: " + user;
+                        eU.setNomUsuari(usuario);                    
                         eU.Show();
+                        
+                        //this.Close();
                     }
                     catch (ServiceException ex)
                     {
@@ -73,6 +80,9 @@ namespace GUIEcoScotter
                             ecoService.LoginEmployee(user, int.Parse(password));
                             EcoScooterEmployeeForm eF = new EcoScooterEmployeeForm(ecoService);
                             eF.Show();
+                            //usuario = "Employee: " + user;
+
+                            //this.Close();
                         }
                         else {
                             textoError.Text = ex.Message;
@@ -96,6 +106,7 @@ namespace GUIEcoScotter
                 //this.Visible = false;
                 //eF.Visible = true;
             }
+            
         }
 
 
@@ -103,6 +114,7 @@ namespace GUIEcoScotter
         {
             EcoScooterRegistrarForm r = new EcoScooterRegistrarForm(ecoService);
             r.Show();
+            //this.Close();
         }
 
         private void EcoScooterAppForm_Load(object sender, EventArgs e)

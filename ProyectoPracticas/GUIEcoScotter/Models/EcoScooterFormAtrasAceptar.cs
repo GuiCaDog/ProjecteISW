@@ -41,5 +41,10 @@ namespace GUIEcoScotter
         {
 
         }
+
+        private void PersonLoginLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -22,6 +22,7 @@ namespace GUIEcoScotter
 
         }
 
+
         //Atras
         protected override void Button1_Click(object sender, EventArgs e)
         {

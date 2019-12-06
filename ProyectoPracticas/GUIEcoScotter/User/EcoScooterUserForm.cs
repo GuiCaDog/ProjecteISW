@@ -13,11 +13,17 @@ namespace GUIEcoScotter
 {
     public partial class EcoScooterUserForm : EcoScooterFormBase
     {
-
+        String usuari;
         public EcoScooterUserForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
 
+        }
+
+        public void setNomUsuari(String s)
+        {
+            personLoginLabel.Text = s;
+            usuari = s;
         }
 
         private void ButtonAlquilarPatinete(object sender, EventArgs e)
@@ -48,7 +54,14 @@ namespace GUIEcoScotter
 
         private void ButtonAtras_Click(object sender, EventArgs e)
         {
+            //EcoScooterAppForm eAF = new EcoScooterAppForm(ecoService);
+           // eAF.Show();
             this.Close();
+        }
+
+        private void PersonLoginLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

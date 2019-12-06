@@ -33,6 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.buttonAtras = new System.Windows.Forms.Button();
+            this.personLoginLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,11 +132,23 @@
             this.buttonAtras.UseVisualStyleBackColor = true;
             this.buttonAtras.Click += new System.EventHandler(this.ButtonAtras_Click);
             // 
+            // personLoginLabel
+            // 
+            this.personLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personLoginLabel.Location = new System.Drawing.Point(845, 9);
+            this.personLoginLabel.Name = "personLoginLabel";
+            this.personLoginLabel.Size = new System.Drawing.Size(182, 23);
+            this.personLoginLabel.TabIndex = 8;
+            this.personLoginLabel.Text = "label1";
+            this.personLoginLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.personLoginLabel.Click += new System.EventHandler(this.PersonLoginLabel_Click);
+            // 
             // EcoScooterUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.personLoginLabel);
             this.Controls.Add(this.buttonAtras);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EcoScooterUserForm";
@@ -153,6 +166,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonAtras;
+        private System.Windows.Forms.Label personLoginLabel;
     }
 }
 
