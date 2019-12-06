@@ -11,7 +11,7 @@ using EcoScooter.BusinessLogic.Services;
 
 namespace GUIEcoScotter
 {
-    public partial class Prova :  EcoScooterFormBase //EcoScooterApp
+    public partial class Prova : EcoScooterFormAtrasAceptar
     {
 
         public Prova(IEcoScooterService ecoService)

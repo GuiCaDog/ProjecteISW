@@ -144,6 +144,7 @@
             this.Name = "EcoScooterDevolverPatineteForm";
             this.Text = "EcoScooter ";
             this.Load += new System.EventHandler(this.EcoScooterDevolverPatineteForm_Load);
+            this.Controls.SetChildIndex(this.personLoginLabel, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.estaciones, 0);

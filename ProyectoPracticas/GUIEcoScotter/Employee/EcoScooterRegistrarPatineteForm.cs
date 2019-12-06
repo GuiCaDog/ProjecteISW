@@ -14,7 +14,7 @@ namespace GUIEcoScotter
 {
     public partial class EcoScooterRegistrarPatineteForm : EcoScooterFormAtrasAceptar
     {
-
+        String usuari;
         public EcoScooterRegistrarPatineteForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
@@ -27,6 +27,12 @@ namespace GUIEcoScotter
             listViewEstaciones.Visible = false;
             labelEstaciones.Visible = false;
 
+        }
+
+        public void setNomUsuari(String s)
+        {
+            personLoginLabel.Text = s;
+            usuari = s;
         }
         //Aceptar
         protected override void Button2_Click(object sender, EventArgs e)
@@ -72,6 +78,7 @@ namespace GUIEcoScotter
         protected override void Button1_Click(object sender, EventArgs e)
         {
             EcoScooterEmployeeForm eUF = new EcoScooterEmployeeForm(ecoService);
+            eUF.setNomUsuari(usuari);
             eUF.Show();
             this.Close();
         }

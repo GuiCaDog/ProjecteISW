@@ -39,6 +39,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.personLoginLabel = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,11 +160,22 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
             // 
+            // personLoginLabel
+            // 
+            this.personLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personLoginLabel.Location = new System.Drawing.Point(845, 9);
+            this.personLoginLabel.Name = "personLoginLabel";
+            this.personLoginLabel.Size = new System.Drawing.Size(182, 23);
+            this.personLoginLabel.TabIndex = 14;
+            this.personLoginLabel.Text = "label1";
+            this.personLoginLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // EcoScooterObtenerRecorridosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.personLoginLabel);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.textoError);
             this.Controls.Add(this.buttonAtras);
@@ -191,6 +203,7 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Label personLoginLabel;
     }
 }
 

@@ -14,10 +14,17 @@ namespace GUIEcoScotter
     public partial class EcoScooterObtenerRecorridosForm : EcoScooterFormBase
     {
         private List<String> routeList;
+        String usuari;
 
         public EcoScooterObtenerRecorridosForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
+        }
+
+        public void setNomUsuari(String s)
+        {
+            personLoginLabel.Text = s;
+            usuari = s;
         }
 
         private void Fecha_Seleccionada(object sender, EventArgs e)
@@ -45,6 +52,7 @@ namespace GUIEcoScotter
         private void Button1_Click(object sender, EventArgs e)
         {
             EcoScooterUserForm eUF = new EcoScooterUserForm(ecoService);
+            eUF.setNomUsuari(usuari);
             eUF.Show();
             this.Close();
         }

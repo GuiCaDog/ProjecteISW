@@ -183,6 +183,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EcoScooterRegistrarPatineteForm";
             this.Text = "EcoScooter ";
+            this.Controls.SetChildIndex(this.personLoginLabel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.listViewEstaciones, 0);

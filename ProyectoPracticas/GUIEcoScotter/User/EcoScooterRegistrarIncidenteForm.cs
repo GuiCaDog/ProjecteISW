@@ -15,11 +15,16 @@ namespace GUIEcoScotter
     public partial class EcoScooterRegistrarIncidenteForm : EcoScooterFormAtrasAceptar
     {
         //private EcoScooterDevolverPatineteForm dPat;
+        String usuari;
         public EcoScooterRegistrarIncidenteForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
 
-
+        }
+        public void setNomUsuari(String s)
+        {
+            personLoginLabel.Text = s;
+            usuari = s;
         }
 
 
@@ -27,6 +32,7 @@ namespace GUIEcoScotter
         protected override void Button1_Click(object sender, EventArgs e)
         {
             EcoScooterDevolverPatineteForm eUF = new EcoScooterDevolverPatineteForm(ecoService);
+            eUF.setNomUsuari(usuari);
             eUF.Show();
             this.Close();
         }

@@ -309,6 +309,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EcoScooterRegistrarEstacionForm";
             this.Text = "EcoScooter ";
+            this.Controls.SetChildIndex(this.personLoginLabel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label5, 0);

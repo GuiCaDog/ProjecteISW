@@ -15,6 +15,7 @@ namespace GUIEcoScotter
     {
         //private string description;
         //private DateTime dia;
+        String usuari;
         public EcoScooterDevolverPatineteForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
@@ -25,10 +26,17 @@ namespace GUIEcoScotter
                 listViewEstaciones.Items.Add(station);
             }
         }
+
+        public void setNomUsuari(String s)
+        {
+            personLoginLabel.Text = s;
+            usuari = s;
+        }
         //Atras
         protected override void Button1_Click(object sender, EventArgs e)
         {
             EcoScooterUserForm eUF = new EcoScooterUserForm(ecoService);
+            eUF.setNomUsuari(usuari);
             eUF.Show();
             this.Close();
              
@@ -102,6 +110,7 @@ namespace GUIEcoScotter
         private void Si_Click(object sender, EventArgs e)
         {
             EcoScooterRegistrarIncidenteForm eRI = new EcoScooterRegistrarIncidenteForm(ecoService);
+            eRI.setNomUsuari(usuari);
             //eRI.setParent(this);
             eRI.Show();
             this.Close();
