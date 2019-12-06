@@ -84,7 +84,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(572, 204);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(670, 204);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.TableLayoutPanel1_Paint);
             // 
@@ -96,10 +96,12 @@
             this.Coordenadas});
             this.listViewEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewEstaciones.FullRowSelect = true;
             this.listViewEstaciones.HideSelection = false;
             this.listViewEstaciones.Location = new System.Drawing.Point(3, 3);
+            this.listViewEstaciones.MultiSelect = false;
             this.listViewEstaciones.Name = "listViewEstaciones";
-            this.listViewEstaciones.Size = new System.Drawing.Size(566, 198);
+            this.listViewEstaciones.Size = new System.Drawing.Size(664, 198);
             this.listViewEstaciones.TabIndex = 0;
             this.listViewEstaciones.UseCompatibleStateImageBehavior = false;
             this.listViewEstaciones.View = System.Windows.Forms.View.Details;
@@ -117,7 +119,7 @@
             // Coordenadas
             // 
             this.Coordenadas.Text = "Coordenadas";
-            this.Coordenadas.Width = 100;
+            this.Coordenadas.Width = 200;
             // 
             // EcoScooterAlquilarPatineteForm
             // 
