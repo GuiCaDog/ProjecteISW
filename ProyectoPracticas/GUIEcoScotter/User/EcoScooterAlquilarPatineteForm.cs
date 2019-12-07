@@ -74,7 +74,13 @@ namespace GUIEcoScotter
         {
             try
             {
-                if (listViewEstaciones.FocusedItem == null)
+                if (ecoService.scooterPendiente())
+                {
+                    textError.Text = "El usuario tiene un Scooter";
+                    return;
+
+                }
+                else if (listViewEstaciones.FocusedItem == null)
                 {
                     throw new ServiceException("Debes de seleccionar una estación.");
                 }
@@ -90,8 +96,9 @@ namespace GUIEcoScotter
                 //Console.WriteLine(estacion + "\n");
                 //estacion = estacion.Substring(4, estacion.IndexOf(".")-4);
                 //Console.WriteLine(estacion + "\n");
+                
                 ecoService.RentScooter(id);
-
+                
                 EcoScooterUserForm eUF = new EcoScooterUserForm(ecoService);
                 eUF.setNomUsuari(usuari);
                 eUF.Show();

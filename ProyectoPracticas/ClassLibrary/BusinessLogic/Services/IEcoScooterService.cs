@@ -160,5 +160,9 @@ namespace EcoScooter.BusinessLogic.Services
         List<Incident> GetIncidents();
         int newIncidentID(List<Incident> incidents);
         Station findStationByID(string id);
+
+        void desconectar();
+
+        bool scooterPendiente();
     }
 }

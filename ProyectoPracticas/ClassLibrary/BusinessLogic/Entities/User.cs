@@ -70,9 +70,11 @@ namespace EcoScooter.Entities
             last = last.AddYears(-2000);
             foreach(Rental r in Rentals)
             {
+                Console.WriteLine(r.EndDate);
                 //Si r es posterior a last
-                if(r.StartDate.CompareTo(last) > 0)
+                if (r.StartDate.CompareTo(last) > 0)
                 {
+                    
                     last = r.StartDate;
                     res = r;
                 }

@@ -225,7 +225,7 @@ namespace EcoScooter.Entities
                 }
                 else
                 {
-                    throw new ServiceException("No hi ha patinets disponibles a l'estació");
+                    throw new ServiceException("No hay patinetes disponibles en la estación");
                 }
             }
             else
@@ -582,6 +582,20 @@ namespace EcoScooter.Entities
                 estacionsString.Add(s.ToString());
             }
             return estacionsString;
+        }
+
+        public bool scooterPendiente(User u)
+        {
+            Rental r = u.getLastRental();
+            if (r != null)
+            {
+                Console.WriteLine("Rental:"+r.ToString()+"....data: "+r.EndDate+"....dest"+r.DestinationStation);
+                return r.DestinationStation == null;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

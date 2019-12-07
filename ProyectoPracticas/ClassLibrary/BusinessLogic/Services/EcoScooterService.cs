@@ -490,5 +490,16 @@ namespace EcoScooter.BusinessLogic.Services
         {
             return ecoScooter.findStationByID(id);
         }
+
+        public void desconectar()
+        {
+            personaLogejada = null;
+        }
+
+        public bool scooterPendiente()
+        {
+            
+            return ecoScooter.scooterPendiente((User)personaLogejada);
+        }
     }
 }
