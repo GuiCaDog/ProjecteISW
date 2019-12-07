@@ -16,16 +16,8 @@ namespace GUIEcoScotter
         
         public EcoScooterRegistrarForm(IEcoScooterService ecoService) : base(ecoService)
         {
-            
             InitializeComponent();
-            setLabelInvisible(); //No funciona
-            
-        }
 
-        public void setLabelInvisible() //No funciona
-        {
-            personLoginLabel.Visible = false;
-            personLoginLabel.Text = "hola";
         }
 
         private void label2_Click(object sender, EventArgs e)

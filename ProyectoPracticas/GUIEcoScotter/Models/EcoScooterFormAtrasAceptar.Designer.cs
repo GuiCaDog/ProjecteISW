@@ -66,7 +66,6 @@
             // 
             // personLoginLabel
             // 
-            this.personLoginLabel.AccessibleDescription = "";
             this.personLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.personLoginLabel.Location = new System.Drawing.Point(845, 9);
             this.personLoginLabel.Name = "personLoginLabel";
@@ -95,6 +94,6 @@
 
         private System.Windows.Forms.Button buttonAtras;
         private System.Windows.Forms.Button buttonAceptar;
-        public System.Windows.Forms.Label personLoginLabel;
+        protected System.Windows.Forms.Label personLoginLabel;
     }
 }

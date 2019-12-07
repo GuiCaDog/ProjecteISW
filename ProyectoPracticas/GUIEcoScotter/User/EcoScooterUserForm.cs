@@ -39,7 +39,7 @@ namespace GUIEcoScotter
         private void ButtonDevolverPatinete(object sender, EventArgs e)
         {
             EcoScooterDevolverPatineteForm eDP = new EcoScooterDevolverPatineteForm(ecoService);
-            eDP.setNomUsuari(usuari);
+            //eDP.setNomUsuari(usuari);
             eDP.Show();
             this.Close();
             // this.Hide();
@@ -49,7 +49,7 @@ namespace GUIEcoScotter
         private void ButtonObtenerRecorridos(object sender, EventArgs e)
         {
             EcoScooterObtenerRecorridosForm eOR = new EcoScooterObtenerRecorridosForm(ecoService);
-            eOR.setNomUsuari(usuari);
+            //eOR.setNomUsuari(usuari);
             eOR.Show();
             this.Close();
             //this.Hide();

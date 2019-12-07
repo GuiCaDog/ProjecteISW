@@ -114,7 +114,7 @@ namespace GUIEcoScotter
         private void ButtonRegistrarse_Click(object sender, EventArgs e)
         {
             EcoScooterRegistrarForm r = new EcoScooterRegistrarForm(ecoService);
-            r.setLabelInvisible(); //No funciona
+            //r.setLabelInvisible(); //No funciona
             r.Show();
             //this.Close();
         }

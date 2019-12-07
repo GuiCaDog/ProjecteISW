@@ -67,7 +67,7 @@
             this.textError.BackColor = System.Drawing.SystemColors.Control;
             this.textError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textError.ForeColor = System.Drawing.Color.Red;
-            this.textError.Location = new System.Drawing.Point(236, 355);
+            this.textError.Location = new System.Drawing.Point(147, 370);
             this.textError.Name = "textError";
             this.textError.Size = new System.Drawing.Size(0, 16);
             this.textError.TabIndex = 11;
@@ -80,7 +80,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.listViewEstaciones, 0, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(236, 111);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(147, 148);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -90,6 +90,7 @@
             // 
             // listViewEstaciones
             // 
+            this.listViewEstaciones.AutoArrange = false;
             this.listViewEstaciones.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Dirección,
@@ -97,6 +98,7 @@
             this.listViewEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listViewEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewEstaciones.FullRowSelect = true;
+            this.listViewEstaciones.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.listViewEstaciones.HideSelection = false;
             this.listViewEstaciones.Location = new System.Drawing.Point(3, 3);
             this.listViewEstaciones.MultiSelect = false;
@@ -132,6 +134,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EcoScooterAlquilarPatineteForm";
             this.Text = "EcoScooter ";
+            this.Controls.SetChildIndex(this.personLoginLabel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);

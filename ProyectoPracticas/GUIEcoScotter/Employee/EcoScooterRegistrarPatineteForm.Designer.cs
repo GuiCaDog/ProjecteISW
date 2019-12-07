@@ -34,11 +34,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
-            this.listViewEstaciones = new System.Windows.Forms.ListView();
             this.labelEstaciones = new System.Windows.Forms.Label();
             this.textoError1 = new System.Windows.Forms.Label();
             this.textoError2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.listViewEstaciones = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Dirección = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Coordenadas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -64,7 +69,7 @@
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxEstado, 1, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(210, 133);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(210, 137);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -120,28 +125,11 @@
             this.comboBoxEstado.Text = "Mantenimiento";
             this.comboBoxEstado.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstado_SelectedIndexChanged);
             // 
-            // listViewEstaciones
-            // 
-            this.listViewEstaciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listViewEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.listViewEstaciones.FullRowSelect = true;
-            this.listViewEstaciones.GridLines = true;
-            this.listViewEstaciones.HideSelection = false;
-            this.listViewEstaciones.Location = new System.Drawing.Point(210, 325);
-            this.listViewEstaciones.MultiSelect = false;
-            this.listViewEstaciones.Name = "listViewEstaciones";
-            this.listViewEstaciones.Size = new System.Drawing.Size(604, 168);
-            this.listViewEstaciones.TabIndex = 11;
-            this.listViewEstaciones.UseCompatibleStateImageBehavior = false;
-            this.listViewEstaciones.View = System.Windows.Forms.View.List;
-            this.listViewEstaciones.SelectedIndexChanged += new System.EventHandler(this.ListViewEstaciones_SelectedIndexChanged);
-            // 
             // labelEstaciones
             // 
             this.labelEstaciones.AutoSize = true;
             this.labelEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.labelEstaciones.Location = new System.Drawing.Point(213, 298);
+            this.labelEstaciones.Location = new System.Drawing.Point(175, 278);
             this.labelEstaciones.Name = "labelEstaciones";
             this.labelEstaciones.Size = new System.Drawing.Size(107, 24);
             this.labelEstaciones.TabIndex = 12;
@@ -154,7 +142,7 @@
             this.textoError1.BackColor = System.Drawing.SystemColors.Control;
             this.textoError1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textoError1.ForeColor = System.Drawing.Color.Red;
-            this.textoError1.Location = new System.Drawing.Point(207, 250);
+            this.textoError1.Location = new System.Drawing.Point(207, 229);
             this.textoError1.Name = "textoError1";
             this.textoError1.Size = new System.Drawing.Size(0, 16);
             this.textoError1.TabIndex = 13;
@@ -165,20 +153,69 @@
             this.textoError2.BackColor = System.Drawing.SystemColors.Control;
             this.textoError2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textoError2.ForeColor = System.Drawing.Color.Red;
-            this.textoError2.Location = new System.Drawing.Point(207, 500);
+            this.textoError2.Location = new System.Drawing.Point(173, 482);
             this.textoError2.Name = "textoError2";
             this.textoError2.Size = new System.Drawing.Size(0, 16);
             this.textoError2.TabIndex = 14;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.listViewEstaciones, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(176, 305);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(670, 169);
+            this.tableLayoutPanel2.TabIndex = 15;
+            // 
+            // listViewEstaciones
+            // 
+            this.listViewEstaciones.AutoArrange = false;
+            this.listViewEstaciones.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ID,
+            this.Dirección,
+            this.Coordenadas});
+            this.listViewEstaciones.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listViewEstaciones.FullRowSelect = true;
+            this.listViewEstaciones.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.listViewEstaciones.HideSelection = false;
+            this.listViewEstaciones.Location = new System.Drawing.Point(3, 3);
+            this.listViewEstaciones.MultiSelect = false;
+            this.listViewEstaciones.Name = "listViewEstaciones";
+            this.listViewEstaciones.Size = new System.Drawing.Size(664, 163);
+            this.listViewEstaciones.TabIndex = 0;
+            this.listViewEstaciones.UseCompatibleStateImageBehavior = false;
+            this.listViewEstaciones.View = System.Windows.Forms.View.Details;
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
+            // Dirección
+            // 
+            this.Dirección.Text = "Dirección";
+            this.Dirección.Width = 400;
+            // 
+            // Coordenadas
+            // 
+            this.Coordenadas.Text = "Coordenadas";
+            this.Coordenadas.Width = 200;
             // 
             // EcoScooterRegistrarPatineteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.textoError2);
             this.Controls.Add(this.textoError1);
             this.Controls.Add(this.labelEstaciones);
-            this.Controls.Add(this.listViewEstaciones);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EcoScooterRegistrarPatineteForm";
@@ -186,12 +223,13 @@
             this.Controls.SetChildIndex(this.personLoginLabel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.listViewEstaciones, 0);
             this.Controls.SetChildIndex(this.labelEstaciones, 0);
             this.Controls.SetChildIndex(this.textoError1, 0);
             this.Controls.SetChildIndex(this.textoError2, 0);
+            this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,10 +242,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBoxEstado;
-        private System.Windows.Forms.ListView listViewEstaciones;
         private System.Windows.Forms.Label labelEstaciones;
         private System.Windows.Forms.Label textoError1;
         private System.Windows.Forms.Label textoError2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.ListView listViewEstaciones;
+        private System.Windows.Forms.ColumnHeader ID;
+        private System.Windows.Forms.ColumnHeader Dirección;
+        private System.Windows.Forms.ColumnHeader Coordenadas;
     }
 }
 

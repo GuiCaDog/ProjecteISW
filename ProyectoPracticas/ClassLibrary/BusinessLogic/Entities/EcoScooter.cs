@@ -257,11 +257,11 @@ namespace EcoScooter.Entities
                     Rental r = u.getLastRental();
                     if(r == null)
                     {
-                        throw new ServiceException("L'usuari no ha efectuat cap alquiler");
+                        throw new ServiceException("L'usuari no ha hecho ningún alquiler");
                     }
                     if (r.EndDate != null)
                     {
-                        throw new ServiceException("Devolució ja efectuada");
+                        throw new ServiceException("Devolución ya efectuada");
 
                     }
                     //int numSerie = r.Scooter.Id; //Per a que el necessitem??
@@ -329,6 +329,7 @@ namespace EcoScooter.Entities
             if (r != null) 
             {
                 startDate = r.StartDate;
+                Console.WriteLine("endDate=" + r.EndDate == null);
                 if(r.EndDate == null)
                 {
                     throw new ServiceException("El usuario no ha devuelto el Scooter actual");

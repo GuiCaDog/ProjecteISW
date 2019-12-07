@@ -19,11 +19,28 @@ namespace GUIEcoScotter
         public EcoScooterDevolverPatineteForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
+            //List<String> stationList = (List<String>)ecoService.GetStations();
+            //foreach (String station in stationList)
+            //{
+            //    Console.WriteLine(station);
+            //    listViewEstaciones.Items.Add(station);
+            //}
+            String dir, id, coords, station2;
             List<String> stationList = (List<String>)ecoService.GetStations();
             foreach (String station in stationList)
             {
                 Console.WriteLine(station);
-                listViewEstaciones.Items.Add(station);
+                dir = station.Substring(10, station.IndexOf(".") - 10);
+                station2 = station.Substring(station.IndexOf(".") + 1);
+                id = station2.Substring(station2.IndexOf("ID:") + 4, station2.IndexOf(".") - station2.IndexOf("ID:") - 4);
+                coords = station2.Substring(station2.IndexOf("("), station2.LastIndexOf(")") - station2.IndexOf("(") + 1);
+                Console.WriteLine(dir + ", " + id + ", " + coords);
+
+                //ListViewItem item0 = new ListViewItem(id);
+                //ListViewItem item1 = new ListViewItem(dir);
+                //ListViewItem item2 = new ListViewItem(coords);
+
+                listViewEstaciones.Items.Add(new ListViewItem(new[] { id, dir, coords }));
             }
         }
 
@@ -72,13 +89,13 @@ namespace GUIEcoScotter
                 else
                 {
 
-                    String estacion = listViewEstaciones.FocusedItem.ToString();
-                    Console.WriteLine(estacion + "\n");
-                    estacion = estacion.Substring(estacion.IndexOf("ID: "));
-                    Console.WriteLine(estacion + "\n");
-                    estacion = estacion.Substring(4, estacion.IndexOf(".") - 4);
-                    Console.WriteLine(estacion + "\n");
-
+                    String estacion = listViewEstaciones.FocusedItem.Text;
+                    //Console.WriteLine(estacion + "\n");
+                    //estacion = estacion.Substring(estacion.IndexOf("ID: "));
+                    //Console.WriteLine(estacion + "\n");
+                    //estacion = estacion.Substring(4, estacion.IndexOf(".") - 4);
+                    //Console.WriteLine(estacion + "\n");
+                    Console.WriteLine(estacion);
                     ecoService.ReturnScooter(estacion);
                     this.Close();
                 }
