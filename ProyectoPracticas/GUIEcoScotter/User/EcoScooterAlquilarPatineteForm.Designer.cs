@@ -36,7 +36,9 @@
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Dirección = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Coordenadas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -123,11 +125,21 @@
             this.Coordenadas.Text = "Coordenadas";
             this.Coordenadas.Width = 200;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUIEcoScotter.Properties.Resources.scooter;
+            this.pictureBox1.Location = new System.Drawing.Point(891, 169);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(136, 136);
+            this.pictureBox1.TabIndex = 12;
+            this.pictureBox1.TabStop = false;
+            // 
             // EcoScooterAlquilarPatineteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textError);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -139,7 +151,9 @@
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             this.Controls.SetChildIndex(this.textError, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +168,7 @@
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Dirección;
         private System.Windows.Forms.ColumnHeader Coordenadas;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

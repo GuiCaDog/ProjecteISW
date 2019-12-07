@@ -38,7 +38,9 @@
             this.dateTimePickerDia = new System.Windows.Forms.DateTimePicker();
             this.textError = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -154,11 +156,21 @@
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.label5.Click += new System.EventHandler(this.Label5_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUIEcoScotter.Properties.Resources.scooter__1_;
+            this.pictureBox1.Location = new System.Drawing.Point(891, 169);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(136, 136);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
             // EcoScooterRegistrarIncidenteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textError);
             this.Controls.Add(this.tableLayoutPanel1);
@@ -170,8 +182,10 @@
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.textError, 0);
             this.Controls.SetChildIndex(this.label5, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,6 +203,7 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerDia;
         private System.Windows.Forms.Label textError;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

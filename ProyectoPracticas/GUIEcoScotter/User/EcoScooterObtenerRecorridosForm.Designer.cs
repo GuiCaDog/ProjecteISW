@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.textoError = new System.Windows.Forms.Label();
-            this.buttonAtras = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,8 +43,11 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.personLoginLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonAtras = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textoError
@@ -58,20 +60,6 @@
             this.textoError.Name = "textoError";
             this.textoError.Size = new System.Drawing.Size(0, 16);
             this.textoError.TabIndex = 10;
-            // 
-            // buttonAtras
-            // 
-            this.buttonAtras.BackgroundImage = global::GUIEcoScotter.Properties.Resources.responder__4_;
-            this.buttonAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonAtras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
-            this.buttonAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAtras.Location = new System.Drawing.Point(41, 494);
-            this.buttonAtras.Name = "buttonAtras";
-            this.buttonAtras.Size = new System.Drawing.Size(75, 75);
-            this.buttonAtras.TabIndex = 6;
-            this.buttonAtras.UseVisualStyleBackColor = true;
-            this.buttonAtras.Click += new System.EventHandler(this.Button1_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -219,11 +207,35 @@
             this.personLoginLabel.Text = "label1";
             this.personLoginLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUIEcoScotter.Properties.Resources.scooter__2_;
+            this.pictureBox1.Location = new System.Drawing.Point(895, 438);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(132, 131);
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonAtras
+            // 
+            this.buttonAtras.BackgroundImage = global::GUIEcoScotter.Properties.Resources.responder__4_;
+            this.buttonAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAtras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.buttonAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAtras.Location = new System.Drawing.Point(41, 494);
+            this.buttonAtras.Name = "buttonAtras";
+            this.buttonAtras.Size = new System.Drawing.Size(75, 75);
+            this.buttonAtras.TabIndex = 6;
+            this.buttonAtras.UseVisualStyleBackColor = true;
+            this.buttonAtras.Click += new System.EventHandler(this.Button1_Click);
+            // 
             // EcoScooterObtenerRecorridosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.personLoginLabel);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.textoError);
@@ -235,6 +247,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,6 +271,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label personLoginLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
