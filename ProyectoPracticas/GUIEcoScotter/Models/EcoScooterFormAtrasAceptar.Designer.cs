@@ -71,7 +71,6 @@
             this.personLoginLabel.Name = "personLoginLabel";
             this.personLoginLabel.Size = new System.Drawing.Size(182, 23);
             this.personLoginLabel.TabIndex = 2;
-            this.personLoginLabel.Text = "label1";
             this.personLoginLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.personLoginLabel.Click += new System.EventHandler(this.PersonLoginLabel_Click);
             // 

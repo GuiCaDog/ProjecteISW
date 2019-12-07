@@ -84,6 +84,10 @@ namespace GUIEcoScotter
                 }
                 Console.WriteLine(fechaRegistro + ", " + estado + ", " + scooterState + ", " + estacion + ".");
                 ecoService.RegisterScooter(fechaRegistro,scooterState, estacion);
+
+                EcoScooterEmployeeForm eUF = new EcoScooterEmployeeForm(ecoService);
+                eUF.setNomUsuari(usuari);
+                eUF.Show();
                 this.Close();
                 
             }

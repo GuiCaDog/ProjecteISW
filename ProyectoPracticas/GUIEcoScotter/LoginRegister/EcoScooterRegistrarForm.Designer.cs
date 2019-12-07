@@ -426,6 +426,7 @@
             this.Name = "EcoScooterRegistrarForm";
             this.Text = "EcoScooter ";
             this.Load += new System.EventHandler(this.EcoScooterRegistrarForm_Load);
+            this.Controls.SetChildIndex(this.personLoginLabel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label6, 0);

@@ -13,7 +13,7 @@ namespace GUIEcoScotter
 {
     public partial class EcoScooterRegistrarEstacionForm : EcoScooterFormAtrasAceptar
     {
-
+        String usuari;
         public EcoScooterRegistrarEstacionForm(IEcoScooterService ecoService) : base(ecoService)
         {
             InitializeComponent();
@@ -22,6 +22,8 @@ namespace GUIEcoScotter
         public void setNomUsuari(String s)
         {
             personLoginLabel.Text = s;
+            usuari = s;
+
         }
         //Aceptar
         protected override void Button2_Click(object sender, EventArgs e)
@@ -41,6 +43,10 @@ namespace GUIEcoScotter
                 Console.WriteLine(direccion + ", " + latitud + ", " + longitud + ", " + id);
             
                 ecoService.RegisterStation(direccion, latitud, longitud, id);
+
+                EcoScooterEmployeeForm eUF = new EcoScooterEmployeeForm(ecoService);
+                eUF.setNomUsuari(usuari);
+                eUF.Show();
                 this.Close();
             }
             catch (ServiceException excepcio) { textoError.Text = excepcio.Message; }
@@ -57,6 +63,7 @@ namespace GUIEcoScotter
         protected override void Button1_Click(object sender, EventArgs e)
         {
             EcoScooterEmployeeForm eUF = new EcoScooterEmployeeForm(ecoService);
+            eUF.setNomUsuari(usuari);
             eUF.Show();
             this.Close();
         }

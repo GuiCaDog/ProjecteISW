@@ -37,6 +37,7 @@
             this.textHora = new System.Windows.Forms.TextBox();
             this.dateTimePickerDia = new System.Windows.Forms.DateTimePicker();
             this.textError = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,19 +143,33 @@
             this.textError.Size = new System.Drawing.Size(0, 16);
             this.textError.TabIndex = 12;
             // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(845, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(182, 23);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "label1";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.label5.Click += new System.EventHandler(this.Label5_Click);
+            // 
             // EcoScooterRegistrarIncidenteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.textError);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "EcoScooterRegistrarIncidenteForm";
             this.Text = "EcoScooter ";
+            this.Controls.SetChildIndex(this.personLoginLabel, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.textError, 0);
+            this.Controls.SetChildIndex(this.label5, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -173,6 +188,7 @@
         private System.Windows.Forms.TextBox textHora;
         private System.Windows.Forms.DateTimePicker dateTimePickerDia;
         private System.Windows.Forms.Label textError;
+        private System.Windows.Forms.Label label5;
     }
 }
 

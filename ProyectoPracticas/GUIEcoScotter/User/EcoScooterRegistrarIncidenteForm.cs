@@ -24,6 +24,7 @@ namespace GUIEcoScotter
         public void setNomUsuari(String s)
         {
             personLoginLabel.Text = s;
+            label5.Text = s;
             usuari = s;
         }
 
@@ -55,6 +56,10 @@ namespace GUIEcoScotter
 
 
                 //dPat.setIncidentInfo(descripcion, dia);
+
+                EcoScooterDevolverPatineteForm eUF = new EcoScooterDevolverPatineteForm(ecoService);
+                eUF.setNomUsuari(usuari);
+                eUF.Show();
                 this.Close();
 
                 // ecoService.RegisterIncident(descripcion, dia, rentalID);
@@ -71,6 +76,11 @@ namespace GUIEcoScotter
 
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Label5_Click(object sender, EventArgs e)
         {
 
         }

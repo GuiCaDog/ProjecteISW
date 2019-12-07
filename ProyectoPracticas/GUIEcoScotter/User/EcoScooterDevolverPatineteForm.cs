@@ -97,6 +97,10 @@ namespace GUIEcoScotter
                     //Console.WriteLine(estacion + "\n");
                     Console.WriteLine(estacion);
                     ecoService.ReturnScooter(estacion);
+
+                    EcoScooterUserForm eUF = new EcoScooterUserForm(ecoService);
+                    eUF.setNomUsuari(usuari);
+                    eUF.Show();
                     this.Close();
                 }
             }

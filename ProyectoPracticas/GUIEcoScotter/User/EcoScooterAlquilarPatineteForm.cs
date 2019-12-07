@@ -91,6 +91,10 @@ namespace GUIEcoScotter
                 //estacion = estacion.Substring(4, estacion.IndexOf(".")-4);
                 //Console.WriteLine(estacion + "\n");
                 ecoService.RentScooter(id);
+
+                EcoScooterUserForm eUF = new EcoScooterUserForm(ecoService);
+                eUF.setNomUsuari(usuari);
+                eUF.Show();
                 Close();
                 }
             catch(ServiceException ex)
