@@ -30,9 +30,6 @@
         {
             this.textoError = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -45,18 +42,26 @@
             this.personLoginLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonAtras = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // textoError
             // 
             this.textoError.AutoSize = true;
-            this.textoError.BackColor = System.Drawing.SystemColors.Control;
             this.textoError.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoError.ForeColor = System.Drawing.Color.Red;
-            this.textoError.Location = new System.Drawing.Point(67, 416);
+            this.textoError.ForeColor = System.Drawing.Color.White;
+            this.textoError.Location = new System.Drawing.Point(78, 419);
             this.textoError.Name = "textoError";
             this.textoError.Size = new System.Drawing.Size(0, 16);
             this.textoError.TabIndex = 10;
@@ -64,63 +69,26 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.06229F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.76784F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.23103F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 38.16534F));
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker2, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(67, 109);
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.dateTimePicker1, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(200, 165);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(883, 68);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(298, 32);
             this.tableLayoutPanel1.TabIndex = 4;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Location = new System.Drawing.Point(551, 6);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(326, 26);
-            this.dateTimePicker2.TabIndex = 9;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.Fecha_Seleccionada);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 62);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Data inicio:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(443, 3);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 62);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Data fin:";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePicker1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(139, 6);
+            this.dateTimePicker1.Location = new System.Drawing.Point(4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(295, 26);
+            this.dateTimePicker1.Size = new System.Drawing.Size(290, 26);
             this.dateTimePicker1.TabIndex = 8;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.Fecha_Seleccionada);
             // 
@@ -128,11 +96,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(41, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 31);
+            this.label1.Size = new System.Drawing.Size(146, 31);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Obtener Recorridos";
+            this.label1.Text = "Recorridos";
             // 
             // tableLayoutPanel2
             // 
@@ -153,6 +122,7 @@
             // listView1
             // 
             this.listView1.AutoArrange = false;
+            this.listView1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Dirección,
@@ -200,6 +170,7 @@
             // personLoginLabel
             // 
             this.personLoginLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.personLoginLabel.ForeColor = System.Drawing.Color.White;
             this.personLoginLabel.Location = new System.Drawing.Point(845, 9);
             this.personLoginLabel.Name = "personLoginLabel";
             this.personLoginLabel.Size = new System.Drawing.Size(182, 23);
@@ -210,17 +181,19 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::GUIEcoScotter.Properties.Resources.scooter__2_;
-            this.pictureBox1.Location = new System.Drawing.Point(895, 438);
+            this.pictureBox1.Location = new System.Drawing.Point(895, 453);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 131);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // buttonAtras
             // 
             this.buttonAtras.BackgroundImage = global::GUIEcoScotter.Properties.Resources.responder__4_;
             this.buttonAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonAtras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(187)))), ((int)(((byte)(222)))), ((int)(((byte)(251)))));
+            this.buttonAtras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.buttonAtras.FlatAppearance.BorderSize = 0;
             this.buttonAtras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAtras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAtras.Location = new System.Drawing.Point(41, 494);
@@ -230,11 +203,88 @@
             this.buttonAtras.UseVisualStyleBackColor = true;
             this.buttonAtras.Click += new System.EventHandler(this.Button1_Click);
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.tableLayoutPanel3.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12.23103F));
+            this.tableLayoutPanel3.Controls.Add(this.dateTimePicker2, 0, 0);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(641, 165);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(300, 32);
+            this.tableLayoutPanel3.TabIndex = 10;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker2.Location = new System.Drawing.Point(4, 4);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(292, 26);
+            this.dateTimePicker2.TabIndex = 10;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(230)))), ((int)(((byte)(160)))));
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(81, 165);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(121, 32);
+            this.tableLayoutPanel4.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.label2.Location = new System.Drawing.Point(3, 3);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 26);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Inicio";
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(230)))), ((int)(((byte)(160)))));
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label3, 0, 0);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(521, 165);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(122, 32);
+            this.tableLayoutPanel5.TabIndex = 15;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.label3.Location = new System.Drawing.Point(3, 3);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 26);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Fin";
+            // 
             // EcoScooterObtenerRecorridosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.tableLayoutPanel5);
+            this.Controls.Add(this.tableLayoutPanel4);
+            this.Controls.Add(this.tableLayoutPanel3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.personLoginLabel);
             this.Controls.Add(this.tableLayoutPanel2);
@@ -244,10 +294,15 @@
             this.Controls.Add(this.label1);
             this.Name = "EcoScooterObtenerRecorridosForm";
             this.Text = "EcoScooter ";
+            this.Load += new System.EventHandler(this.EcoScooterObtenerRecorridosForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,10 +312,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button buttonAtras;
         private System.Windows.Forms.Label textoError;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -272,6 +323,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Label personLoginLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label3;
     }
 }
 

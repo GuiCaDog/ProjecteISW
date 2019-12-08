@@ -25,7 +25,7 @@ namespace GUIEcoScotter
             //    listViewEstaciones.Items.Add(station);
             //}
             listViewEstaciones.Visible = false;
-            labelEstaciones.Visible = false;
+            tableLayoutPanel4.Visible = false;
             String dir, id, coords, station2;
             List<String> stationList = (List<String>)ecoService.GetStations();
             foreach (String station in stationList)
@@ -110,12 +110,12 @@ namespace GUIEcoScotter
             if (comboBoxEstado.Text.Equals("Disponible"))
             {
                 listViewEstaciones.Visible = true;
-                labelEstaciones.Visible = true; ;
+                tableLayoutPanel4.Visible = true; ;
             }
             else
             {
                 listViewEstaciones.Visible = false;
-                labelEstaciones.Visible = false;
+                tableLayoutPanel4.Visible = false;
                 textoError2.Text = "";
             }
 
@@ -123,7 +123,7 @@ namespace GUIEcoScotter
             {
                 textoError1.Text = "La fecha de registro debe ser anterior a la actual";
                 listViewEstaciones.Visible = false;
-                labelEstaciones.Visible = false;
+                tableLayoutPanel4.Visible = false;
                 textoError2.Text = "";
             }
             else if(dateTimePicker1.Value != null && dateTimePicker1.Value.CompareTo(DateTime.Now) <= 0)

@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBoxEstado = new System.Windows.Forms.ComboBox();
-            this.labelEstaciones = new System.Windows.Forms.Label();
             this.textoError1 = new System.Windows.Forms.Label();
             this.textoError2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -42,14 +41,22 @@
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Dirección = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Coordenadas = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label11 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // personLoginLabel
+            // 
+            this.personLoginLabel.ForeColor = System.Drawing.Color.White;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(55, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(232, 31);
@@ -60,8 +67,8 @@
             // 
             this.tableLayoutPanel1.AutoSize = true;
             this.tableLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.DarkCyan;
-            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(66)))), ((int)(((byte)(66)))));
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -74,14 +81,16 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(613, 77);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(607, 71);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label2.Location = new System.Drawing.Point(6, 3);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(4, 6);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(158, 24);
             this.label2.TabIndex = 0;
@@ -89,9 +98,11 @@
             // 
             // label3
             // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.label3.Location = new System.Drawing.Point(6, 40);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(4, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 24);
             this.label3.TabIndex = 1;
@@ -103,7 +114,7 @@
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(311, 6);
+            this.dateTimePicker1.Location = new System.Drawing.Point(307, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(296, 26);
             this.dateTimePicker1.TabIndex = 5;
@@ -118,23 +129,12 @@
             this.comboBoxEstado.Items.AddRange(new object[] {
             "Disponible",
             "Mantenimiento"});
-            this.comboBoxEstado.Location = new System.Drawing.Point(311, 43);
+            this.comboBoxEstado.Location = new System.Drawing.Point(307, 39);
             this.comboBoxEstado.Name = "comboBoxEstado";
             this.comboBoxEstado.Size = new System.Drawing.Size(296, 28);
             this.comboBoxEstado.TabIndex = 6;
             this.comboBoxEstado.Text = "Mantenimiento";
             this.comboBoxEstado.SelectedIndexChanged += new System.EventHandler(this.comboBoxEstado_SelectedIndexChanged);
-            // 
-            // labelEstaciones
-            // 
-            this.labelEstaciones.AutoSize = true;
-            this.labelEstaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.labelEstaciones.Location = new System.Drawing.Point(175, 278);
-            this.labelEstaciones.Name = "labelEstaciones";
-            this.labelEstaciones.Size = new System.Drawing.Size(107, 24);
-            this.labelEstaciones.TabIndex = 12;
-            this.labelEstaciones.Text = "Estaciones:";
-            this.labelEstaciones.Click += new System.EventHandler(this.Label4_Click);
             // 
             // textoError1
             // 
@@ -152,8 +152,8 @@
             this.textoError2.AutoSize = true;
             this.textoError2.BackColor = System.Drawing.SystemColors.Control;
             this.textoError2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textoError2.ForeColor = System.Drawing.Color.Red;
-            this.textoError2.Location = new System.Drawing.Point(173, 482);
+            this.textoError2.ForeColor = System.Drawing.Color.White;
+            this.textoError2.Location = new System.Drawing.Point(184, 494);
             this.textoError2.Name = "textoError2";
             this.textoError2.Size = new System.Drawing.Size(0, 16);
             this.textoError2.TabIndex = 14;
@@ -207,15 +207,42 @@
             this.Coordenadas.Text = "Coordenadas";
             this.Coordenadas.Width = 200;
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.tableLayoutPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(230)))), ((int)(((byte)(160)))));
+            this.tableLayoutPanel4.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.60836F));
+            this.tableLayoutPanel4.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(179, 275);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(664, 27);
+            this.tableLayoutPanel4.TabIndex = 16;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
+            this.label11.Location = new System.Drawing.Point(4, 1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 24);
+            this.label11.TabIndex = 5;
+            this.label11.Text = "Estación";
+            // 
             // EcoScooterRegistrarPatineteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1039, 596);
+            this.Controls.Add(this.tableLayoutPanel4);
             this.Controls.Add(this.tableLayoutPanel2);
             this.Controls.Add(this.textoError2);
             this.Controls.Add(this.textoError1);
-            this.Controls.Add(this.labelEstaciones);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "EcoScooterRegistrarPatineteForm";
@@ -223,13 +250,15 @@
             this.Controls.SetChildIndex(this.personLoginLabel, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
-            this.Controls.SetChildIndex(this.labelEstaciones, 0);
             this.Controls.SetChildIndex(this.textoError1, 0);
             this.Controls.SetChildIndex(this.textoError2, 0);
             this.Controls.SetChildIndex(this.tableLayoutPanel2, 0);
+            this.Controls.SetChildIndex(this.tableLayoutPanel4, 0);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,7 +271,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBoxEstado;
-        private System.Windows.Forms.Label labelEstaciones;
         private System.Windows.Forms.Label textoError1;
         private System.Windows.Forms.Label textoError2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
@@ -250,6 +278,8 @@
         private System.Windows.Forms.ColumnHeader ID;
         private System.Windows.Forms.ColumnHeader Dirección;
         private System.Windows.Forms.ColumnHeader Coordenadas;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label label11;
     }
 }
 

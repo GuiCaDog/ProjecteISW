@@ -40,7 +40,7 @@ namespace GUIEcoScotter
             //-----------------
             string user = textLogin.Text;
             string password = textBoxPassword.Text;
-            if (user.Equals("") || password.Equals("")) { textoError.Text = "Rellena los 2 campos"; }
+            if (user.Equals("") || password.Equals("")) { textoError.Text = "Usuario y contraseña necesarios"; }
             else
             {
                 //if (textLogin.Text.Equals("PACO"))
@@ -135,6 +135,16 @@ namespace GUIEcoScotter
         }
 
         private void TextBoxLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
