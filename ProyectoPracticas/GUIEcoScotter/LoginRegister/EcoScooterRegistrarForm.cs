@@ -115,5 +115,15 @@ namespace GUIEcoScotter
         {
 
         }
+
+        private void dateTimePickerCaducidad_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePickerNac_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

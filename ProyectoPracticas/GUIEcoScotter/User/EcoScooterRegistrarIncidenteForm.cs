@@ -41,26 +41,36 @@ namespace GUIEcoScotter
         //Botó Aceptar
         protected override void Button2_Click(object sender, EventArgs e)
         {
-            if (textDescripcion.Text.Equals("") || textHora.Text.Equals("") || dateTimePickerDia.Value == null)
+            if (textDescripcion.Text.Equals("") || textHora.Text.Equals("") || textHora.Text.Equals("") || dateTimePickerDia.Value == null)
             {
-                textError.Text = "Rellene todos los campos";
+                textError.Text = "Existen campos vacíos";
             }
             else
             {
                 String descripcion = textDescripcion.Text;
                 String hora = textHora.Text;
+                String min = textMin.Text;
                 DateTime dia = dateTimePickerDia.Value;
+                int h = int.Parse(hora); int m = int.Parse(min);
                 //dia.AddHours(int.Parse(hora));
                 //((EcoScooterService)ecoService).wasIncident(descripcion, dia);
-                ecoService.wasIncident(descripcion, dia);
+                if (h < 0 || h > 23 || m < 0 || m > 59)
+                {
+                    textError.Text = "Hora[00,23] : Min[00,59]";
+                }
+                else
+                {
+                    dia.AddHours(h); dia.AddMinutes(m);
+                    ecoService.wasIncident(descripcion, dia);
 
 
-                //dPat.setIncidentInfo(descripcion, dia);
+                    //dPat.setIncidentInfo(descripcion, dia);
 
-                EcoScooterDevolverPatineteForm eUF = new EcoScooterDevolverPatineteForm(ecoService);
-                eUF.setNomUsuari(usuari);
-                eUF.Show();
-                this.Close();
+                    EcoScooterDevolverPatineteForm eUF = new EcoScooterDevolverPatineteForm(ecoService);
+                    eUF.setNomUsuari(usuari);
+                    eUF.Show();
+                    this.Close();
+                }
 
                 // ecoService.RegisterIncident(descripcion, dia, rentalID);
 
@@ -81,6 +91,16 @@ namespace GUIEcoScotter
         }
 
         private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void EcoScooterRegistrarIncidenteForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
