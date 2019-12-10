@@ -31,6 +31,7 @@ namespace GUIEcoScotter
         {
             EcoScooterRegistrarEstacionForm eRE = new EcoScooterRegistrarEstacionForm(ecoService);
             eRE.setNomUsuari(usuari);
+            
             eRE.Show();
             this.Close();
             //this.Hide();
@@ -41,6 +42,7 @@ namespace GUIEcoScotter
         {
             EcoScooterRegistrarPatineteForm eRP = new EcoScooterRegistrarPatineteForm(ecoService);
             eRP.setNomUsuari(usuari);
+            
             eRP.Show();
             this.Close();
             //this.Hide();
@@ -50,6 +52,7 @@ namespace GUIEcoScotter
         {
             EcoScooterAppForm eAF = new EcoScooterAppForm(ecoService);
             eAF.Show();
+            ecoService.desconectar();
             this.Close();
         }
     }

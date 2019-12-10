@@ -81,7 +81,7 @@
             this.textLogin.Location = new System.Drawing.Point(4, 6);
             this.textLogin.Name = "textLogin";
             this.textLogin.Size = new System.Drawing.Size(335, 31);
-            this.textLogin.TabIndex = 4;
+            this.textLogin.TabIndex = 0;
             this.textLogin.TextChanged += new System.EventHandler(this.TextBoxLogin_TextChanged);
             // 
             // textBoxPassword
@@ -94,7 +94,7 @@
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(332, 31);
-            this.textBoxPassword.TabIndex = 5;
+            this.textBoxPassword.TabIndex = 4;
             this.textBoxPassword.TextChanged += new System.EventHandler(this.TextBoxPassword_TextChanged);
             // 
             // buttonIniciarSesion
@@ -114,6 +114,7 @@
             this.buttonIniciarSesion.Name = "buttonIniciarSesion";
             this.buttonIniciarSesion.Size = new System.Drawing.Size(339, 46);
             this.buttonIniciarSesion.TabIndex = 1;
+            this.buttonIniciarSesion.TabStop = false;
             this.buttonIniciarSesion.Text = "Login";
             this.buttonIniciarSesion.UseVisualStyleBackColor = false;
             this.buttonIniciarSesion.Click += new System.EventHandler(this.ButtonIniciarSesion_Click);
@@ -134,7 +135,8 @@
             this.buttonRegistrarse.Margin = new System.Windows.Forms.Padding(1);
             this.buttonRegistrarse.Name = "buttonRegistrarse";
             this.buttonRegistrarse.Size = new System.Drawing.Size(137, 38);
-            this.buttonRegistrarse.TabIndex = 6;
+            this.buttonRegistrarse.TabIndex = 5;
+            this.buttonRegistrarse.TabStop = false;
             this.buttonRegistrarse.Text = "Registrarse";
             this.buttonRegistrarse.UseVisualStyleBackColor = false;
             this.buttonRegistrarse.Click += new System.EventHandler(this.ButtonRegistrarse_Click);
@@ -159,7 +161,7 @@
             this.exitButton.Location = new System.Drawing.Point(35, 496);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(90, 79);
-            this.exitButton.TabIndex = 0;
+            this.exitButton.TabIndex = 6;
             this.exitButton.UseVisualStyleBackColor = true;
             this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
@@ -202,7 +204,6 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.81081F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(343, 42);
             this.tableLayoutPanel3.TabIndex = 13;
-            this.tableLayoutPanel3.TabStop = true;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // label3
@@ -235,7 +236,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(343, 24);
             this.tableLayoutPanel4.TabIndex = 14;
-            this.tableLayoutPanel4.TabStop = true;
             // 
             // label1
             // 
@@ -286,7 +286,6 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(343, 25);
             this.tableLayoutPanel6.TabIndex = 16;
-            this.tableLayoutPanel6.TabStop = true;
             // 
             // label2
             // 
