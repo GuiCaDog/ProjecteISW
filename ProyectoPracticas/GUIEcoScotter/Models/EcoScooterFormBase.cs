@@ -21,7 +21,8 @@ namespace GUIEcoScotter
         {
             InitializeComponent();
         }
-        public EcoScooterFormBase(IEcoScooterService ecoService) : this() {
+        public EcoScooterFormBase(IEcoScooterService ecoService) : this()
+        {
             this.ecoService = ecoService;
         }
 

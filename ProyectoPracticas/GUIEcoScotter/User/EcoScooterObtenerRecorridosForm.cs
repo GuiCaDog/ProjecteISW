@@ -56,7 +56,7 @@ namespace GUIEcoScotter
                     Console.WriteLine(price);
                     Console.WriteLine(oriId);
                     Console.WriteLine(finId);
-                    listView1.Items.Add(new ListViewItem(new[] {oriId, fIni, finId, fFin, price }));
+                    listView1.Items.Add(new ListViewItem(new[] { oriId, fIni, finId, fFin, (price + ",  ").Substring(0,price.IndexOf(',')+3)+" €" })); ;
                 }
 
             }
@@ -95,6 +95,11 @@ namespace GUIEcoScotter
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ListView1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

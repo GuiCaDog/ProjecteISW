@@ -67,5 +67,10 @@ namespace GUIEcoScotter
         {
 
         }
+        private void EcoScooterUserForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Console.WriteLine("Hey");
+            Application.Exit();
+        }
     }
 }

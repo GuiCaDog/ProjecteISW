@@ -223,7 +223,7 @@
     <None Include="Resources\scooter %283%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\scooter_kick-512.png" />
+    <Content Include="Resources\scooter_kick-512.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
