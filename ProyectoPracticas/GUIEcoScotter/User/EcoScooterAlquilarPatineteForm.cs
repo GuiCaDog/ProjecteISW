@@ -113,7 +113,7 @@ namespace GUIEcoScotter
 
         private void TableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
-
+            //....
         }
 
         private void Label1_Click(object sender, EventArgs e)
