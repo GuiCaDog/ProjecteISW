@@ -148,7 +148,7 @@
             this.tableLayoutPanel2.ColumnCount = 3;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 69.09091F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.90909F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutPanel2.Controls.Add(this.textHora, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.label6, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.textMin, 2, 0);
@@ -167,7 +167,7 @@
             this.textHora.ForeColor = System.Drawing.Color.White;
             this.textHora.Location = new System.Drawing.Point(3, 3);
             this.textHora.Name = "textHora";
-            this.textHora.Size = new System.Drawing.Size(32, 29);
+            this.textHora.Size = new System.Drawing.Size(31, 29);
             this.textHora.TabIndex = 4;
             // 
             // label6
@@ -176,7 +176,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(38, 3);
+            this.label6.Location = new System.Drawing.Point(37, 3);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(16, 26);
@@ -188,7 +188,7 @@
             this.textMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(33)))), ((int)(((byte)(33)))));
             this.textMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textMin.ForeColor = System.Drawing.Color.White;
-            this.textMin.Location = new System.Drawing.Point(57, 3);
+            this.textMin.Location = new System.Drawing.Point(56, 3);
             this.textMin.Name = "textMin";
             this.textMin.Size = new System.Drawing.Size(35, 29);
             this.textMin.TabIndex = 5;

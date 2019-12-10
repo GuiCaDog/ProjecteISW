@@ -68,7 +68,11 @@ namespace GUIEcoScotter
 
                     if (textBoxNumeroTarjeta.Text.Length != 8)
                     {
-                        throw new System.FormatException();
+                        throw new System.FormatException("La tarjeta contiene 8 números");
+                    }
+                    if(textBoxCVV.Text.Length != 3)
+                    {
+                        throw new System.FormatException("CVV contiene 3 dígitos");
                     }
                     int numeroTarjeta = int.Parse(textBoxNumeroTarjeta.Text);
                     
@@ -95,7 +99,7 @@ namespace GUIEcoScotter
             }
             catch (System.FormatException exc){
                 
-                mistakes.Text = "La tarjeta contiene 8 números";
+                mistakes.Text = exc.Message;
             }
             catch (System.OverflowException) { }
         }

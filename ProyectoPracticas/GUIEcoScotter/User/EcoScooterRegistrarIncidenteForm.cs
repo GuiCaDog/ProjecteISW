@@ -51,26 +51,30 @@ namespace GUIEcoScotter
                 String hora = textHora.Text;
                 String min = textMin.Text;
                 DateTime dia = dateTimePickerDia.Value;
-                int h = int.Parse(hora); int m = int.Parse(min);
-                //dia.AddHours(int.Parse(hora));
-                //((EcoScooterService)ecoService).wasIncident(descripcion, dia);
-                if (h < 0 || h > 23 || m < 0 || m > 59)
+                try
+                {
+                    int h = int.Parse(hora); int m = int.Parse(min);
+                    if (h < 0 || h > 23 || m < 0 || m > 59)
+                    {
+                        textError.Text = "Hora[00,23] : Min[00,59]";
+                    }
+                    else
+                    {
+                        dia.AddHours(h); dia.AddMinutes(m);
+                        ecoService.wasIncident(descripcion, dia);
+                        //dPat.setIncidentInfo(descripcion, dia);
+                        EcoScooterDevolverPatineteForm eUF = new EcoScooterDevolverPatineteForm(ecoService);
+                        eUF.setNomUsuari(usuari);
+                        eUF.Show();
+                        this.Close();
+                    }
+                }
+                catch(Exception)
                 {
                     textError.Text = "Hora[00,23] : Min[00,59]";
                 }
-                else
-                {
-                    dia.AddHours(h); dia.AddMinutes(m);
-                    ecoService.wasIncident(descripcion, dia);
-
-
-                    //dPat.setIncidentInfo(descripcion, dia);
-
-                    EcoScooterDevolverPatineteForm eUF = new EcoScooterDevolverPatineteForm(ecoService);
-                    eUF.setNomUsuari(usuari);
-                    eUF.Show();
-                    this.Close();
-                }
+                //dia.AddHours(int.Parse(hora));
+                //((EcoScooterService)ecoService).wasIncident(descripcion, dia);
 
                 // ecoService.RegisterIncident(descripcion, dia, rentalID);
 

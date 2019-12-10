@@ -99,7 +99,7 @@
             this.Si.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.Si.FlatAppearance.BorderSize = 0;
             this.Si.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DimGray;
-            this.Si.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.Si.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(238)))), ((int)(((byte)(156)))));
             this.Si.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Si.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.Si.ForeColor = System.Drawing.Color.Snow;
