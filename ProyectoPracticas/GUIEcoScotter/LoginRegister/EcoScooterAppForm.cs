@@ -71,7 +71,7 @@ namespace GUIEcoScotter
                         eU.setNomUsuari(usuario);                    
                         eU.Show();
                         
-                        //this.Close();
+                       // this.Close();
                     }
                     catch (ServiceException ex)
                     {

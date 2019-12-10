@@ -375,7 +375,6 @@
             this.textBoxContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxContraseña.Location = new System.Drawing.Point(196, 38);
             this.textBoxContraseña.Name = "textBoxContraseña";
-            this.textBoxContraseña.PasswordChar = '*';
             this.textBoxContraseña.Size = new System.Drawing.Size(183, 26);
             this.textBoxContraseña.TabIndex = 4;
             // 
@@ -386,7 +385,6 @@
             this.textBoxRepContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.textBoxRepContraseña.Location = new System.Drawing.Point(196, 73);
             this.textBoxRepContraseña.Name = "textBoxRepContraseña";
-            this.textBoxRepContraseña.PasswordChar = '*';
             this.textBoxRepContraseña.Size = new System.Drawing.Size(183, 26);
             this.textBoxRepContraseña.TabIndex = 5;
             // 
