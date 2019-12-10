@@ -57,8 +57,8 @@ namespace GUIEcoScotter
 
         private void ButtonAtras_Click(object sender, EventArgs e)
         {
-            //EcoScooterAppForm eAF = new EcoScooterAppForm(ecoService);
-            // eAF.Show();
+           // EcoScooterAppForm eAF = new EcoScooterAppForm(ecoService);
+           // eAF.Show();
             ecoService.desconectar();
             this.Close();
         }
