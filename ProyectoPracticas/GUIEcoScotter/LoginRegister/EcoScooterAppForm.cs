@@ -70,7 +70,8 @@ namespace GUIEcoScotter
                         usuario = "User: " + user;
                         eU.setNomUsuari(usuario);                    
                         eU.Show();
-                        
+
+                        this.Hide();
                        // this.Close();
                     }
                     catch (ServiceException ex)
@@ -83,6 +84,7 @@ namespace GUIEcoScotter
                             usuario = "Employee: " + user;
                             eF.setNomUsuari(usuario);
 
+                            this.Hide();
                             //this.Close();
                         }
                         else {
@@ -116,6 +118,7 @@ namespace GUIEcoScotter
             EcoScooterRegistrarForm r = new EcoScooterRegistrarForm(ecoService);
             //r.setLabelInvisible(); //No funciona
             r.Show();
+            this.Hide();
             //this.Close();
         }
 
